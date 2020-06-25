@@ -1,0 +1,17 @@
+ {% extends "admin/base.html.twig" %}
+
+ {% block body %}
+
+ 	<div class="container">
+ 		<h1>Editer un organigramme</h1>
+ 		
+ 		<div>
+ 			
+			<img class="text-center"  src="{{vich_uploader_asset(org, 'imageFile')  }}" alt="{{org.filename}}" >
+ 		</div>
+
+ 		{{ include ('admin/organigramme/_form.html.twig', {button: 'Editer'}) }}
+
+ 	</div>
+
+ {% endblock %}

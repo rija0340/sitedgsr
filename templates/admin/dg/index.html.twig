@@ -1,0 +1,62 @@
+
+{% extends 'admin/base.html.twig' %}
+
+{% block title  'Gérer les directeurs'%}
+
+
+{% block body %}
+
+	<div class="container mt-4">
+		<h1> Gérer les directeurs</h1>
+
+		{% for message in app.flashes('success') %}
+
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{% endfor %}
+		<div class="text-right">
+			<a href="{{path('admin.dg.new')}}" class="btn btn-primary">Ajouter un nouveau directeur</a>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Photo</th>
+					<th>Grades</th>
+					<th>Noms</th>
+					<th>Periodes</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for dg in dg %}
+					<tr>
+						<td>
+							<div class="text-center" style="height : 60px; width : 60px;">
+								
+								<img  src="{{vich_uploader_asset(dg, 'imageFile')   }}" alt="{{dg.name}}" class="img-fluid rounded-circle">
+							</div>
+						</td>
+						<td>{{ dg.grade }}</td>
+						<td>{{ dg.name }}</td>
+						<td>{{ dg.periode }}</td>
+						<td>
+							<a href="{{ path('admin.dg.edit', { id : dg.id }) }}" class="btn btn-secondary ">Editer</a>
+							<form method="post" action="{{ path('admin.dg.delete' , { id : dg.id } ) }}" style="display : inline-block" onsubmit="return confirm('Are you sure?');">
+								<input type="hidden" name="_method" value="DELETE">
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dg.id)  }}" >
+								<button class="btn btn-danger"> Supprimer </button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+
+
+
+{% endblock %}

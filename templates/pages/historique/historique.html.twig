@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+
+	<div class="row">
+		<!-- Post Content Column -->
+		<div class="col-lg-12">
+			<div>
+				<div class="historique_text">
+					<hr>
+					<h4>Automobile Club de Madagascar (ACM)</h4>
+					<hr>
+					<p>-    <strong>Le 10 décembre 1959</strong>, signature d’une convention par laquelle l’Etat Malagasy a confié le contrôle technique périodique des véhicules automobiles à l’AUTOMOBILE CLUB DE MADAGASCAR (A.C.M), association privée reconnue d’utilité publique.
+					</p>
+					<p>-    Progressivement, des Centres de Sécurité Routière, placés sous contrôle administratif et technique du Ministère de l’équipement et des communications (chargé des transports), ont été créés pour être chargé des visites techniques des véhicules automobiles conformément aux dispositions du code de la route.
+					</p>
+					<p>-    <strong>Par la convention du 14 mai 1968,</strong> l’Etat Malagasy a confié à l’automobile Club de Madagascar la gérance des Centres de Sécurité Routière. Placés sous l’autorité du Ministère de l’Equipement et des communications de l’époque, les Centres de sécurité Routière étaient pour la plupart implantés dans les locaux des Travaux Publics.</p>
+
+					<ul style="margin-left: 40px;">
+						<li>25% à l’ACM à titre de rémunération du gérant</li>
+						<li>75% destinés à financer des investissements à effectuer dans les centres de sécurité Routière existants ou à créer ou à titre d’un programme établi par le Ministère de l’Equipement et des Communications.</li>
+					</ul>
+
+					<p>Le personnel chargé du fonctionnement administratif des Centres de Sécurité Routière était engagé par l’ACM. L’ensemble des biens mobiliers et immobiliers qui étaient acquis au cours de la gérance de ces Centres étaient reconnus propriétés de l’Etat.</p>
+					<hr>
+					<h4>Gendarmerie Nationale</h4>
+					<hr>
+
+					<p>-    <strong>Par le décret N°76-283 du 09 septembre 1976,</strong> suite à la déficience de l’ACM, la responsabilité des Centres de Sécurité Routière en matière de visite technique a été confiée à la Zandarimariam-Pirenena.</p>
+
+					<p>-    <strong>Le 02 février 1982</strong>, parution de l’Instruction Ministérielle N°/MINDEF/SG/DAL/STIM reltive aux modalités d’application du Décret N°76-283 du 09 septembre 1976, confiant la responsabilité des centres de sécurité routière en matière de visite technique à la Zandarimariam-Pirenena.</p>
+
+					<p>-    <strong>Le 06 mars 1991</strong>, la responsabilité assumée par le Ministère des Travaux Publics en matière de réception technique des véhicules a été transférée au Ministère de la Défense en vertu du Décret N°88-426 du 03 novembre 1988.</p>
+
+					<p>-    <strong>Le 10 janvier 1989</strong>, parution de l’arrêté 128/89 du Ministère de la Défense relatif à la réception des véhicules à moteur ou véhicules remorqués ainsi que les éléments de véhicules.</p>
+
+					<p>-    <strong>A compter du 1er janvier 1989</strong> les Centres de Sécurité Routière sont érigés en Direction Générale de la Sécurité Routière, connue sous le sigle D.G.S.R suivant le décret N°89-080 du 24 mars 1989.<br/>
+						En son article 2, le décret N°89-080 du 24 mars 1989 confère à la DGSR le statut d’Etablissement Public à caractère Industriel et Commercial (EPIC) bénéficiant de l’autonomie financière et placé sous la tutelle du Ministère de la Défense.</p>
+
+						<p>-    <strong>En 1995 :</strong> la DGSR, organisme rattaché à la Zandarimariam-Pirenena, est placée sous tutelle du Ministère des Forces Armées, suivant le décret N°95-327 du 03 mai 1995.</p>
+
+						<p>-    <strong>En 1997 :</strong> décret N°97-284 du 07 avril 1997 fixant les attributions du Secrétariat d’Etat près du Ministère des Forces Armées chargé de la Gendarmerie, ainsi que l’organisation générale de son Secrétariat d’Etat qui stipule en son article 13 que la DGSR est un EPIC placée sous tutelle du SEG.</p>
+
+						<p>-    <strong>En 2001 : </strong>décret N°2001/780 du 28 septembre 2001, portant modification de certaines dispositions du décret N°89-080 du 24 mars 1989 sur la réorganisation des Centres de Sécurité Routière, notamment en son article 2  stipulant que « La Direction Générale de la Sécurité Routière est un Etablissement Public à caractère Industriel et Commercial doté de la personnalité morale et jouissant de l’autonomie administrative et financière régie par la loi N°98-031 du 20 janvier 1998 susvisée, placée sous tutelle du Secrétariat d’Etat chargé de la Gendarmerie.</p>
+
+						<p>-    <em><strong>Note de service N°01/DGSR/02 du 02 janvier 2002</strong> relative à la réorganisation de la DGSR (suppression du service technique dans l’organigramme)</em></p>
+
+						<p>
+							-   <em>Décret N°2003/856 du 19 août 2003 portant statut de la DGSR (EPIC)</em>
+						</p>
+					</div>
+				</div>
+
+
+			</div>
+
+			<!-- /.row -->
+
+		</div>
+		<hr>	
+		<h3 class="title" style="text-align: center; margin-top: 25px; ">Les Directeurs généraux successifs de la Direction Générale de la Sécurité Routière</h3>
+		<hr>	
+
+
+		<div class="row">
+			{% for  director in directors %}
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-4">
+					<div class="card mb-4">
+
+						{% if director.filename %}
+							<div style="height : 70%;">
+								<img   src="{{vich_uploader_asset(director, 'imageFile')   }}" alt={{director.name}} class="card-img-top">
+							</div>
+						{% endif %}	
+						<div class="card-body">
+							<div class="text">
+								<div class="d-flex justify-content-center">{{director.grade}}</div>
+								<div class="d-flex justify-content-center" style="">{{director.name}}</div>
+							</div>
+							<!-- /.text-->
+						</div>
+						<div class="d-flex justify-content-center card-footer">
+							{{director.periode}}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+
+		<!-- /.row -->
+
+		{%endblock%}

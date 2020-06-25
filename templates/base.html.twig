@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %} dgsrmada {% endblock %}</title>
+	<meta nema="viewport">
+	<link rel="stylesheet" type="text/css"
+	href="{{ asset( 'vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}">
+	<!-- for material style -->
+	<link rel="stylesheet" type="text/css" href="{{asset( 'css/material.indigo-blue.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/styles.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
+	{% block stylesheets %} {%endblock%}
+	</head>
+	<body>
+		{% block banniere%} {% include 'layouts/banniere.html.twig' %} {%endblock %}
+		{% block nav %} {% include 'layouts/nav.html.twig' %}{%endblock%}
+			{% block carousel %} {%endblock%}
+				<div class="container">
+					{% block content %}  {%endblock%}
+					</div>
+
+					{% block sidenav %}
+
+						<!-- pour l'administration qui n'a pas besoin de class container -->
+					{% endblock %} 
+
+					{% block footer %} {% include 'layouts/footer.html.twig' %} {%endblock%}
+						<!-- Bootstrap core JavaScript -->
+
+						<!-- veuillez respecter l'odre des declarations des sripts -->
+
+						<script src="{{ asset( 'vendor_bootstrap/jquery/jquery.min.js') }}"></script>
+						<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.min.js') }}"></script>
+						<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+						<script type="text/javascript" src="{{ asset( 'js/material.min.js') }}"></script>
+						{% block javascripts %}  {%endblock%}
+						</body>
+						</html>

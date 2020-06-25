@@ -1,0 +1,50 @@
+
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/baguetteBox.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/grid-gallery.css')}}">
+
+	{%endblock%}
+	{% block content %}
+
+		<section class="gallery-block grid-gallery">
+			<div class="container">
+				<div class="heading">
+					<h2 class="text-center">Grid Gallery</h2>
+				</div>
+				{% for actualite in actualites %}
+					<h5> {{ actualite.title }}</h5>
+					<div class="row">
+						<div class="col-md-3 col-lg-3 item">
+							<a class="lightbox" href="{{vich_uploader_asset(actualite, 'imageFile1')  }}">
+								<img class="img-fluid image scale-on-hover" src="{{vich_uploader_asset(actualite, 'imageFile1')  }}">
+							</a>
+						</div>
+						<div class="col-md-3 col-lg-3 item">
+							<a class="lightbox" href="{{vich_uploader_asset(actualite, 'imageFile2')  }}">
+								<img class="img-fluid image scale-on-hover" src="{{vich_uploader_asset(actualite, 'imageFile2')  }}">
+							</a>
+						</div>
+						<div class="col-md-3 col-lg-3 item">
+							<a class="lightbox" href="{{vich_uploader_asset(actualite, 'imageFile3')  }}">
+								<img class="img-fluid image scale-on-hover" src="{{vich_uploader_asset(actualite, 'imageFile3') }}">
+							</a>
+						</div>
+						<div class="col-md-3 col-lg-3 item">
+							<a class="lightbox" href="{{vich_uploader_asset(actualite, 'imageFile4')  }}">
+								<img class="img-fluid image scale-on-hover" src="{{vich_uploader_asset(actualite, 'imageFile4')  }}">
+							</a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+		{%endblock%}
+
+		{% block javascripts %}
+			<script src="{{ asset ('js/gallerie_photo/baguetteBox.min.js') }}"></script>
+			<script>
+			baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+			</script>
+		{% endblock %}

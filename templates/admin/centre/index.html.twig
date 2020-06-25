@@ -1,0 +1,70 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title  'Gérer les centres'%}
+
+
+{% block body %}
+
+	<div class="container mt-4">
+		<h1> Gérer les centres</h1>
+
+		{% for message in app.flashes('success') %}
+
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{% endfor %}
+		<div class="text-right">
+			<a href="{{path('admin.centre.new')}}" class="btn btn-primary">Ajouter un nouveau centre</a>
+		</div>
+		<table class="table table-striped">
+			{% for faritany in faritany %}
+
+				<thead>
+					<tr>
+						<th colspan="5" class="border-secondary"><h3>{{faritany.faritany}}</h3></th>
+					</tr>
+					<tr>
+						<th >Ville</th>
+						<th >Adresse</th>
+						<th >Type</th>
+						<th >Chef C</th>
+						<th >Actions</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for centre in centres %}
+						{% if centre.ville.faritany == faritany.faritany %}
+
+							<tr>
+								{% if 	centre.annexe %}
+									<td >{{ centre.ville }}(annexe)</td>
+								{% else %}	
+									<td >{{ centre.ville }}</td>
+								{% endif %}
+								<td >{{ centre.adresse }}</td>
+								<td >{{ centre.type }}</td>
+								<td >{{ centre.gradeCc }} {{ centre.nomCc }}</td>
+								<td>
+									<a href="{{ path('admin.centre.edit', { id : centre.id }) }}" class="btn btn-secondary ">Editer</a>
+									<form method="post" action="{{ path('admin.centre.delete' , { id : centre.id } ) }}" style="display : inline-block" onsubmit="return confirm('Are you sure?');">
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ centre.id)  }}" >
+										<button class="btn btn-danger"> Suppr </button>
+									</form>
+								</td>
+							</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+			{% endfor %}
+		</table>
+
+	</div>
+
+
+
+
+{% endblock %}

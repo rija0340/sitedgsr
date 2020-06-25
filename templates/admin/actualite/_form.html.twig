@@ -1,0 +1,27 @@
+
+{{form_start(form)}}
+
+{{ form_row(form.title) }} 
+{{ form_row(form.content) }}
+<div class="row">
+	<div class="col-lg-3">
+		{{ form_row(form.imageFile,{'label' : 'Image'}) }} 
+	</div>
+
+
+</div>
+
+<div class="row">
+	
+	<div class="col-lg-6">
+		{{ form_row(form.date_pub) }} 
+	</div>
+	<div class="col-lg-6">
+		{{ form_row(form.url_video) }} 
+	</div>
+</div>
+
+
+{{form_rest(form)}}
+<button class="btn btn-primary" >{{ button|default('Enregistrer')}}</button>
+{{form_end(form)}}

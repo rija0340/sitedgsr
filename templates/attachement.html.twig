@@ -1,0 +1,26 @@
+{% if value is not null %}
+
+	<div class="form-widget">
+		<div class="form-control">
+			<div class="row">
+
+				{% for image in value %}
+					<div class="col-lg-6">
+
+	<!-- 				<a href="#" class="easyadmin-thumbnail" data-featherlight="#easyadmin-ligthbox-{{ item.id }}" data-featherlight-close-on-click="anywhere">
+	
+		<img src="/uploads/images/actualite/{{ image.image }}">
+	
+	</a> -->
+					<div id="easyadmin-ligthbox-{{ item.id }}" class="easyadmin-ligthbox" >
+						<img style="width: 100%" src="/uploads/images/actualite/{{ image.image }}" alt="">
+					
+					</div>
+
+			</div>
+		{% endfor %}
+	</div>
+</div>
+</div>
+
+{% endif %}

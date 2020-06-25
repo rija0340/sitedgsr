@@ -1,0 +1,35 @@
+
+{{form_start(form)}}
+<div class="row">	
+	<div class="col-lg-2">	
+		{{ form_row(form.ville) }}
+	</div>
+	<div class="col-lg-6">
+		{{ form_row(form.adresse) }} 
+	</div>
+	<div class="col-lg-4">
+		{{ form_row(form.type, {'label' : 'Type de centre'}) }} 
+	</div>
+
+</div>
+<div class="row">	
+	<div class="col-lg-2">	
+		{{ form_row(form.grade_cc) }} 
+	</div>
+	<div class="col-lg-6">
+
+		{{ form_row(form.nom_cc) }} 
+	</div>
+	<div class="col-lg-4">
+
+		{{ form_row(form.num_cc) }} 
+	</div>
+</div>
+
+{{form_row(form.imageFile)}}
+
+{{ form_row(form.annexe, {'label' : 'Annexe'}) }} 
+
+{{form_rest(form)}}
+<button class="btn btn-primary " >{{ button|default('Enregistrer')}}</button>
+{{form_end(form)}}

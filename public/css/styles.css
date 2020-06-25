@@ -1,0 +1,169 @@
+/*la bannière*/
+img{
+	display : block; 
+	height : auto;
+	width : 100%;
+}
+.banner{
+
+}
+
+/*navigation*/
+nav{
+
+	background-color: #1ba8e1;
+}
+.navbar{
+	z-index : 100;
+	top:0;
+	width: 100%;
+	
+
+}
+
+.navbar-brand{
+	font-size: 2em;
+	font-family: serif;
+	color: #ffffff;
+	font-weight: 400;
+}
+.navbar-brand:hover{
+	color: blue;
+}
+
+.nav-item  {
+	color: white;
+}
+.nav-item .nav-link{
+	color: white;
+}
+
+.nav-item:hover{
+	background-color: #68eaff;
+	color: blue;
+	font-size: 1.2em;
+}
+
+.navbar{
+	padding: 0 0 ;
+}
+
+.nav-item{
+
+	padding: 0.5rem 0.5rem;
+}
+
+.actif{
+	background-color :#1cb4f6;
+
+}
+.actif > a{
+	font-color : #4682b4;
+	font-weight: bold;
+}
+
+.navbar-toggler-icon{
+	color : white;
+}
+
+.sticky {
+	box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.3;
+}
+.sticky:hover{
+	opacity: 1;
+
+}
+
+/* surchargement classe dropdown bootstrap */
+.dropdown-menu{
+	background-color : #1ca8e1;
+	color: white; 
+}
+
+.dropdown-menu > a:hover{
+	background-color: #68eaff;
+	color: blue;
+}
+
+.dropdown-item:hover{
+	color : white;
+}
+
+/
+
+
+/* missions */
+@-webkit-keyframes slidebloc {
+	0% {
+		bottom: 20vh;
+		left: 10vw;
+	}
+	25% {
+		bottom: 30vh;
+		left: 30vw;
+	}
+	50% {
+		bottom: 35vh;
+		left: 40vw;
+	}
+	75% {
+		bottom: 40vh;
+		left: 50vw;
+	}
+	100% {
+		bottom: 50vh;
+		left: 60vw;
+	}
+}
+.mission_texte{
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 0.9em;
+	text-align: justify;
+	text-indent: 2em;
+}
+.mission_texte:hover{
+	-webkit-animation: slidebloc 0.8s infinite;
+}
+p{
+	font-size: 1.2em;
+	text-align: justify;
+}
+
+.act{
+	width: auto;
+	align-items: center;
+	padding: auto;
+}
+@media (max-width: 1024px) {
+	.act{
+		width : 50vw;
+	}
+}
+@media (max-width: 768px) {
+	.act{
+		width : 70vw;
+	}
+}
+
+
+@media (max-width: 425px) {
+	.act{
+		width : 100vw;
+	}
+}
+@media (max-width: 320px) {
+	.act{
+		width : 100vw;
+	}
+}
+
+
+/*table de tarif visites*/
+
+.tarif_visite{
+	height: 500px;	
+}

@@ -1,0 +1,57 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title  'Gérer les actualités'%}
+
+
+{% block body %}
+
+	<div class="container mt-4">
+		<h1> Gérer les actualités</h1>
+
+		{% for message in app.flashes('success') %}
+
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{% endfor %}
+		<div class="text-right">
+			<a href="{{path('admin.actualite.new')}}" class="btn btn-primary">Ajouter une nouvelle actualité</a>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th >Date Event</th>
+					<th >Titre</th>
+					<th >attachement</th>
+					<th >Actions</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for actualite in actualites %}
+
+					<tr>
+						<td >{{ actualite.datePub | date("d/m/Y") }}</td>
+						<td >{{ actualite.title }}</td>
+						<td >
+							{% for item in actualite.attachements %}
+								{{ item.image }}
+							{% endfor %}
+						</td>
+						<td>
+							<a href="{{ path('admin.actualite.edit', { id : actualite.id }) }}" class="btn btn-secondary ">Editer</a>
+							<form method="post" action="{{ path('admin.actualite.delete' , { id : actualite.id } ) }}" style="display : inline-block" onsubmit="return confirm('Are you sure?');">
+								<input type="hidden" name="_method" value="DELETE">
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actualite.id)  }}" >
+								<button class="btn btn-danger"> Suppr </button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
+
+{% endblock %}

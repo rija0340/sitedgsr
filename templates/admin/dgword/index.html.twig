@@ -1,0 +1,52 @@
+	
+{% extends 'admin/base.html.twig' %}
+
+{% block title  'Gérer les mots du DG'%}
+
+
+{% block body %}
+
+	<div class="container mt-4">
+		<h1>Gérer les mots du DG</h1>
+
+		{% for message in app.flashes('success') %}
+
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{% endfor %}
+		<div class="text-right">
+			<a href="{{path('admin.dgword.new')}}" class="btn btn-primary">Créer un nouveau mot du DG</a>
+		</div>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Mot du Directeur Général</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for dgWord in dgWord %}
+					<tr>
+						<td>{{ dgWord.dg.grade }} <br> <p class="font-weight-bold">{{ dgWord.dg.name }}</p></td>
+						<td style="max-width : 300px;">{{ dgWord.word|length > 50 ? dgWord.word|slice(0, 100) ~ '...' : dgWord.word  }}</td>
+						<td >
+							<a href="{{ path('admin.dgword.edit', { id : dgWord.id }) }}" class="btn btn-secondary ">Editer</a>
+							<form method="post" action="{{ path('admin.dgword.delete' , { id : dgWord.id } ) }}" style="display : inline-block" onsubmit="return confirm('Are you sure?');">
+								<input type="hidden" name="_method" value="DELETE">
+								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dgWord.id)  }}" >
+								<button class="btn btn-danger"> Supprimer </button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+{% endblock %}

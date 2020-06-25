@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %} 
+
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/organigramme.css')}}">
+
+	{%endblock%}
+	{% block title %}Accueil{% endblock %}
+
+
+		{% block content %}
+			{% for org in org %}
+				{% if org.filename %}
+					<img style="width : 100%" class="card-img-top" src="{{ vich_uploader_asset(org, 'imageFile') }}" alt="organigramme de la DGSR">
+				{% endif %}
+			{% endfor %}
+
+			{%endblock%}
+
+			{% block javascripts %}
+
+				<script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
+				<script src="{{ asset('js/caroussel_card.js') }}"></script>
+			{% endblock %}

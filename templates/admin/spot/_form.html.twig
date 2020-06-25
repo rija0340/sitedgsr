@@ -1,0 +1,11 @@
+
+{{form_start(form)}}
+
+{{ form_row(form.name) }} 
+{{ form_row(form.description) }}
+{{ form_row(form.youtube_link) }} 
+{{ form_row(form.date_creation) }} 
+
+{{form_rest(form)}}
+<button class="btn btn-primary" >{{ button|default('Enregistrer')}}</button>
+{{form_end(form)}}

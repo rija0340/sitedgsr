@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/style_table.css')}}">
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/basictable.css')}}">
+{% endblock %}
+
+{% block title %}Tarif visite technique {% endblock %}
+
+
+
+
+
+	{% block content %}
+		 {% include 'pages/tarifs/tarif_visite/visite.html.twig' %} 
+		{%endblock%}
+
+		{% block javascripts %}  
+
+			<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+
+		{%endblock%}

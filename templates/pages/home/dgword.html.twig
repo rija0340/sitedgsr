@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block 	content %}
+	<div >
+		<div   class="float-left mr-5" >
+			<div >
+				<img   src="{{vich_uploader_asset(current_dg, 'imageFile') }}" alt="">
+			</div>	
+			<div>
+				<p class="nom-dg text-center" ><span class="grade">{{ current_dg.grade }}</span> <br><span class="nom">{{current_dg.name}}</span></p>
+			</div>
+		</div>
+		{{ last_dgword.word | raw }} 
+	</div> 
+{% endblock %}

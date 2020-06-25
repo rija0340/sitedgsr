@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+	<h1>{{ centre_detail }}</h1>
+	
+	<h2>{{centre.ville }} - <small> {{centre.adresse}} </small></h2>
+	<hr>
+	<div class="row">
+		<div class="col-md-7">
+			<a href="#">
+				<img class="photo img-fluid rounded mb-3 mb-md-0" src="{{ vich_uploader_asset(centre, 'imageFile') }}" alt="">
+			</a>
+		</div>
+		<div class="col-md-5">
+			<p class="label">Chef de centre : </p>
+			<p class="cc">{{ centre.nomCc }}</p>
+			<hr class="col-lg-10 col-md-10 col-sm-10" style="text-align: center ; margin-bottom: 15px">
+			<p class="label">Adresse : </p>
+			<p class="adr">{{ centre.adresse }}</p>
+			<hr class="col-lg-10 col-md-10" style="text-align: center ; margin-bottom: 15px">
+			<p class="label">Téléphone : </p>
+			<p class="tel">{{ centre.numCc }}</p>
+		</div>
+	</div>
+{% endblock %}

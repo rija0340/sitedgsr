@@ -1,0 +1,51 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title  'Gérer les villes'%}
+
+
+{% block body %}
+
+	<div class="container mt-4">
+		<h1> Gérer les villes</h1>
+
+		{% for message in app.flashes('success') %}
+
+			<div class="alert alert-success">
+				{{message}}
+			</div>
+
+		{% endfor %}
+		<div class="text-right">
+			<a href="{{path('admin.ville.new')}}" class="btn btn-primary">Ajouter une nouvelle ville</a>
+		</div>
+		<table class="table table-striped">
+			{% for faritany in faritany %}
+				<thead>
+					<tr>
+						<th colspan="2" class="border-secondary"><h3>{{faritany.faritany}}</h3></th>
+					</tr>
+				</thead>
+				<tbody>
+
+					{% for ville in villes %}
+						{% if ville.faritany == faritany.faritany %}
+							<tr>
+								<td>{{ ville.ville }}</td>
+								<td>
+									<a href="{{ path('admin.ville.edit', { id : ville.id }) }}" class="btn btn-secondary ">Editer</a>
+									<form method="post" action="{{ path('admin.ville.delete' , { id : ville.id } ) }}" style="display : inline-block" onsubmit="return confirm('Are you sure?');">
+										<input type="hidden" name="_method" value="DELETE">
+										<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ville.id)  }}" >
+										<button class="btn btn-danger"> Supprimer </button>
+									</form>
+								</td>
+							</tr>
+
+						{% endif %}
+					{% endfor %}
+				</tbody>
+			{% endfor %}
+		</table>
+	</div>
+
+{% endblock %}

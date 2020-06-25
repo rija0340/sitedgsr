@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+ <!--Missions-->
+  <h2 style="text-align : center; padding : 40px;">Nos missions</h2>
+  <div class="row">
+    <div class="col-lg-6 portfolio-item">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-text">Assurer la sécurité de la Circulation routière, essentiellement le contrôle et la vérification de la conformité et de l'état technique des véhicules automobiles et remorqués</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 portfolio-item">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-text">Contribuer suivant ses possibilités, au financement des activités de la Gendarmerie Nationale relatives à la sécurité publique et la sécurité routière</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Activité -->
+  <h2 style="text-align : center; padding : 40px;">Nos activités</h2>
+  <div class="row">
+    <div class="col-md-7">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0 act" src="{{ asset ('images/missions_activites/VT.png' ) }}" alt="">
+      </a>
+    </div>
+    <div id="VT" class="col-md-5">
+      <h3>Visite Technique</h3>
+      <section class="mission_texte">
+        <p>Périodicité :</p>
+          <ul>
+            <li>
+              tous les ans  pour  les véhicules de plus de cinq ans
+            </li>
+            <li>
+              tous les quatre mois pour les véhicules de transport
+            </li>
+          </ul>
+          <p>Public de personnes :</p>
+          <ul>
+            <li>
+              tous les six mois pour les véhicules de transport de marchandises
+            </li>
+          </ul>
+          <p>Les papiers exigés : <br/>
+          D'une manière générale, on demande :</p>
+          <ul>
+            <li>
+              La carte grise
+            </li>
+            <li>
+              La carte de visite technique
+            </li>
+          </ul>
+          <p>Pour les véhicules utilitaires, on exige en plus :</p>
+          <ul>
+            <li>
+              Carte violette - Patente - Licence
+            </li>
+            <li>
+              Carnet d'entretien
+            </li>
+            <li>
+              Attestation de non imposition
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Two -->
+    <div class="row">
+      <div id="RT" class="col-md-5">
+        <h3>Recéption technique</h3>
+        <section class="mission_texte">
+          <p style="font-size : 16px;">
+          Des véhicules à moteur et remorqués :</p>
+          <ul>
+            <li>
+              importés, neufs ou d'occasions
+            </li>
+            <li>
+              neuf ou d'occasion ayant subi  des aménagements, transformations ou modifications
+            </li>
+          </ul>
+          <p>Les papiers exigés :</p>
+          <ul>
+            <li>
+              Demande manuscrite adressée à Monsieur <br/>le Directeur Général de la D.G.S.R
+            </li>
+            <li>
+              Photocopie de la carte grise à l'étranger
+            </li>
+            <li>
+              Photocopie du Certificat pour servir à l'immatriculation (Modèle 1)
+            </li>
+            <li>
+              Photocopie de la déclaration d'importation
+            </li>
+            <li>
+              Notice descriptive du véhicule.
+            </li>
+            <li>
+              Certificat de conformité
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="col-md-7">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0 act" src="{{ asset( 'images/missions_activites/RT.png') }}" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Three -->
+    <div class="row">
+      <div id="CAD" class="col-md-7">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0 act" src="{{ asset( 'images/missions_activites/CAD.png') }}" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>Constatation avant dédouanement</h3>
+        <section class="mission_texte">
+          <p>Constatation avant dédouanement de l’état technique des véhicules utilitaires importés de PTAC plus de 3,500T (avant dédouanement).</p>
+        </section>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Project Four -->
+    <div class="row">
+      <div id="CI" class="col-md-5">
+        <h3>Contrôle inopiné</h3>
+        <section class="mission_texte">
+          <p>En matière de contrôle inopiné, la Direction Générale de la Sécurité Routière  (DGSR)
+            a donné un mois de sensibilisation et conscientisation (du 20 décembre 2018 au 20 janvier 2019)
+            des usagers (propriétaires et chauffeurs) de bien entretenir et maintenir en bon état de marche leurs véhicules.
+            Mais n’accorde aucune tolérance pour tous véhicules présentant des anomalies génératrices d’accident
+            surtout celle qui touchent le système de freinage, la direction et les pneumatiques.
+          Une fois  ce délai expirée, des contrôles plus strictes, sévères, rigoureux seront appliqués aux récalcitrants.</p>
+        </section>
+      </div>
+      <div class="col-md-7">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="{{ asset( 'images/missions_activites/controle1.png') }}" alt="">
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+{%endblock%}
