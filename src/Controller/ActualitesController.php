@@ -17,24 +17,25 @@ use Symfony\Component\HttpFoundation\Request;
 class ActualitesController extends AbstractController
 {
 
-    private $repository;
+    private $acturepo;
     private $attachrepo;
     private $attachement;
 
-    public function __construct(ActualiteRepository $repository, AttachementRepository $attachrepo, ObjectManager $em){
+    public function __construct(ActualiteRepository $acturepo, AttachementRepository $attachrepo, ObjectManager $em){
 
-        $this->repository = $repository;
+        $this->acturepo = $acturepo;
         $this->attachrepo = $attachrepo;
     }
 
     /**
      * @Route("/actualites", name="actualites")
      */
-    public function actualites(ActualiteRepository $repository)
+    public function actualites()
     {
     	$actualites = new Actualite();
 
-    	$actualites = $this->repository->findBy(array(),  array('datePub' => 'DESC'));
+    	$actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+
 
     	return $this->render('pages/actualites/actualites.html.twig',[
 
@@ -55,7 +56,7 @@ class ActualitesController extends AbstractController
 
          if($request->isXmlHttpRequest()) {
 
-            $actualite = $this->repository->find($id);
+            $actualite = $this->acturepo->find($id);
 
             $att = $actualite->getAttachements();
 
@@ -86,6 +87,10 @@ class ActualitesController extends AbstractController
 
         }else{
 
+        $actualites = new Actualite();
+
+        $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+        
             return $this->render('pages/actualites/actualites.html.twig',[
 
                 'actualites' => $actualites
