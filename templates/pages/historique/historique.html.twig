@@ -70,8 +70,8 @@
 					<div class="card mb-4">
 
 						{% if director.filename %}
-							<div style="height : 70%;">
-								<img   src="{{vich_uploader_asset(director, 'imageFile')   }}" alt={{director.name}} class="card-img-top">
+							<div style="height : 100%; ">
+								<img   src="{{vich_uploader_asset(director, 'imageFile') | imagine_filter('thumbnail')  }}" alt={{director.name}} class="card-img-top">
 							</div>
 						{% endif %}	
 						<div class="card-body">
