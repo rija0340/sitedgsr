@@ -21,3 +21,6 @@
 ###> liip/imagine-bundle ###
 /public/media/cache/
 ###< liip/imagine-bundle ###
+
+# ignore all jpg files
+*.jpg 
