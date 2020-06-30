@@ -11,18 +11,18 @@
             <div class="mb-1" id="accordion" role="tablist" aria-multiselectable="true">
               <div class="card">
                 <div class="card-header" role="tab" id="headingOne">
-                  <h6 class="mb-0 mt-0 ml-5">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#{{ faritany.faritany }}" aria-expanded="true" aria-controls="{{ faritany.faritany }}">{{ faritany.faritany }}</a>
+                  <h6 class="mb-0 mt-0 ml-0">
+                    <a style="text-decoration:none;" data-toggle="collapse" data-parent="#accordion" href="#{{ faritany.faritany }}" aria-expanded="true" aria-controls="{{ faritany.faritany }}">{{ faritany.faritany }}</a>
                   </h6>
                 </div>
-                <div id="{{ faritany.faritany }}" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="card-body m-0">
+                <div id="{{ faritany.faritany }}" class="collapse m-0 p-0" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="card-body m-0 p-0">
                    <table class="table table-striped">
-                    <ul>
+                    <ul class="liste_centres" >
                       {% for centre in centres %}
                         {% if centre.ville.faritany == faritany.faritany  %}
                           <li>
-                            <a  href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show">
+                            <a style="text-decoration:none;color:inherit" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show nav-link">
 
                               {% if centre.ville | lower == faritany.faritany | lower %}
                                 {% set adresse = centre.adresse|split(',') %}
