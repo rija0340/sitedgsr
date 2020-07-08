@@ -3,6 +3,7 @@
 {% block stylesheets %}
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/baguetteBox.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/grid-gallery.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo.css')}}">
 
 	{%endblock%}
 	{% block content %}
@@ -12,18 +13,25 @@
 				<div class="heading">
 					<h2 class="text-center">Grid Gallery</h2>
 				</div>
-				{% for actualite in actualites %}
-					<h5> {{ actualite.title }}</h5>
-					<div class="row">
-						{% for attach in actualite.attachements %}
-								<div class="col-md-3 col-lg-3 item">
-									<a class="lightbox" href="{{vich_uploader_asset(attach, 'imageFile')  }}">
-										<img class="img-fluid image scale-on-hover" src="{{vich_uploader_asset(attach, 'imageFile')  }}">
-									</a>
-								</div>
-						{% endfor %}
+					{% for actualite in actualites %}
+					<h5  style="padding-bottom : 10px;" class="m-0"> {{ actualite.title }} <p>{{ actualite.datePub | date("d M Y")}} </p></h5>
 
+					<div class="gallery-wrap">
+						<div class="row  m-0 p-0">
+							{% for attach in actualite.attachements %}
+									<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">
+										<div class="item p-2 m-0 photo ">
+											
+											<a  href="{{vich_uploader_asset(attach, 'imageFile')  }}">
+												<img class="img-fluid image scale-on-hover thumbnail" src="{{vich_uploader_asset(attach, 'imageFile')  }}">
+											</a>
+										</div>
+									</div>
+							{% endfor %}
+
+						</div>
 					</div>
+
 				{% endfor %}
 			</div>
 		</section>

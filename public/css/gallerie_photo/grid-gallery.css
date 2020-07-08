@@ -24,7 +24,7 @@
 }
 
 .gallery-block.grid-gallery .item{
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 @media (min-width: 576px) {
