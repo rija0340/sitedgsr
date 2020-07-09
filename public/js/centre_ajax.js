@@ -18,6 +18,7 @@ $(document).ready(function() {
 		$.ajax({ url : url, type : 'GET', dataType : "json", data : { "id_centre" : $id } }) 
 		.done(function(data, status, jqxhr){
 
+
 			var ville = data.ville.toLowerCase();
 			var faritany = data.faritany.toLowerCase();
 			var adresse = data.adresse.split(",");
@@ -36,6 +37,22 @@ $(document).ready(function() {
 				$( '.faritany' ).text(data.faritany);
 				$img_centre.attr('src', "/images/dg/"+ data.filename +"");
 
+
+				
+				console.log($("li"));
+
+
+				if ($a.text().trim()==adresse[0]) {
+
+					$("li").removeClass("centre_actif");
+					$a.parent().addClass("centre_actif");
+
+				} else{
+
+					// $a.parent().removeClass("centre_actif");
+
+				}
+
 			}else{
 
 				
@@ -48,6 +65,24 @@ $(document).ready(function() {
 				$( '.ville' ).text(data.ville);
 				$( '.faritany' ).text(data.faritany);
 				$img_centre.attr('src', "/images/dg/"+ data.filename +"");
+
+				//trim() sert à supprimer les espaces avant et apèrs les chaines de caractères
+				
+				console.log($a.parent(".accordion").children());
+
+
+
+				if ($a.text().trim()==data.ville) {
+
+					$("li").removeClass("centre_actif");
+					$a.parent().addClass("centre_actif");
+
+				} else{
+
+					// $a.parent().removeClass("centre_actif");
+
+				}
+
 			}
 
 

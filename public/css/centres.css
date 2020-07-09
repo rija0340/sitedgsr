@@ -1,28 +1,28 @@
 .card-header {
-  background-color: rgba(0, 0, 0, 0.01);
+	background-color: rgba(0, 0, 0, 0.01);
 }
 
 .card-header h6{
 	
-  font-family: Comic Sans MS;
+	font-family: Comic Sans MS;
 }
 
 .liste_centres  li  {
-	 list-style-type: none;
-	 text-align: center;
-	 border-bottom:1px solid rgba(0, 0, 0, 0.125);
+	list-style-type: none;
+	text-align: center;
+	border-bottom:1px solid rgba(0, 0, 0, 0.125);
 	color : #AEB6BF;
 }
 
 .liste_centres li:last-child {
 
-	 border-bottom:1px solid rgba(0, 0, 0, 0);
+	border-bottom:1px solid rgba(0, 0, 0, 0);
 }
 
 .liste_centres  li:hover  {
 	background-color: #EBF5FB;
 	color : #DD953C;
-  font-family: Georgia;
+	font-family: Georgia;
 	font-size: 2.5em;
 }
 
@@ -34,4 +34,10 @@
 
 .li_class a{
 	padding: 0;
+}
+
+.centre_actif{
+	
+	background-color : red;
+
 }
