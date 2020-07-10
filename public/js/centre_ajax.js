@@ -46,6 +46,8 @@ $(document).ready(function() {
 
 					$("li").removeClass("centre_actif");
 					$a.parent().addClass("centre_actif");
+					// $a.removeClass("pressed_link");
+					// $a.addClass("pressed_link");
 
 				} else{
 
@@ -68,14 +70,16 @@ $(document).ready(function() {
 
 				//trim() sert à supprimer les espaces avant et apèrs les chaines de caractères
 				
-				console.log($a.parent(".accordion").children());
+				console.log($a.parent().children());
+				console.log($a);
 
 
 
 				if ($a.text().trim()==data.ville) {
-
 					$("li").removeClass("centre_actif");
 					$a.parent().addClass("centre_actif");
+					// $a.removeClass("pressed_link");
+					// $a.addClass("pressed_link");
 
 				} else{
 

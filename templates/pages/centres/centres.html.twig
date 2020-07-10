@@ -11,8 +11,8 @@
             <div class="mb-1" id="accordion" role="tablist" aria-multiselectable="true">
               <div class=" mdl-shadow--3dp">
                 <div class="card-header d-flex" role="tab" id="headingOne">
-                  <div class="text-left" style="display:inline-block">
-                    <h6  class="mb-0 mt-0 ml-0 " style="color">
+                  <div class="text-left">
+                    <h6  class="mb-0 mt-0 ml-0 ">
                       {{ faritany.faritany }}
 
 
@@ -32,10 +32,11 @@
                       {% for centre in centres %}
                         {% if centre.ville.faritany == faritany.faritany  %}
                           <li  class="test" id="centre-{{ centre.id }} ">
-                            <a style="text-decoration:none;color:inherit" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show nav-link" id="centre.id">
+                            <a style="text-decoration:none" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show nav-link" id="centre.id">
                               {% if centre.ville | lower == faritany.faritany | lower %}
                                 {% set adresse = centre.adresse|split(',') %}
                                   {{ adresse[0] }}
+
                                 {% else %}
                                   {{centre.ville}}
                                 {% endif %}
@@ -68,16 +69,16 @@
           <hr>
           <div class="row">
             <div class="col-md-7">
-              <img src="" alt=""> 
+              <img class="image_centre"src="" alt=""> 
             </div>
             <div class="col-md-5">
-              <p class="label">Chef de centre : </p>
+              <p class="label_cc">Chef de centre : </p>
               <span class="grade_cc"></span> <span class="nom_cc"> </span></p>
               <hr class="col-lg-10 col-md-10 col-sm-10" style="text-align: center ; margin-bottom: 15px">
               <p class="label_adresse">Adresse : </p>
               <p class="adresse"> </p>
               <hr class="col-lg-10 col-md-10" style="text-align: center ; margin-bottom: 15px">
-              <p class="label">Téléphone : </p>
+              <p class="label_phone">Téléphone : </p>
               <p class="num_cc"> </p>
             </div>
           </div>
