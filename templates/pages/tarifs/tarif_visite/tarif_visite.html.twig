@@ -12,12 +12,87 @@
 
 
 	{% block content %}
-		 {% include 'pages/tarifs/tarif_visite/visite.html.twig' %} 
+
+		<h3> Tarifs visite technique </h3>
+		<h5 class="ref_inter_min">Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</h5>
+
+		<div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+			<div class="card">
+				<div class="card-header" role="tab" id="headingOne">
+					<h5 class="m-0 p-0">
+						<div class="d-flex">
+							<div>
+								
+								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Visite sur site : apte</a>
+							</div>
+							<div class="ml-auto">
+								
+								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<i id="collapseOne_icone"  class="fa fa-toggle-down" style="color:gray;"></i>
+								</a>
+							</div>
+						</div>
+					</h5>
+				</div>
+
+				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+					<div class="card-body">
+						{% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} 
+
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab" id="headingTwo">
+					<h5 class="m-0 p-0">
+						<div class="d-flex">
+							<div >
+								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Visite sur site : inapte</a>
+							</div>
+							<div class="ml-auto">
+								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									
+									<i id="collapseTwo_icone" class="fa fa-toggle-down" style="color:gray;"></i>
+								</a>
+							</div>
+						</div>
+					</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="card-body">
+						{% include 'pages/tarifs/tarif_visite/visite_site_inapte.html.twig' %} 
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header" role="tab" id="headingThree">
+					<h5 class="m-0 p-0">
+						<div class="d-flex">
+							<div>
+								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Visite à domicile</a>
+							</div>
+							<div class="ml-auto">
+								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<i  id="collapseThree_icone" class="fa fa-toggle-down" style="color:gray;"></i>
+								</a>
+							</div>
+						</div>
+					</h5>
+				</div>
+				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="card-body">
+
+						{% include 'pages/tarifs/tarif_visite/visite_domicile.html.twig' %} 
+					</div>
+				</div>
+			</div>
+		</div>
 		{%endblock%}
 
 		{% block javascripts %}  
 
 			<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
 			<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+			<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
 
-		{%endblock%}
+			{%endblock%}
