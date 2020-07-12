@@ -89,9 +89,9 @@ nav{
 
 .dropdown-menu > a:hover{
 /*	background-color: #68eaff;
-	color: blue;*/
-		background-color: #68eaff;
-	font-size: 1.2em;
+color: blue;*/
+background-color: #68eaff;
+font-size: 1.2em;
 }
 
 .dropdown-item:hover{
@@ -167,8 +167,3 @@ p{
 }
 
 
-/*table de tarif visites*/
-
-.tarif_visite{
-	height: 500px;	
-}

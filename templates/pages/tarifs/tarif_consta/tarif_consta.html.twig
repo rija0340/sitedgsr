@@ -3,6 +3,8 @@
 {% block stylesheets %}
 	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/style_table.css')}}">
 	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/basictable.css')}}">
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/tarifs.css')}}">
+
 {% endblock %}
 
 {% block title %}Tarif constatation {% endblock %}
@@ -11,13 +13,15 @@
 
 
 
-{% block content %}
-	{% include 'pages/tarifs/tarif_consta/consta.html.twig' %} 
-{%endblock%}
+	{% block content %}
+		<h3> Tarif constatation avant dédouanement </h3>
 
-{% block javascripts %}  
+		{% include 'pages/tarifs/tarif_consta/consta.html.twig' %} 
+		{%endblock%}
 
-	<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+		{% block javascripts %}  
 
-{%endblock%}
+			<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
+			<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+
+			{%endblock%}
