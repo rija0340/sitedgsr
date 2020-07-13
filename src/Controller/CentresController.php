@@ -45,7 +45,7 @@ class CentresController extends AbstractController
 
       $faritany = $this->faritanyRepo->findAll();
       $centres = $this->centreRepo->findAll();
-      $villes = $this->villeRepo->findAll();
+      $villes = $this->villeRepo->findAll(['ville' => 'ASC']);
       
       dump($villes);
 
