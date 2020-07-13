@@ -8,3 +8,47 @@
 	height: 500px;	
 	
 }
+
+/*style pour tableau papier utiles visite technique*/
+.table_papiers {
+	background: white;
+	border-collapse: collapse;
+	margin: 1.25em 0 0;
+	width: 100%;
+	text-align: left;
+}
+
+.table_papiers th,
+.table_papiers td {
+	/*padding: 10px; */
+	text-align: left;
+}
+
+.col3{
+
+	padding-left: 30px; 
+}
+
+.col0{
+	padding: 0px 0px 0px 10px ; 
+	
+}
+
+.col1{
+
+	padding: 0px 0px 0px 10px ; 
+
+}
+
+
+.col2{
+	padding: 0px 0px 0px 10px ; 
+
+}
+
+
+.table_papiers th{
+
+	padding: 5px;
+	text-align: center;
+}

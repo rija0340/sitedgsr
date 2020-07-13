@@ -8,14 +8,10 @@
 
 {% block title %}Tarif visite technique {% endblock %}
 
-
-
-
-
 	{% block content %}
 
-		<h3> Tarifs visite technique </h3>
-		<h5 class="ref_inter_min">Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</h5>
+		<h4 class="m-0 p-0"> Tarifs visite technique </h4>
+		<h6 class="ref_inter_min">Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</h6>
 
 		<div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
 			<div class="card">
@@ -23,11 +19,11 @@
 					<h5 class="m-0 p-0">
 						<div class="d-flex">
 							<div>
-								
+
 								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Visite sur site : apte</a>
 							</div>
 							<div class="ml-auto">
-								
+								<a href="" class="btn" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
 								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 									<i id="collapseOne_icone"  class="fa fa-toggle-down" style="color:gray;"></i>
 								</a>
@@ -35,7 +31,6 @@
 						</div>
 					</h5>
 				</div>
-
 				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 					<div class="card-body">
 						{% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} 
@@ -51,8 +46,10 @@
 								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Visite sur site : inapte</a>
 							</div>
 							<div class="ml-auto">
+								<a href="" class="btn" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
+
 								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-									
+
 									<i id="collapseTwo_icone" class="fa fa-toggle-down" style="color:gray;"></i>
 								</a>
 							</div>
@@ -73,6 +70,8 @@
 								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Visite à domicile</a>
 							</div>
 							<div class="ml-auto">
+								<a href="" class="btn" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
+
 								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 									<i  id="collapseThree_icone" class="fa fa-toggle-down" style="color:gray;"></i>
 								</a>
@@ -88,6 +87,39 @@
 				</div>
 			</div>
 		</div>
+
+
+
+		{# ceci est le modal  #}
+
+		<div  style="height:570px;" class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-md" role="document">
+				<div class="modal-content" style="background-color : #fff">
+
+					<div class="actu_detail" >
+						<div class="modal-header">
+							<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"> Liste des abbreviations</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="main-wrapper" oncontextmenu="return false">
+							<div class="container-fluid ">
+								{% include 'pages/tarifs/abreviations.html.twig' %} 
+
+							</div>
+						</div>
+						<p class="actu_content p-4"> </p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- debut papier utiles -->
+		{% include 'pages/tarifs/tarif_visite/papiers_utiles.html.twig' %} 
+
 		{%endblock%}
 
 		{% block javascripts %}  

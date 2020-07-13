@@ -42,4 +42,9 @@ $(document).ready(function() {
 	});
 
 
+	//pour gerer modal pour abreviation 
+
+	
+
+
 });
