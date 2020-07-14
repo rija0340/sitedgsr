@@ -30,3 +30,7 @@ vich_uploader:
       dg_image:
           uri_prefix: '%dg_image_path%'
           upload_destination: '%kernel.project_dir%/public/%dg_image_path%'
+
+      centre_image:
+          uri_prefix: '%centre_image_path%'
+          upload_destination: '%kernel.project_dir%/public/%centre_image_path%'

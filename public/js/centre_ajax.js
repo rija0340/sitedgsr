@@ -35,7 +35,7 @@ $(document).ready(function() {
 				$( '.num_cc' ).text(data.num_cc);
 				$( '.ville' ).text(adresse[0]);
 				$( '.faritany' ).text(data.faritany);
-				$img_centre.attr('src', "/images/dg/"+ data.filename +"");
+				$img_centre.attr('src', "/uploads/images/centres/"+ data.filename +"");
 
 
 				
@@ -66,7 +66,7 @@ $(document).ready(function() {
 				$( '.num_cc' ).text(data.num_cc);
 				$( '.ville' ).text(data.ville);
 				$( '.faritany' ).text(data.faritany);
-				$img_centre.attr('src', "/images/dg/"+ data.filename +"");
+				$img_centre.attr('src', "/uploads/images/centres/"+ data.filename +"");
 
 				//trim() sert à supprimer les espaces avant et apèrs les chaines de caractères
 				

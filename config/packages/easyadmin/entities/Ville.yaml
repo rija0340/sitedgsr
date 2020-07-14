@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+
+    Ville:
+      class: App\Entity\Ville
+      label: "Ville"

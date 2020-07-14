@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+
+    Organigramme:
+      class: App\Entity\Organigramme
+      label: "Organigramme"

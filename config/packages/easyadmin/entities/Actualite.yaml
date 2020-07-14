@@ -1,0 +1,36 @@
+easy_admin:
+  entities:
+    Actualite:
+      class: App\Entity\Actualite
+      # templates:
+      #   show: 'easyadmin/actualite/show.html.twig'
+      #   edit: 'easyadmin/actualite/edit.html.twig'
+      label: "Actualite"
+      form:
+        fields:
+          - title
+          - {property: 'content', type: 'text_editor'} 
+          - url_video
+          - datePub
+          - { property: 'imageFile', type: 'vich_image' }
+          - { property: 'attachements', type: 'collection', type_options: {entry_type: 'App\Form\AttachementType', by_reference: false}}
+          
+      list:
+        collapse_actions: true
+        actions: ['show', 'edit', 'delete']
+        batch_actions: ['delete']
+        title: "Liste Actualites "
+        fields: ['title', 'content', 'datePub', {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'} ]
+
+      show:
+        fields:
+          - title
+          - {property: 'content', type: 'raw'}
+          - datePub
+          - {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'}
+          - {property: 'attachements', template: 'attachement.html.twig'}
+
+      edit:
+        help: "hello there"
+        fields:
+          - '-tags'

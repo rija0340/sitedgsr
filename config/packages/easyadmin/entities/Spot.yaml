@@ -1,0 +1,6 @@
+easy_admin:
+  entities:
+
+    Spot:
+      class: App\Entity\Spot
+      label: "Spot"
