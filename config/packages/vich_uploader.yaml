@@ -34,3 +34,8 @@ vich_uploader:
       centre_image:
           uri_prefix: '%centre_image_path%'
           upload_destination: '%kernel.project_dir%/public/%centre_image_path%'
+
+      org_image:
+          uri_prefix: '%org_image_path%'
+          upload_destination: '%kernel.project_dir%/public/%org_image_path%'
+

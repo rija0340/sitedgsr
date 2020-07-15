@@ -7,6 +7,7 @@ parameters:
     uploads_actualite_path: 'uploads/images/actualite'
     dg_image_path: 'images/dg'
     centre_image_path: 'uploads/images/centres'
+    org_image_path: 'uploads/images/organigrammes'
 
 services:
     # default configuration for services in *this* file

@@ -30,7 +30,7 @@ class Organigramme
 
     /**
      * @var File|null
-     * @Vich\UploadableField(mapping="property_image", fileNameProperty="filename")
+     * @Vich\UploadableField(mapping="org_image", fileNameProperty="filename")
      */
     private $imageFile;
 
