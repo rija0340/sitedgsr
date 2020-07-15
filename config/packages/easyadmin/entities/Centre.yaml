@@ -30,7 +30,6 @@ easy_admin:
       #     - datePub
       #     - {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'}
       #     - {property: 'attachements', template: 'attachement.html.twig'}
-
       # edit:
       #   help: "hello there"
       #   fields:

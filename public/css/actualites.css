@@ -156,8 +156,11 @@
 }
 
 .actu_content{
-	margin-top: 60%;
 	text-align : justify;
+	padding-right: 5px;
+	height: 340px;
+	overflow: auto !important ;
+
 }
 
 p {

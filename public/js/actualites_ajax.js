@@ -22,6 +22,8 @@ $(document).ready(function() {
 		$.ajax({ url : url, type : 'GET', dataType : "json", data : { "id" : $id } }) 
 		.done(function(data, status, jqxhr){
 
+			$('#bouton').trigger('click');
+			
 			$( '.actu_title' ).text(data.titre);
 			$( '.actu_content' ).html(data.contenu);
 			$( '.actu_datepub' ).text($date(data.datepub.date)); //getday() return 0->sunday, 1->monday..., 
@@ -33,7 +35,6 @@ $(document).ready(function() {
 		/*	setTimeout(function(){
 				console.log("THIS IS");
 			}, 4000);*/
-			$('#bouton').trigger('click');
 
 
 		})

@@ -30,6 +30,7 @@
 		{% endfor %}
 	</div>
 
+
 	<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
 
 	<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -45,52 +46,61 @@
 					</div>
 					<div class="main-wrapper" oncontextmenu="return false">
 						<div class="container-fluid ">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="row ten-cols">
+										<div class="col-md-6 no-space">
+											<div class="content-box bg-one">
+												<div class="content-box-expend">
+													<a class="content-box-title">
+														<div class="content-box-icon">
+															<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+														</div> 
+													</a>
+												</div>
+											</div>
+											<div class="content-box bg-two">
+												<div class="content-box-expend">
+													<a class="content-box-title">
+														<div class="content-box-icon">
+															<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6 no-space">
+											<div class="content-box bg-three">
+												<div class="content-box-expend">
+													<a class="content-box-title">
+														<div class="content-box-icon">
+															<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
+														</div>
+													</a>
+												</div>
+											</div>
+											<div class="content-box bg-four">
+												<div class="content-box-expend">
+													<a class="content-box-title">
+														<div class="content-box-icon">
+															<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<p class="actu_content pb-5"> </p>
 
-							<div *ngIf="selectedActu.url_img2" class="row ten-cols">
-								<div class="col-md-6 no-space">
-									<div class="content-box bg-one">
-										<div class="content-box-expend">
-											<a class="content-box-title">
-												<div class="content-box-icon">
-													<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
-												</div> 
-											</a>
-										</div>
-									</div>
-									<div class="content-box bg-two">
-										<div class="content-box-expend">
-											<a class="content-box-title">
-												<div class="content-box-icon">
-													<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
-												</div>
-											</a>
-										</div>
-									</div>
 								</div>
-								<div class="col-md-6 no-space">
-									<div class="content-box bg-three">
-										<div class="content-box-expend">
-											<a class="content-box-title">
-												<div class="content-box-icon">
-													<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
-												</div>
-											</a>
-										</div>
-									</div>
-									<div class="content-box bg-four">
-										<div class="content-box-expend">
-											<a class="content-box-title">
-												<div class="content-box-icon">
-													<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+
 							</div>
+
+
 						</div>
 					</div>
-					<p class="actu_content p-4"> </p>
 
 				</div>
 			</div>
