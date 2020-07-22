@@ -7,7 +7,7 @@
 
 	{% block banniere %} {% include 'layouts/banniere.html.twig' %} {%endblock %}
 		{% block carousel %} 
-			<div class="head_carousel">
+			<div class="head_carousel padding">
 				<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
 						<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -18,19 +18,19 @@
 						<div class="carousel-item active">
 							<img  src="{{vich_uploader_asset(actualite1, 'imageFile')  }}" class="d-block w-100 img-fluid" alt="...">
 							<div class="carousel-caption d-none d-md-block">
-								<h5>{{ actu1_title }}</h5>
+								<h4>{{ actu1_title }}</h4>
 							</div>
 						</div>
 						<div class="carousel-item">
 							<img  src="{{vich_uploader_asset(actualite2, 'imageFile')  }}" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
-								<h5>{{ actu2_title}}</h5>
+								<h4>{{ actu2_title}}</h4>
 							</div>
 						</div>
-						<div class="carousel-item" style="height: 40%">
+						<div class="carousel-item">
 							<img  src="{{vich_uploader_asset(actualite3, 'imageFile')  }}" class="d-block w-100" alt="...">
 							<div class="carousel-caption d-none d-md-block">
-								<h5>{{ actu3_title }}</h5>
+								<h4>{{ actu3_title }}</h4>
 							</div>
 						</div>
 					</div>
@@ -48,81 +48,128 @@
 
 			{%endblock%}
 			{% block content %}
-	
-				<section style="width: 100%;">
-					<div style="padding-top : 20px;">
-						<h2 class="text-center">Nos Activités</h2>
-						<div class="row d-flex justify-content-center" >
-							<div class="col-lg-3">
-								<div class="card mdl-shadow--3dp">
+
+				<div class=" activites text-center">
+					<div class="padding">
+						<div class="row text-center">
+							<div class="col-12">
+
+								<h2 class="display-4">Nos Activités</h2>
+							</div>
+							<hr class="my-3">
+						</div>
+					</div>
+
+					<div class="padding">
+						<div class="row d-flex justify-content-center padding" >
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="card mdl-shadow--3dp activite">
 									<div class="card-body text-center">
-										<i class="fas fa-car-side"></i>
-										Visite technique
+										<a class="link-services" href="{{ path ( 'missions')}}#VT">
+											<i class="fa fa-bus" style="font-size:36px;"></i>
+											<div class="content-services">
+												<p class="text-service">Visite Technique</p>
+											</div>
+										</a>
 									</div>
 								</div>		
 							</div>
-							<div class="col-lg-3">
-								<div class="card mdl-shadow--3dp">
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="card mdl-shadow--3dp activite">
 									<div class="card-body text-center">
-										Réception technique
+
+										<a class="link-services" href="{{ path ( 'missions')}}#RT">
+											<i class=" fa fa-taxi" style="font-size:36px;"></i>
+											<div class="content-services">
+												<p class="text-service">Réception Technique</p>
+											</div>
+										</a>
 									</div>
 								</div>		
 							</div>
-							<div class="col-lg-3">
-								<div class="card mdl-shadow--3dp">
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="card mdl-shadow--3dp activite">
 									<div class="card-body text-center">
-										Constatation avant dédouanement
+										<a class="link-services" href="{{ path ( 'missions')}}#CAD">
+											<i class=" fa fa-car" style="font-size:36px;"></i>
+											<div class="content-services">
+												<p class="text-service">Constatation avant dédouanement</p>
+											</div>
+										</a>
 									</div>
 								</div>			
 							</div>
-							<div class="col-lg-3">
-								<div class="card mdl-shadow--3dp">
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="card mdl-shadow--3dp activite">
 									<div class="card-body text-center">
-										Contrôle inopiné
+										<a class="link-services" href="{{ path ( 'missions')}}#CI">
+											<i class=" fa fa-truck" style="font-size:36px;"></i>
+											<div class="content-services">
+												<p class="text-service">Contrôle inopiné</p>
+											</div>
+										</a>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
-					<hr>
-				</section>
+				</div>
 
 				<!-- video ny dgsr ve -->
-				<div class="row" style="text-align : center; margin-top : 20px;" >
+				<div class="spot padding text-center">
 
-					<div class="col-lg-6 mb-12">
-						<h1 class="">Ny DGSR ve?</h1>
+					<div class="padding">
+						<div class="row text-center">
+							<div class="col-12">
 
+								<h2 class="display-4">Spot</h2>
+							</div>
+							<hr class="my-3">
+						</div>
 					</div>
-					<div class="col-lg-6 mb-12">
-						<iframe
-						src="{{ spot }}"
-						frameborder="0"
-						allowfullscreen
-						width="100%"
-						height = "300px"
-						></iframe>
-
+					<div class="row">
+					{# 	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-12">
+							<div class="dgsr_ve text-center">	
+								<h2 class="m-0">Ny DGSR ve?</h2>
+							</div>
+						</div> #}
+						{# <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-12 "> #}
+						<div class="col-12">
+							<div class="iframe">	
+								<iframe
+								src="{{ spot }}"
+								frameborder="0"
+								allowfullscreen
+								width="100%"
+								height = "300px"
+								></iframe>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				{# test fix background image #}
+				<figure>
+					<div class="fixed-wrap">
+						<div id="fixed">
+
+							
+						</div>
+					</div>
+				</figure>
 				<!-- mot du directeur -->
-				<hr/>
-				<section class=""  class="mot_dg">
-					<h2 class="text-center">Mot du Directeur Général</h2>
+				<div class="mot_dg padding">
+					<h2 class="label_mot_dg">Mot du Directeur Général</h2>
+					<hr class="my-3">
 					<div >
-						<div class="photo_dg mx-auto">
-							<img  src="{{vich_uploader_asset(current_dg, 'imageFile')  }}" class="rounded-circle" alt="Directeur Général">
+						<div class="photo_dg mx-auto padding">
+							<img  src="{{vich_uploader_asset(current_dg, 'imageFile')  }}" class="rounded-circle " alt="Directeur Général">
 						</div>
 						<div class=" mx-auto ">
 							<p class="nom-dg text-center"><span class="grade">Le {{ current_dg.grade }}</span> <span class="nom">{{ current_dg.name }}</span></p>
-							<p class="text-center"><a href="{{ path ( 'dgword')}}">Lire la suite</a></p>
+							<p class="text-center"><a href="{{ path ( 'dgword')}}" class="btn btn-outline-secondary">Lire la suite</a></p>
 						</div>
 					</div>
-				</section>
+				</div>
 
-			<div>
-		<ul>
-		</ul>
-	</div>
-	{%endblock%}
+				{%endblock%}

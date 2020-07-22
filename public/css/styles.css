@@ -4,105 +4,11 @@ img{
 	height : auto;
 	width : 100%;
 }
-.banner{
 
-}
-
-/*navigation*/
-nav{
-
-	background-color: #1ba8e1;
-}
-.navbar{
-	z-index : 100;
-	top:0;
-	width: 100%;
-	
-
-}
-
-.navbar-brand{
-	font-size: 2em;
-	font-family: serif;
-	color: #ffffff;
-	font-weight: 400;
-}
-.navbar-brand:hover{
-	color: blue;
-}
-
-.nav-item  {
-	color: white;
-}
-
-
-.nav-item .nav-link{
-	color: white;
-}
-
-.nav-item:hover{
-	background-color: #68eaff;
-	font-size: 1.2em;
-}
-
-.navbar{
-	padding: 0 0 ;
-}
-
-.nav-item{
-
-	padding: 0.5rem 0.5rem;
-}
-
-.actif{
-	background-color :#1cb4f6;
-
-}
-.actif > a{
-	font-color : #4682b4;
-	font-weight: bold;
-}
-
-
-.sticky {
-	box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
-	position: fixed;
-	top: 0;
-	width: 100%;
-	opacity: 0.3;
-}
-.sticky:hover{
-	opacity: 1;
-
-}
-
-/* surchargement classe dropdown bootstrap */
-.dropdown-menu{
-	background-color : #1ca8e1;
-}
-
-.dropdown-menu>a{
-	
-	color: white; 
-}
-
-
-.dropdown-menu > a:hover{
-/*	background-color: #68eaff;
-color: blue;*/
-background-color: #68eaff;
-font-size: 1.2em;
-}
-
-.dropdown-item:hover{
-	color : white;
-}
-
-/
 
 
 /* missions */
-@-webkit-keyframes slidebloc {
+/*@-webkit-keyframes slidebloc {
 	0% {
 		bottom: 20vh;
 		left: 10vw;
@@ -124,15 +30,7 @@ font-size: 1.2em;
 		left: 60vw;
 	}
 }
-.mission_texte{
-	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	font-size: 0.9em;
-	text-align: justify;
-	text-indent: 2em;
-}
-.mission_texte:hover{
-	-webkit-animation: slidebloc 0.8s infinite;
-}
+
 p{
 	font-size: 1.2em;
 	text-align: justify;
@@ -165,5 +63,5 @@ p{
 		width : 100vw;
 	}
 }
-
+*/
 

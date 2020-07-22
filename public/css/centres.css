@@ -25,7 +25,7 @@
 	color : #DD953C;
 
 	font-family: Georgia;
-	font-size: 2.5em;
+	font-size: 1.1em;
 }
 
 .liste_centres  li a  {
@@ -51,13 +51,16 @@
 .centre_actif{
 	
 	/*background-color : red;*/
+
 	background-color: #EBF9FF;
 	color : red;
 	font-family: Georgia;
-	font-size: 2.5em;
-
+	font-size: 1.1em;
+	text-shadow: 1px 1px 2px #DD953C;
 
 }
+
+
 .pressed_link{
 	color: #333;
 	border: 1px solid black;

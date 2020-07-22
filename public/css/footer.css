@@ -54,19 +54,19 @@
 }
 
 .iframe_googlemap{
-	width : 400px;
-	height: 300px;
+	width : 370px;
+	height: 338px;
 }
 
 @media (max-width: 1024px) {
 	.iframe_googlemap{
-		width : 330px;
+		width : 309px;
 		height: 280px;
 	}
 }
 @media (max-width: 768px) {
 	.iframe_googlemap{
-		width : 245px;
+		width : 345px;
 		height: 300px;
 	}
 }
@@ -74,8 +74,8 @@
 
 @media (max-width: 425px) {
 	.iframe_googlemap{
-		width : 340px;
-		height: 200px;
+		width : 345px;
+		height: 300		px;
 	}
 }
 @media (max-width: 320px) {

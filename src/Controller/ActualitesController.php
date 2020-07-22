@@ -32,15 +32,21 @@ class ActualitesController extends AbstractController
      */
     public function actualites()
     {
-    	$actualites = new Actualite();
+        $actualites = new Actualite();
+        $actu = new Actualite();
 
-    	$actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+        $attachements = $this->attachrepo->findAll();
+        $attach = $this->attachrepo->find(15);
+        dump($attach);
+
+        $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
 
 
-    	return $this->render('pages/actualites/actualites.html.twig',[
+        return $this->render('pages/actualites/actualites.html.twig',[
 
-    		'actualites' => $actualites
-    	]);
+          'actualites' => $actualites,
+          'attachements' => $attachements
+      ]);
 
     }
 
@@ -54,50 +60,50 @@ class ActualitesController extends AbstractController
             $attachement = Array();
             $i = 0;
 
-         if($request->isXmlHttpRequest()) {
+            if($request->isXmlHttpRequest()) {
 
-            $actualite = $this->acturepo->find($id);
+                $actualite = $this->acturepo->find($id);
 
-            $att = $actualite->getAttachements();
+                $att = $actualite->getAttachements();
 
-            foreach($att as $att){
+                foreach($att as $att){
 
                     $attachement[$i] = $att->getImage();
                     $i = $i + 1;
 
+                }
+
+
+                $response = new Response(json_encode(array(
+
+                    'titre' => $actualite->getTitle(),
+                    'contenu' => $actualite->getContent(),
+                    'img' => $actualite->getFilename(),
+                    'url_video' => $actualite->getUrlVideo(),
+                    'datepub' => $actualite->getDatePub(),
+                    'attachement' => $attachement
+
+
+                )));
+
+                $response->headers->set('Content-Type', 'application/json');
+
+                /*  var_dump( $attachement[0] );*/
+                return $response;
+
+            }else{
+
+                $actualites = new Actualite();
+
+                $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+
+                return $this->render('pages/actualites/actualites.html.twig',[
+
+                    'actualites' => $actualites
+                ]);
+
             }
-        
 
-            $response = new Response(json_encode(array(
+        }    
 
-                'titre' => $actualite->getTitle(),
-                'contenu' => $actualite->getContent(),
-                'img' => $actualite->getFilename(),
-                'url_video' => $actualite->getUrlVideo(),
-                'datepub' => $actualite->getDatePub(),
-                'attachement' => $attachement
-
-
-            )));
-
-            $response->headers->set('Content-Type', 'application/json');
-
-          /*  var_dump( $attachement[0] );*/
-            return $response;
-
-        }else{
-
-        $actualites = new Actualite();
-
-        $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
-        
-            return $this->render('pages/actualites/actualites.html.twig',[
-
-                'actualites' => $actualites
-            ]);
-
-        }
-
-    }    
-
-}
+    }

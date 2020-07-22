@@ -1,4 +1,8 @@
 
+.padding{
+
+	padding-bottom: 2rem;
+}
 
 .carousel-item,
 .carousel-inner,
@@ -13,6 +17,74 @@
 .carousel {
 	height: 100%;
 }
+.carousel-caption  h4{
+	font-size: 200%;
+	text-align: center;
+	text-shadow: 1px 1px 10px #000;
+	/*background-color: gray;*/
+}
+.carousel-caption{
+
+	/*position: absolute;
+	top : 10%;*/
+
+}
+
+
+.my-3{
+	border-top : 2px solid #b4b4b4;
+	width : 50%;
+	margin: 0 auto;
+
+}
+
+
+/* misson et activite */
+.mission_texte{
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 0.9em;
+	text-align: justify;
+	text-indent: 2em;
+}
+.mission_texte:hover{
+	-webkit-animation: slidebloc 0.8s infinite;
+}
+
+.link-services{
+	text-decoration: none;
+	color: inherit;
+	font-size: 1em;
+	padding: 0 0 0 0;
+	display: block;
+	
+}
+.link-services:hover{
+	text-decoration : none;
+	color : #222;
+}
+
+
+/*spot video*/
+.dgsr_ve{
+
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	text-align: center;
+	transform: translateY(-50%);
+
+}
+
+.dgsr_ve h2{
+
+	color: 	#222;
+	font-size: 280%;
+}
+
+.iframe{
+	width : 50%;
+	margin: 0 auto; /*permet de centrer un block*/
+}
 
 /*directeur général*/
 
@@ -20,8 +92,77 @@
 	width: 30%;
 	height: 30%;
 }
-.test{
-	color: red;
+
+
+.mot_dg h2{
+
+}
+
+.label_mot_dg{
+/*	color: 	#222;
+	text-shadow: 1px 1px 5px #000;
+	font-size: 300%;*/
+	text-align : center;
+
+}
+.photo_dg img {
+	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
+	border: solid 6px #fff;
+}
+
+/*copie colle dgsrsite angular */
+
+
+.text-service{
+
+	font-size: 1em;
 }
 
 
+
+.activite{
+	text-align: center;
+	
+}
+
+.activite:hover{
+	background-color : #bae1ff;
+}
+
+
+.fa {
+	color: #00abed;
+}
+.fa:hover{
+	transform: scale(1.4);
+	transform: rotate3d(1, 2, 1, 35deg);
+	color: #131f51;
+}
+
+
+
+/*media query pour responsive design*/
+
+@media (max-width: 1024px) {
+	.label_mot_dg{
+
+		font-size: 200%;
+
+	}
+}
+@media (max-width: 768px) {
+	.label_mot_dg{
+		
+		font-size: 150%;
+
+	}
+
+}
+
+
+@media (max-width: 425px) {
+
+}
+@media (max-width: 320px) {
+
+}
