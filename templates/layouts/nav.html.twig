@@ -1,58 +1,58 @@
 	<!-- Navigation -->
-<nav  id="navbar" class="navbar  navbar-expand-lg ">
-  {# <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"> #}
+  <nav  id="navbar" class="navbar  navbar-expand-lg ">
+    {# <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"> #}
 
-  <div class="container">
-    <a class="navbar-brand" href="{{ path ( 'index')}}"> <data value="Direction Générale de la Sécurité Routière"></data>DGSR</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container">
+      <a class="navbar-brand" href="{{ path ( 'index')}}"> <data value="Direction Générale de la Sécurité Routière"></data>DGSR</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
           <i class="fa fa-bars" style="color:white"> </i>
         </span>
       </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a  href="{{ path ( 'index')}}" class="nav-link">Accueil</a>
-        </li>
-        <li class="nav-item {% if app.request.attributes.get('_route') starts with 'historique' %}actif{% endif %}">
-          <a href="{{ path ( 'historique')}}" class="nav-link " >Historique</a>
-        </li>
-        <li class="nav-item {% if app.request.attributes.get('_route') starts with 'missions' %}actif{% endif %}">
-          <a href="{{ path ( 'missions')}}"class="nav-link" >Missions</a>
-        </li>
-        <li class="nav-item {% if app.request.attributes.get('_route') starts with 'organigramme' %}actif{% endif %}">
-          <a  href="{{ path ( 'organigramme')}}" class="nav-link" >Organigramme</a>
-        </li>
-        <li class="nav-item {% if app.request.attributes.get('_route') starts with 'centres' %}actif{% endif %}">
-          <a href="{{ path ( 'centres')}}" class="nav-link">Les centres</a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'index' %}actif{% endif %}">
+            <a  href="{{ path ( 'index')}}" class="nav-link">Accueil</a>
+          </li>
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'historique' %}actif{% endif %}">
+            <a href="{{ path ( 'historique')}}" class="nav-link " >Historique</a>
+          </li>
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'missions' %}actif{% endif %}">
+            <a href="{{ path ( 'missions')}}"class="nav-link" >Missions</a>
+          </li>
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'organigramme' %}actif{% endif %}">
+            <a  href="{{ path ( 'organigramme')}}" class="nav-link" >Organigramme</a>
+          </li>
+          <li class="nav-item {% if app.request.attributes.get('_route') starts with 'centres' %}actif{% endif %}">
+            <a href="{{ path ( 'centres')}}" class="nav-link">Les centres</a>
+          </li>
 
-        <li class="nav-item dropdown {% if app.request.attributes.get('_route') starts with 'tarif' %}actif{% endif %}">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Tarifs
-          </a>
-          <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownBlog">
-            <a href="{{ path ( 'tarif_visite' )}}" class="dropdown-item">Visite technique</a>
-            <a href="{{ path ( 'tarif_reception' )}}" class="dropdown-item">Réception technique</a>
-            <a  href="{{ path ( 'tarif_consta' )}}" class="dropdown-item">Constatation avant dédouanement</a>
-          </div>
+          <li class="nav-item dropdown {% if app.request.attributes.get('_route') starts with 'tarif' %}actif{% endif %}">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Tarifs
+            </a>
+            <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownBlog">
+              <a href="{{ path ( 'tarif_visite' )}}" class="dropdown-item">Visite technique</a>
+              <a href="{{ path ( 'tarif_reception' )}}" class="dropdown-item">Réception technique</a>
+              <a  href="{{ path ( 'tarif_consta' )}}" class="dropdown-item">Constatation avant dédouanement</a>
+            </div>
 
-        </li>
-        <li class="nav-item" >
-          <a href="{{ path ( 'actualites')}}" class="nav-link" >Actualités</a>
-        </li>
-        <li class="nav-item dropdown {% if app.request.attributes.get('_route') starts with 'gallerie' %}actif{% endif %}" >
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Gallerie
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <a href="{{ path ( 'gallerie_photo')}}" class="dropdown-item">Photos</a>
-            <a href="{{ path ( 'gallerie_video')}}" class="dropdown-item" >Vidéos</a>
-          </div>
+          </li>
+          <li class="nav-item" >
+            <a href="{{ path ( 'actualites')}}" class="nav-link" >Actualités</a>
+          </li>
+          <li class="nav-item dropdown {% if app.request.attributes.get('_route') starts with 'gallerie' %}actif{% endif %}" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gallerie
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a href="{{ path ( 'gallerie_photo')}}" class="dropdown-item">Photos</a>
+              <a href="{{ path ( 'gallerie_video')}}" class="dropdown-item" >Vidéos</a>
+            </div>
 
-        </li>
+          </li>
 
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>

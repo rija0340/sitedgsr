@@ -58,16 +58,65 @@
 	height: 338px;
 }
 
+.footer-contact p{
+	font-size: 1.1rem;
+
+}
+.footer-links a{
+	font-size: 1.1em;
+}
+
+.footer-copyright{
+	
+	font-size: 1.1em;
+}
+
+
+
 @media (max-width: 1024px) {
 	.iframe_googlemap{
 		width : 309px;
 		height: 280px;
+	}
+	.display-6{
+
+		font-size: 1.9rem;
+		font-weight: 90;
+		line-height: 1;
+
+	}
+	.footer-contact p{
+		font-size: 1rem;
+
+	}
+	.footer-links{
+		font-size: 1rem;
 	}
 }
 @media (max-width: 768px) {
 	.iframe_googlemap{
 		width : 345px;
 		height: 300px;
+	}
+
+	.display-6{
+
+		font-size: 1.6rem;
+		font-weight: 85;
+		line-height: 1;
+
+	}
+	.footer-links a{
+
+		font-size: 0.9rem;
+	}
+	.footer-contact p{
+		font-size: 0.9rem;
+
+	}
+	.footer-copyright{
+		
+		font-size: 0.9rem;
 	}
 }
 

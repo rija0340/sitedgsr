@@ -1,15 +1,29 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
 
 {% block 	content %}
-	<div >
-		<div   class="float-left mr-5" >
-			<div >
-				<img   src="{{vich_uploader_asset(current_dg, 'imageFile') }}" alt="">
-			</div>	
-			<div>
-				<p class="nom-dg text-center" ><span class="grade">{{ current_dg.grade }}</span> <br><span class="nom">{{current_dg.name}}</span></p>
+	<div class="mot">
+		<div class="padding">
+			<div class="row text-center">
+				<div class="col-12">
+
+					<h3 class="display-5">Mot du Directeur Général</h3>
+				</div>
+				<hr class="my-3">
 			</div>
 		</div>
-		{{ last_dgword.word | raw }} 
+		<div   class="float-left" >
+			<div class="photo_dg2 mx-auto padding">
+				<img  src="{{vich_uploader_asset(current_dg, 'imageFile')  }}" class="img-fluid" alt="Directeur Général">
+			</div>
+			<div>
+				<p class="nom-dg text-center" ><span class="grade_dg">{{ current_dg.grade }}</span> <br><span class="nom_dg">{{current_dg.name}}</span></p>
+			</div>
+		</div>
+		<div class="text-justify" >	
+			{{ last_dgword.word | raw }} 
+		</div>
 	</div> 
 {% endblock %}

@@ -1,4 +1,10 @@
 
+.display-5{
+
+	font-size: 3rem;
+	font-weight: 250;
+	line-height: 1;
+}
 .padding{
 
 	padding-bottom: 2rem;
@@ -7,15 +13,13 @@
 .carousel-item,
 .carousel-inner,
 .carousel-inner img {
-	height: 80%;
-	width: 100%;
+
 }
 
 .carousel-item {
 	text-align: center;
 }
 .carousel {
-	height: 100%;
 }
 .carousel-caption  h4{
 	font-size: 200%;
@@ -63,6 +67,37 @@
 	color : #222;
 }
 
+.text-service{
+
+	font-size: 1em;
+	margin: 0;
+}
+
+.activite{
+	text-align: center;
+	
+}
+
+.activite:hover{
+	background-color : #bae1ff;
+}
+
+
+.fa {
+	color: #00abed;
+}
+
+.fa-bus, .fa-taxi, .fa-car, .fa-truck{
+	font-size: 2.7em;
+}
+.fa-bus:hover, .fa-taxi:hover, .fa-car:hover, .fa-truck:hover{
+	transform: scale(1.4);
+	transform: rotate3d(1, 2, 1, 35deg);
+	color: #131f51;
+}
+
+
+
 
 /*spot video*/
 .dgsr_ve{
@@ -93,7 +128,6 @@
 	height: 30%;
 }
 
-
 .mot_dg h2{
 
 }
@@ -110,59 +144,203 @@
 	border: solid 6px #fff;
 }
 
-/*copie colle dgsrsite angular */
 
+.grade_dg{
+	font-size: 1.2em;
+	color: #221;
 
-.text-service{
-
-	font-size: 1em;
+}
+.nom_dg{
+	font-size: 1.3em;
 }
 
 
+/*style dans page mot du dg*/
 
-.activite{
-	text-align: center;
-	
+.photo_dg2 img {
+	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
+	/*border: solid 6px #fff;*/
+}
+.mot{
+	padding-top: 2rem;
 }
 
-.activite:hover{
-	background-color : #bae1ff;
+.float-left{
+
+	margin-right : 1rem !important;
+
 }
 
+.ngeza, .kelykely, .kely{
+	display: 	none;
+}
 
-.fa {
-	color: #00abed;
-}
-.fa:hover{
-	transform: scale(1.4);
-	transform: rotate3d(1, 2, 1, 35deg);
-	color: #131f51;
-}
 
 
 
 /*media query pour responsive design*/
 
 @media (max-width: 1024px) {
-	.label_mot_dg{
 
-		font-size: 200%;
+	/***********************************/
+	.ngezabe, .kelykely, .kely{
+		display: 	none;
+	}
+	.ngeza{
+		display: block;
+	}
+
+	/***********************************/
+	.navbar-brand{
+
+		font-size: 1.2rem;
 
 	}
+	.padding{
+
+		padding-bottom: 1.7rem;
+	}
+
+	.carousel-caption  h4{
+
+		font-size: 140%;
+
+	}
+
+	.display-5{
+
+		font-size: 2.1rem;
+		font-weight: 160;
+		margin: 0;
+
+	}
+	.fa-bus, .fa-taxi, .fa-car, .fa-truck{
+		font-size: 2em;
+	}
+	.activite a{
+		
+		font-size: 0.9rem;
+	}
+	.iframe{
+		width : 60%;
+		margin: 0 auto; /*permet de centrer un block*/
+	}
+	.grade_dg{
+		font-size: 1.1em;
+
+	}
+	.nom_dg{
+		font-size: 1.2em;
+	}
+	.float-left{
+		margin-right : 0rem !important;
+	}
+
+	/*dgword image*/
+	.photo_dg2{
+		width : 80%;
+		height: 80%;
+
+	}
+
+
+
 }
 @media (max-width: 768px) {
-	.label_mot_dg{
+
+	/***********************************/
+	.ngezabe, .ngeza, .kely{
+		display: 	none;
+	}
+	.kelykely{
+		display: block;
+	}
+
+	/***********************************/
+
+
+	.carousel-caption  h4{
 		
-		font-size: 150%;
+		font-size: 90%;
 
 	}
+	.carousel-indicators{
+		display: none !important;
+	}
+	.carousel-caption{
+		/*display: block;*/
+		top:50% !important;
+	}
+
+	.display-5{
+
+		font-size: 1.5rem;
+		font-weight: 100;
+		line-height: 1;
+
+	}
+	.fa-bus, .fa-taxi, .fa-car, .fa-truck{
+		font-size: 1.9em;
+	}
+	.activite a{
+		
+		font-size: 0.7rem;
+	}
+	.iframe{
+		width : 80%;
+		margin: 0 auto; /*permet de centrer un block*/
+	}
+	.grade_dg{
+		font-size: 0.8em;
+
+	}
+	.nom_dg{
+		font-size: 1em;
+	}
+	.float-left{
+		margin-right : 0.6rem !important;
+	}
+
+	/*dgword image*/
+	.photo_dg2{
+		width : 70%;
+		height: 70%;
+
+	}
+
+
 
 }
 
 
 @media (max-width: 425px) {
+	/***********************************/
+	.ngezabe, .kelykely, .ngeza{
+		display: 	none;
+	}
+	.kely{
+		display: block;
+	}
+
+	/***********************************/
+
+	.carousel-indicators{
+		display: none !important;
+	}
+	.carousel-caption{
+		/*display: block;*/
+		top:5% !important;
+	}
 
 }
 @media (max-width: 320px) {
+
+	.carousel-indicators{
+		display: none !important;
+	}
+	.carousel-caption{
+		/*display: block;*/
+		top:5% !important;
+	}
 
 }
