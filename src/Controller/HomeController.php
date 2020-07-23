@@ -37,17 +37,16 @@ class HomeController extends AbstractController
 
         $spot = $this->spotRepo->find(1);
         // $dgword = $this->dgwordRepo->findOneBy(3);
-        $actualites = $this->actuRepo->findBy(array() , array('datePub' => 'DESC'), 3);
+        
+        //on prend les 3 dernières actualités dans la base de données.
+        $actualites = $this->actuRepo->findBy(array() , array('id' => 'DESC'), 3);
         $dgword = $this->dgwordRepo->findBy(array() , array('id' => 'DESC'), 1);
 
         $last_dgword = $dgword[0];
 
-        dump($last_dgword);
-
         $actu1 = $actualites[0];
         $actu2 = $actualites[1];
         $actu3 = $actualites[2];
-     
 
         return $this->render('pages/home/home.html.twig', [
             'spot' => $spot->getYoutubeLink(),
