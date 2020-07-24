@@ -1,0 +1,109 @@
+
+.display-5{
+
+	font-size: 2rem;
+	font-weight: 200;
+	line-height: 1;
+}
+
+.historique_texte li, .historique_texte p{
+	color : #5b5b5b;
+	text-align: justify;
+}
+
+/*DG successifs*/
+.grade_dg{
+	color: #5b5b5f;
+	font-size: 0.8rem;
+
+}
+.nom_dg{
+
+	font-size: 0.9em;
+	/*font-weight: bold;*/
+
+}
+
+.periode_dg{
+	font-size: 0.8rem;
+
+}
+.image_dg img{
+	max-height: 170px;
+}
+
+.card-body{
+	width: 181px;
+	height: 77px; 
+	padding-bottom: 0px;
+}
+/*media query pour responsive design*/
+
+@media (max-width: 1024px) {
+	.display-5{
+
+		font-size: 1.5rem;
+		font-weight: 150;
+	}
+
+	.grade_dg{
+		color: #5b5b5b;
+		font-size: 0.8rem;
+
+	}
+	.nom_dg{
+
+		font-size: 0.9em;
+		font-weight: bold;
+
+	}
+
+	.periode_dg{
+		font-size: 0.8rem;
+
+	}
+	.image_dg img{
+		max-height: 150px;
+	}
+	.card-body{
+		padding: 10px;
+	}
+
+
+}
+@media (max-width: 768px) {
+
+	.display-5{
+
+		font-size: 1.2rem;
+		font-weight: 120;
+	}
+	.image_dg img{
+		max-height: 160px;
+	}
+	.card-body{
+		padding: 0px 0px 0px 0px;
+		margin: 0;
+		display: block;
+	}
+	.text{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+
+
+	}
+
+
+}
+
+
+@media (max-width: 425px) {
+
+
+}
+@media (max-width: 320px) {
+
+
+
+}
