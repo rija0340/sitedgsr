@@ -14,7 +14,6 @@ $(document).ready(function() {
 		var $id = parseInt(url.slice(8, url.length), 10);
 		var $img_centre = $('.detail_centre').find('img');
 
-
 		$.ajax({ url : url, type : 'GET', dataType : "json", data : { "id_centre" : $id } }) 
 		.done(function(data, status, jqxhr){
 
@@ -23,10 +22,9 @@ $(document).ready(function() {
 			var faritany = data.faritany.toLowerCase();
 			var adresse = data.adresse.split(",");
 
-
 			if (ville == faritany) {
+			$('#bouton').trigger('click');
 
-				
 				$(".detail_centre").show();
 				$(".madagascar").hide();
 				$( '.adresse' ).text(data.adresse);
@@ -36,11 +34,8 @@ $(document).ready(function() {
 				$( '.ville' ).text(adresse[0]);
 				$( '.faritany' ).text(data.faritany);
 				$img_centre.attr('src', "/uploads/images/centres/"+ data.filename +"");
-
-
 				
 				console.log($("li"));
-
 
 				if ($a.text().trim()==adresse[0]) {
 
@@ -50,14 +45,12 @@ $(document).ready(function() {
 					// $a.addClass("pressed_link");
 
 				} else{
-
 					// $a.parent().removeClass("centre_actif");
-
 				}
 
 			}else{
-
 				
+			$('#bouton').trigger('click');
 				$(".detail_centre").show();
 				$(".madagascar").hide();
 				$( '.adresse' ).text(data.adresse);
@@ -73,8 +66,6 @@ $(document).ready(function() {
 				console.log($a.parent().children());
 				console.log($a);
 
-
-
 				if ($a.text().trim()==data.ville) {
 					$("li").removeClass("centre_actif");
 					$a.parent().addClass("centre_actif");
@@ -88,8 +79,6 @@ $(document).ready(function() {
 				}
 
 			}
-
-
 
 		})
 		.fail(function(jqxhr){

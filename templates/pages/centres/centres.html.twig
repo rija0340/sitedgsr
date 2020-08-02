@@ -5,22 +5,19 @@
 
   {% block content %}
     <div class="row mt-4">
-      <div class="col-lg-3 col-md-4 ">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3  ">
         {% for  faritany in faritany %}
           <div id="accordion">
             <div class="mb-1" id="accordion" role="tablist" aria-multiselectable="true">
               <div class=" mdl-shadow--3dp">
-                <div class="card-header d-flex" role="tab" id="headingOne">
-                  <div class="text-left">
+                <div  class="card-header d-flex" role="tab" id="headingOne">
+                  <div class="text-left" >
                     <h6  class="mb-0 mt-0 ml-0 ">
                       {{ faritany.faritany }}
-
-
                     </h6>
                   </div>
                   <div class="ml-auto" >
-                    <a   class="nav-link m-0 p-0 faritany-mada" style="text-decoration:none;" data-toggle="collapse" data-parent="#accordion" href="#{{ faritany.faritany }}" aria-expanded="true" aria-controls="{{ faritany.faritany }}">
-
+                    <a class="nav-link m-0 p-0 faritany-mada" style="text-decoration:none;" data-toggle="collapse" data-parent="#accordion" href="#{{ faritany.faritany }}" aria-expanded="true" aria-controls="{{ faritany.faritany }}">
                       <i id="{{ faritany.faritany }}_icone"  class="fa fa-toggle-down" style="color:gray;"></i>
                     </a>
                   </div>
@@ -54,30 +51,30 @@
         {% endfor %}
       </div>
 
-      <div class="col-lg-9 col-md-8 madagascar">
+      <div class=" col-xs-8 col-sm-8 col-md-8 col-lg-9  madagascar">
         <div class="d-flex justify-content-center">
-          <img style='height: 40%; width: 40%;' src="{{ asset ('images/centre/madagascar.png') }}" alt="My image">
+          <img  src="{{ asset ('images/centre/madagascar.png') }}" alt="My image">
         </div>
 
       </div>
 
 
-      <div class="col-lg-9 col-md-8">
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-9">
         <div class="detail_centre ">
 
-          <h2 class="m-0"> <span class="ville">  </span> <small class="faritany">  </small></h2>
+          <h2 class="m-0 p-0"> <span class="ville">  </span> <small class="faritany">  </small></h2>
           <hr>
           <div class="row">
-            <div class=" col-lg-7 col-md-12 col-sm-12 col-12">
-              <img class="image_centre"src="" alt=""> 
+            <div class=" col-lg-7 col-md-12 col-sm-12 col-12 image_centre">
+              <img class="img_centre"src="" alt=""> 
             </div>
             <div class="col-lg-5 col-md-12 col-sm-12 col-12">
               <p class="label_cc">Chef de centre : </p>
               <span class="grade_cc"></span> <span class="nom_cc"> </span></p>
-              <hr class="col-lg-10 col-md-10 col-sm-10" style="text-align: center ; margin-bottom: 15px">
+              <hr class="col-lg-10 col-md-10 col-sm-10" >
               <p class="label_adresse">Adresse : </p>
               <p class="adresse"> </p>
-              <hr class="col-lg-10 col-md-10" style="text-align: center ; margin-bottom: 15px">
+              <hr class="col-lg-10 col-md-10" >
               <p class="label_phone">Téléphone : </p>
               <p class="num_cc"> </p>
             </div>
@@ -88,7 +85,50 @@
     </div>
 
 
+{# modal pour mobile #}
 
+<button style="display : none;" id="bouton" type="button" class="btn btn-primary " data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+
+    <div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content" style="background-color : #fff">
+
+          <div class="actu_detail " >
+            <div class="modal-header">
+              <h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="main-wrapper" oncontextmenu="return false">
+
+                      <div class="detail_centre ">
+
+          <h2 class="m-0 p-0"> <span class="ville">  </span> <small class="faritany">  </small></h2>
+          <hr>
+          <div class="row">
+            <div class=" col-lg-7 col-md-12 col-sm-12 col-12 image_centre">
+              <img class="img_centre"src="" alt=""> 
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+              <p class="label_cc">Chef de centre : </p>
+              <span class="grade_cc"></span> <span class="nom_cc"> </span></p>
+              <hr class="col-lg-10 col-md-10 col-sm-10" >
+              <p class="label_adresse">Adresse : </p>
+              <p class="adresse"> </p>
+              <hr class="col-lg-10 col-md-10" >
+              <p class="label_phone">Téléphone : </p>
+              <p class="num_cc"> </p>
+            </div>
+          </div>
+        </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     {%endblock%}
 
