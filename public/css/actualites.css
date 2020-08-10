@@ -167,4 +167,9 @@ p {
 	text-indent: 1.2em;
 }
 
+/*spinner*/
+.hide{
+	display: none;
+}
+
 /*css pour slide card*/

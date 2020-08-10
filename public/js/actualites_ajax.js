@@ -19,8 +19,18 @@ $(document).ready(function() {
 		var $img4 = $('.bg-four').find('img');
 
 
+		//affichage spinner a l'aide du ID
+		var $id_a = $a.attr('id');
+		console.log($('#'+$id_a));
+		console.log($('#'+$id_a).firstChild);
+
+
 		$.ajax({ url : url, type : 'GET', dataType : "json", data : { "id" : $id } }) 
 		.done(function(data, status, jqxhr){
+
+
+			$('.loading-icon').addClass("hide"); //pour cacher de nouveau le spinner une fois les données eu
+
 
 			$('#bouton').trigger('click');
 			

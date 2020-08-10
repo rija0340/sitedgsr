@@ -182,37 +182,24 @@
 
 			{# card numero 3 #}
 			<div class="col-4">
-				<div class="card h-100">
-					<h4 class="card-header">Card Title recto</h4>
-					<div class="card-body">
-						<p class="card-text">recto</p>
-					</div>
-					<div class="card-footer">
-						{# <a href="#" class="btn btn-primary">Learn More</a> #}
-					</div>
-					<div class="overlay">
-						<div class="card h-100">
-							<h4 class="card-header">Card Title verso</h4>
-							<div class="card-body">
-								<p class="card-text">verso</p>
-							</div>
-							<div class="card-footer">
-								{# <a href="#" class="btn btn-primary">Learn More</a> #}
-							</div>
-						</div>
-					</div>
+				<div class="card card1 h-100">
+					recto face
+				</div>
+				<div class="card card2 h-100">
+					verso face
 				</div>
 			</div>
 		</div>
+	</div>
 
 
+
+	{%endblock%}
+
+	{% block javascripts %}  
+
+		<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+		<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
 
 		{%endblock%}
-
-		{% block javascripts %}  
-
-			<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
-			<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
-			<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
-
-			{%endblock%}
