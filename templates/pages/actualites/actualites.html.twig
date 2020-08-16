@@ -1,150 +1,149 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
+	{# <link rel="stylesheet" href="{{ asset('css/actualites.css') }}"> #}
 {% endblock %}
 
 {% block content %}
 
-	<div class="row">
-		{% for actualite in actualites %}
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-2 p-0">
-				<div class="mx-auto">
-					
-					<div class="card mx-auto" style="width: 18rem;">
-						{% set i = 0 %} {# initialisation de i pour le compteur #}
-							{% for attachement in attachements %}  
-								{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
-
-									{% if i == 0 %} {# on veut juste afficher la première image #}
-
-										<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" class="card-img-top" alt="...">
-
-									{% endif %}
-
-									{%  set i = i + 1 %}
-
-								{% endif %}
-							{% endfor %}
-
-							<div class="card-body pt-0">
-								<h6 class="card-title">{{ actualite.title}} </h6>
-								<div class=" p-0">
-									<div class="d-flex">
-										<div class="button">
-											<a class="js-actu_show btn btn-outline-secondary " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">Lire
-												<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner-{{actualite.id}}"></i>
-												<span></span>
-											</a>
-										</div>
-										<div class="ml-auto " style="font-style : italic;">
-											{{ actualite.datePub | date('d-m-Y')}}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
+	
+	<div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
+		<div class="container text-center">
+			<h2>Clents Review</h2>
+			<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
 		</div>
+	</div>    
+
+	<div class="testimonial-area spb">
+		<div class="container">
+			<div class="section-title white">
+				<h2>Clients Review 2</h2>
+				<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+			</div>
+			<div class="testimonial-slider">
+				{% for actualite in actualites %}
 
 
-		<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+					<div class="single-slide p-0 m-0">
+						<div class="single-portfolio m-0 p-0">
+							<div class="inner">
+								<div class="portfolio-content">
+									<a href="#"><h5>{{ actualite.title}}</h5></a>
+									<span>{{ actualite.datePub | date('d-m-Y')}}</span>
+								</div>
+								<div class="portfolio-img">
+									{% set i = 0 %} {# initialisation de i pour le compteur #}
+										{% for attachement in attachements %}  
+											{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
 
-		<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl" role="document">
-				<div class="modal-content" style="background-color : #fff">
+												{% if i == 0 %} {# on veut juste afficher la première image #}
 
-					<div class="actu_detail " >
-						<div class="modal-header">
-							<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="main-wrapper" oncontextmenu="return false">
-							<div class="container-fluid ">
-								<div class="row">
-									<div class="col-lg-6">
-										<div class="row ten-cols">
-											<div class="col-md-6 no-space">
-												<div class="content-box bg-one">
-													<div class="content-box-expend">
-														<a class="content-box-title">
-															<div class="content-box-icon">
-																<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
-															</div> 
-														</a>
-													</div>
-												</div>
-												<div class="content-box bg-two">
-													<div class="content-box-expend">
-														<a class="content-box-title">
-															<div class="content-box-icon">
-																<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
-															</div>
-														</a>
-													</div>
-												</div>
+
+													<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
+												{% endif %}
+
+												{%  set i = i + 1 %}
+
+											{% endif %}
+										{% endfor %}
+										<div class="hover-content">
+											<div>
+												<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
+													Voir
+												</a>
 											</div>
-											<div class="col-md-6 no-space">
-												<div class="content-box bg-three">
-													<div class="content-box-expend">
-														<a class="content-box-title">
-															<div class="content-box-icon">
-																<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
-															</div>
-														</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>  
+
+
+					{% endfor %}               
+
+				</div>
+			</div>   
+
+
+			<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+
+			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-xl" role="document">
+					<div class="modal-content" style="background-color : #fff">
+
+						<div class="actu_detail " >
+							<div class="modal-header">
+								<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="main-wrapper" oncontextmenu="return false">
+								<div class="container-fluid ">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="row ten-cols">
+												<div class="col-md-6 no-space">
+													<div class="content-box bg-one">
+														<div class="content-box-expend">
+															<a class="content-box-title">
+																<div class="content-box-icon">
+																	<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+																</div> 
+															</a>
+														</div>
+													</div>
+													<div class="content-box bg-two">
+														<div class="content-box-expend">
+															<a class="content-box-title">
+																<div class="content-box-icon">
+																	<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
+																</div>
+															</a>
+														</div>
 													</div>
 												</div>
-												<div class="content-box bg-four">
-													<div class="content-box-expend">
-														<a class="content-box-title">
-															<div class="content-box-icon">
-																<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
-															</div>
-														</a>
+												<div class="col-md-6 no-space">
+													<div class="content-box bg-three">
+														<div class="content-box-expend">
+															<a class="content-box-title">
+																<div class="content-box-icon">
+																	<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
+																</div>
+															</a>
+														</div>
+													</div>
+													<div class="content-box bg-four">
+														<div class="content-box-expend">
+															<a class="content-box-title">
+																<div class="content-box-icon">
+																	<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
+																</div>
+															</a>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col-lg-6">
-										<p class="actu_content pb-5"> </p>
+										<div class="col-lg-6">
+											<p class="actu_content pb-5"> </p>
+
+										</div>
 
 									</div>
+
 
 								</div>
-
-
 							</div>
-						</div>
 
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="owl-carousel owl-theme">
-			<div class="item"><h4>1</h4></div>
-			<div class="item"><h4>2</h4></div>
-			<div class="item"><h4>3</h4></div>
-			<div class="item"><h4>4</h4></div>
-			<div class="item"><h4>5</h4></div>
-			<div class="item"><h4>6</h4></div>
-			<div class="item"><h4>7</h4></div>
-			<div class="item"><h4>8</h4></div>
-			<div class="item"><h4>9</h4></div>
-			<div class="item"><h4>10</h4></div>
-			<div class="item"><h4>11</h4></div>
-			<div class="item"><h4>12</h4></div>
-		</div>
 
-		{%endblock%}
+			{%endblock%}
 
-		{% block javascripts %}
-			<script src="{{ asset('js/actualites_ajax.js') }}"></script>
-			<script src="{{ asset('js/owl.carousel.js') }}"></script>
-			<script src="{{ asset('js/owl.actualite.js') }}"></script>
+			{% block javascripts %}
+				<script src="{{ asset('js/actualites_ajax.js') }}"></script>
 
-		{% endblock %}
+			{% endblock %}

@@ -9,197 +9,150 @@
 {% block title %}Tarif visite technique {% endblock %}
 
 	{% block content %}
+		<div class="page-title sp" style="background-image: url('{{ asset ('flattheme/img/dgsr/autres/centre.jpg') }}'); background-position: fixed;">
+			<div class=" text-center ">
+				<div class="d-flex  justify-content-between m-0 p-0">
 
-		<h4 class="m-0 p-0"> Tarifs visite technique </h4>
-		<h6 class="ref_inter_min">Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</h6>
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
+					</div>
+					<div class="">
 
-		<div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-			<div class="card">
-				<div class="card-header" role="tab" id="headingOne">
-					<h5 class="m-0 p-0">
-						<div class="d-flex">
-							<div>
-
-								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Visite sur site : apte</a>
-							</div>
-							<div class="ml-auto">
-								<a href="" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
-								<a class="btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									<i id="collapseOne_icone"  class="fa fa-toggle-down" style="color:gray;"></i>
-								</a>
-							</div>
-						</div>
-					</h5>
-				</div>
-				<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-					<div class="card-body">
-						{% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} 
-
+						<h2>Direction Générale de la Sécurité Routière</h2>
+					</div>
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
 					</div>
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-header" role="tab" id="headingTwo">
-					<h5 class="m-0 p-0">
-						<div class="d-flex">
-							<div >
-								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Visite sur site : inapte</a>
-							</div>
-							<div class="ml-auto">
-								<a href="" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
+		</div>    
 
-								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-
-									<i id="collapseTwo_icone" class="fa fa-toggle-down" style="color:gray;"></i>
-								</a>
-							</div>
-						</div>
-					</h5>
+		<div class="service-area bg2 sp">
+			<div class="container">
+				<div class="section-title">
+					<h2>Visite Technique</h2>
+					<p>Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</p>
 				</div>
-				<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-					<div class="card-body">
-						{% include 'pages/tarifs/tarif_visite/visite_site_inapte.html.twig' %} 
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab" id="headingThree">
-					<h5 class="m-0 p-0">
-						<div class="d-flex">
-							<div>
-								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Visite à domicile</a>
+				<div class="row">
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-film"></i>
+								</div>
+								<h4><a href="" data-toggle="modal" data-target=".visite_domicile">Tarif Visite à domicile</a></h4>
 							</div>
-							<div class="ml-auto">
-								<a href="" class="btn btn-outline-primary" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
-
-								<a class="collapsed btn_tarif" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-									<i  id="collapseThree_icone" class="fa fa-toggle-down" style="color:gray;"></i>
-								</a>
+							<div class="content">
 							</div>
 						</div>
-					</h5>
-				</div>
-				<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-					<div class="card-body">
-
-						{% include 'pages/tarifs/tarif_visite/visite_domicile.html.twig' %} 
 					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-camera"></i>
+								</div>
+								<h4><a href="	" data-toggle="modal" data-target=".visite_site_apte">Tarif Visite sur site, Apte</a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-music"></i>
+								</div>
+								<h4><a href="	" data-toggle="modal" data-target=".visite_site_inapte">Tarif Visite sur site, Inapte</a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
-		</div>
+		</div> 
+
+		{# modal pour mobile #}
 
 
-
-		{# ceci est le modal  #}
-
-		<div  style="height:570px;" class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-md" role="document">
+		<div   style="height:600px;" class=" modal fade visite_domicile " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
 				<div class="modal-content" style="background-color : #fff">
 
-					<div class="actu_detail" >
+					<div class="actu_detail " >
 						<div class="modal-header">
-							<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"> Liste des abbreviations</h5>
+							<h5 class="modal-title actu_title text-center"  id="exampleModalCenterTitle">
+								Tarif visite technique à domicile
+							</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="main-wrapper" oncontextmenu="return false">
-							<div class="container-fluid ">
-								{% include 'pages/tarifs/abreviations.html.twig' %} 
+						<div class="main-wrapper" style="height" oncontextmenu="return false">
 
-							</div>
+							{% include 'pages/tarifs/tarif_visite/visite_domicile.html.twig' %} 
+							{# <h1>	test</h1> #}
+
 						</div>
-						<p class="actu_content p-4"> </p>
 
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<div   style="height:600px;" class=" modal fade visite_site_apte " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content" style="background-color : #fff">
 
-		<!-- debut papier utiles -->
-		{% include 'pages/tarifs/tarif_visite/papiers_utiles.html.twig' %} 
+					<div class="actu_detail " >
+						<div class="modal-header">
+							<h5 class="modal-title actu_title text-center"  id="exampleModalCenterTitle">
+								Tarif visite technique sur site, APTE
+								
+							</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="main-wrapper" style="height" oncontextmenu="return false">
 
-		<!-- card pour tester rotate -->
-		<div class="row">
-			<div class="col-4">
-				<div class="card h-100">
-					<h4 class="card-header">Card Title</h4>
-					<div class="card-body">
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary">Learn More</a>
-					</div>
-				</div>
-			</div>
-
-			{# card numero 2 #}
-			<div class="col-4">
-				<div class="card h-100">
-					<h4 class="card-header">Card Title</h4>
-					{# <img  src="{{ asset ('images/gallerie/image1.jpg') }}" alt="My image"> #}
-					<div class="card-body">
-						<p class="card-text">
-							TV TAXI VILLE <br>
-							13-200 - 22800 <br>
-						</p>
-						<div class="row text-center">
-							<div class="col-6">
-								D: 700 <br>
-								PV : 100
-							</div>
-							<div class="col-6">
-								C: 2000 <br>
-								Ct: 6000 
-							</div>
-
+							{% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} 
+							{# <h1>	test</h1> #}
 
 						</div>
-					</div>
-					<div class="card-footer">
-						{# <a href="#" class="btn btn-primary">Learn More</a> #}
-					</div>
-					<div class="overlay ">
-						<div class="text m-5 text-justify" style="color:white;"> 
-							{# <h1>Elisa</h1> #}
-							<div class="d-flex justify-content-center" style="font-size : 1.5em">
-								
-								D: Droit<br>
-								P.V: Procès verbal<br>
-								C: Carte<br>
-								Cr: Carnet
-								
 
-							</div>
-							<div class="d-flex justify-content-center">
-								{# 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum adipisci eos saepe, asperiores, recusandae impedit consequatur. Natus dignissimos ab consequuntur! Dignissimos sed harum, ipsam earum minima optio incidunt, expedita a! #}
-							</div>
-						</div>
 					</div>
-				</div>
-			</div>		
-
-			{# card numero 3 #}
-			<div class="col-4">
-				<div class="card card1 h-100">
-					recto face
-				</div>
-				<div class="card card2 h-100">
-					verso face
 				</div>
 			</div>
 		</div>
-	</div>
 
+		<div   style="height:600px;" class=" modal fade visite_site_inapte " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content" style="background-color : #fff">
 
+					<div class="actu_detail " >
+						<div class="modal-header">
+							<h5 class="modal-title actu_title text-center"  id="exampleModalCenterTitle">
+								Tarif visite technique sur site, INAPTE
+							</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="main-wrapper" style="height" oncontextmenu="return false">
 
-	{%endblock%}
+							{% include 'pages/tarifs/tarif_visite/visite_site_inapte.html.twig' %} 
+							{# <h1>	test</h1> #}
 
-	{% block javascripts %}  
+						</div>
 
-		<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
-		<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
-		<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		{%endblock%}

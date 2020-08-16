@@ -5,26 +5,37 @@
 	<meta charset="utf-8">
 	<title>{% block title %} dgsrmada {% endblock %}</title>
 	<meta nema="viewport">
-	<link rel="stylesheet" type="text/css"
-	href="{{ asset( 'vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}">
+	{# <link rel="stylesheet" type="text/css" href="{{ asset( 'vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}"> #}
 	<!-- for material style -->
-	<link rel="stylesheet" type="text/css" href="{{asset( 'css/material.indigo-blue.min.css')}}">
+	{# <link rel="stylesheet" type="text/css" href="{{asset( 'css/material.indigo-blue.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/styles.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/nav.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'font-awesome/css/font-awesome.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'font-awesome/css/font-awesome.css')}}"> #}
+
+	{# style css pour flatheme #}
+	<!-- Required CSS files -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('flattheme/css/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/barfiller.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/animate.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/slicknav.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/main.css')}}">
+	<link rel="stylesheet" href="{{asset('flattheme/css/custom.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
+	
 
 	{# cdn pour font awesome #}
 	{# <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> #}
 	{% block stylesheets %} {%endblock%}
 	</head>
 	<body>
-		{% block banniere%} {% include 'layouts/banniere.html.twig' %} {%endblock %}
+		{% block banniere%}  {%endblock %}
 		{% block nav %} {% include 'layouts/nav.html.twig' %}{%endblock%}
 			{% block carousel %} {%endblock%}
-				<div class="container">
-					{% block content %}  {%endblock%}
-					</div>
+				{% block content %}  {%endblock%}
 
 					{% block sidenav %}
 
@@ -36,11 +47,24 @@
 
 						<!-- veuillez respecter l'odre des declarations des sripts -->
 
-						<script src="{{ asset( 'vendor_bootstrap/jquery/jquery.min.js') }}"></script>
+						{# <script src="{{ asset( 'vendor_bootstrap/jquery/jquery.min.js') }}"></script>
 						<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.min.js') }}"></script>
 						<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 						<script type="text/javascript" src="{{ asset( 'js/material.min.js') }}"></script>
-						<script type="text/javascript" src="{{ asset( 'js/nav.js') }}"></script>
+						<script type="text/javascript" src="{{ asset( 'js/nav.js') }}"></script>#}
+
+
+						{# {# liste des js pour flattheme #}
+						<script src="{{asset('flattheme/js/jquery-2.2.4.min.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/popper.min.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/bootstrap.min.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/owl.carousel.min.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/isotope.pkgd.min.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/jquery.barfiller.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/loopcounter.js') }}"></script>
+						<script src="{{asset('flattheme/js/vendor/slicknav.min.js') }}"></script> 
+						<script src="{{asset('flattheme/js/active.js') }}"></script> 
+
 						{% block javascripts %}  {%endblock%}
 						</body>
 						</html>

@@ -51,7 +51,7 @@ class HomeController extends AbstractController
         return $this->render('pages/home/home.html.twig', [
             'spot' => $spot->getYoutubeLink(),
             'current_dg' =>  $last_dgword->getDg(),
-            'dgword' =>  $last_dgword,
+            'last_dgword' =>  $last_dgword,
             'actualite1' => $actu1,
             'actualite2' => $actu2,
             'actualite3' => $actu3, 
