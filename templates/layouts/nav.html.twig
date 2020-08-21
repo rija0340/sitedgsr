@@ -27,13 +27,9 @@
                     <li class="{% if app.request.attributes.get('_route') starts with 'missions' %}current-menu-item{% endif %}"><a href="{{ path ( 'missions')}}">Missions</a></li>
                     <li class="{% if app.request.attributes.get('_route') starts with 'organigramme' %}current-menu-item{% endif %}"><a href="{{ path ( 'organigramme')}}">Organigramme</a></li>
                     <li class="{% if app.request.attributes.get('_route') starts with 'centres' %}current-menu-item{% endif %}"><a href="{{ path ( 'centres')}}">Centres</a></li>
-                    <li class="{% if app.request.attributes.get('_route') starts with 'tarif' %}current-menu-item{% endif %} has-child">
-                      <a href="#">Tarifs</a>
-                      <ul class="sub-menu">
-                        <li><a href="{{ path ( 'tarif_visite' )}}">Visite technique</a></li>
-                        <li><a href="{{ path ( 'tarif_reception' )}}">Réception technique</a></li>
-                        <li><a href="{{ path ( 'tarif_consta' )}}">Constatation avant dédouanement</a></li>
-                      </ul>
+                    <li class="{% if app.request.attributes.get('_route') starts with 'tarif' %}current-menu-item{% endif %}">
+                      <a href="{{ path ( 'tarifs' )}}">Tarifs</a></li>
+                      
                       <li class="{% if app.request.attributes.get('_route') starts with 'actualites' %}current-menu-item{% endif %}"><a href="{{ path ( 'actualites')}}">Actualites</a></li>
                     </li>
                     <li class="{% if app.request.attributes.get('_route') starts with 'gallerie' %}current-menu-item{% endif %} has-child">

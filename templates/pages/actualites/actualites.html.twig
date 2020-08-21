@@ -3,147 +3,160 @@
 {% block stylesheets %}
 	{# <link rel="stylesheet" href="{{ asset('css/actualites.css') }}"> #}
 {% endblock %}
-
-{% block content %}
-
-	
-	<div class="page-title sp" style="background-image: url(assets/img/page-title.jpg)">
-		<div class="container text-center">
-			<h2>Clents Review</h2>
-			<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-		</div>
-	</div>    
-
-	<div class="testimonial-area spb">
-		<div class="container">
-			<div class="section-title white">
-				<h2>Clients Review 2</h2>
-				<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-			</div>
-			<div class="testimonial-slider">
-				{% for actualite in actualites %}
+{% block title %}Actualités {% endblock %}
 
 
-					<div class="single-slide p-0 m-0">
-						<div class="single-portfolio m-0 p-0">
-							<div class="inner">
-								<div class="portfolio-content">
-									<a href="#"><h5>{{ actualite.title}}</h5></a>
-									<span>{{ actualite.datePub | date('d-m-Y')}}</span>
-								</div>
-								<div class="portfolio-img">
-									{% set i = 0 %} {# initialisation de i pour le compteur #}
-										{% for attachement in attachements %}  
-											{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
-
-												{% if i == 0 %} {# on veut juste afficher la première image #}
+	{% block content %}
 
 
-													<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
-												{% endif %}
+		<div class="page-title sp" style="background-image: url('{{ asset ('flattheme/img/dgsr/autres/centre.jpg') }}'); background-position: fixed;">
+			<div class=" text-center ">
+				<div class="d-flex  justify-content-between m-0 p-0">
 
-												{%  set i = i + 1 %}
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
+					</div>
+					<div class="">
 
-											{% endif %}
-										{% endfor %}
-										<div class="hover-content">
-											<div>
-												<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
-													Voir
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>  
-
-
-					{% endfor %}               
-
-				</div>
-			</div>   
-
-
-			<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-
-			<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-xl" role="document">
-					<div class="modal-content" style="background-color : #fff">
-
-						<div class="actu_detail " >
-							<div class="modal-header">
-								<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="main-wrapper" oncontextmenu="return false">
-								<div class="container-fluid ">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="row ten-cols">
-												<div class="col-md-6 no-space">
-													<div class="content-box bg-one">
-														<div class="content-box-expend">
-															<a class="content-box-title">
-																<div class="content-box-icon">
-																	<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
-																</div> 
-															</a>
-														</div>
-													</div>
-													<div class="content-box bg-two">
-														<div class="content-box-expend">
-															<a class="content-box-title">
-																<div class="content-box-icon">
-																	<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
-																</div>
-															</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6 no-space">
-													<div class="content-box bg-three">
-														<div class="content-box-expend">
-															<a class="content-box-title">
-																<div class="content-box-icon">
-																	<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
-																</div>
-															</a>
-														</div>
-													</div>
-													<div class="content-box bg-four">
-														<div class="content-box-expend">
-															<a class="content-box-title">
-																<div class="content-box-icon">
-																	<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
-																</div>
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-6">
-											<p class="actu_content pb-5"> </p>
-
-										</div>
-
-									</div>
-
-
-								</div>
-							</div>
-
-						</div>
+						<h2>Direction Générale de la Sécurité Routière</h2>
+					</div>
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_gn.jpg') }}" alt="logo">
 					</div>
 				</div>
 			</div>
+		</div>   
 
-			{%endblock%}
+		<div class="testimonial-area spb">
+			<div class="container">
+				<div class="section-title white">
+					<h2>Clients Review 2</h2>
+					<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+				</div>
+				<div class="testimonial-slider">
+					{% for actualite in actualites %}
 
-			{% block javascripts %}
-				<script src="{{ asset('js/actualites_ajax.js') }}"></script>
 
-			{% endblock %}
+						<div class="single-slide p-0 m-0">
+							<div class="single-portfolio m-0 p-0">
+								<div class="inner">
+									<div class="portfolio-content">
+										<a href="#"><h5>{{ actualite.title}}</h5></a>
+										<span>{{ actualite.datePub | date('d-m-Y')}}</span>
+									</div>
+									<div class="portfolio-img">
+										{% set i = 0 %} {# initialisation de i pour le compteur #}
+											{% for attachement in attachements %}  
+												{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
+
+													{% if i == 0 %} {# on veut juste afficher la première image #}
+
+
+														<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
+													{% endif %}
+
+													{%  set i = i + 1 %}
+
+												{% endif %}
+											{% endfor %}
+											<div class="hover-content">
+												<div>
+													<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
+														Voir
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>  
+
+
+						{% endfor %}               
+
+					</div>
+				</div>   
+
+
+				<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+
+				<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl" role="document">
+						<div class="modal-content" style="background-color : #fff">
+
+							<div class="actu_detail " >
+								<div class="modal-header">
+									<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="main-wrapper" oncontextmenu="return false">
+									<div class="container-fluid ">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="row ten-cols">
+													<div class="col-md-6 no-space">
+														<div class="content-box bg-one">
+															<div class="content-box-expend">
+																<a class="content-box-title">
+																	<div class="content-box-icon">
+																		<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+																	</div> 
+																</a>
+															</div>
+														</div>
+														<div class="content-box bg-two">
+															<div class="content-box-expend">
+																<a class="content-box-title">
+																	<div class="content-box-icon">
+																		<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
+																	</div>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 no-space">
+														<div class="content-box bg-three">
+															<div class="content-box-expend">
+																<a class="content-box-title">
+																	<div class="content-box-icon">
+																		<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
+																	</div>
+																</a>
+															</div>
+														</div>
+														<div class="content-box bg-four">
+															<div class="content-box-expend">
+																<a class="content-box-title">
+																	<div class="content-box-icon">
+																		<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
+																	</div>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<p class="actu_content pb-5"> </p>
+
+											</div>
+
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{%endblock%}
+
+				{% block javascripts %}
+					<script src="{{ asset('js/actualites_ajax.js') }}"></script>
+
+				{% endblock %}

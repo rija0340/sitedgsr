@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/style_table.css')}}">
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/basictable.css')}}">
+	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/tarifs.css')}}">
+{% endblock %}
+
+{% block title %}Tarifs {% endblock %}
+
+	{% block content %}
+		<div class="page-title sp" style="background-image: url('{{ asset ('flattheme/img/dgsr/autres/centre.jpg') }}'); background-position: fixed;">
+			<div class=" text-center ">
+				<div class="d-flex  justify-content-between m-0 p-0">
+
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
+					</div>
+					<div class="">
+
+						<h2>Direction Générale de la Sécurité Routière</h2>
+					</div>
+					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
+						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
+					</div>
+				</div>
+			</div>
+		</div>    
+
+		<div class="service-area bg2 sp">
+			<div class="container">
+				<div class="section-title">
+					<h2>Tarifs</h2>
+					<p>Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</p>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-film"></i>
+								</div>
+								<h4>
+									<a class="btn_tarif" href="" data-toggle="modal" data-target=".visite_domicile">Visite Technique à domicile <i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a>
+
+								</h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-camera"></i>
+								</div>
+								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_apte">Visite Technique sur site, Apte<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-music"></i>
+								</div>
+								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_inapte">Visite Technique sur site, Inapte<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-music"></i>
+								</div>
+								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_reception">Réception Technique<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-music"></i>
+								</div>
+								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_consta">Constatation avant dédouanement<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 single-service">
+						<div class="inner">
+							<div class="title">
+								<div class="icon">
+									<i class="fa fa-music"></i>
+								</div>
+								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">Abbreviations et papiers utiles<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
+							</div>
+							<div class="content">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+
+		{# modal pour mobile #}
+
+		<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal-target ">Extra large modal</button>
+
+		<div   style="height:600px;" class=" modal fade modal-target " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content" style="background-color : #fff">
+
+					<div class="actu_detail " >
+						<div class="modal-header">
+							<h5 class="modal-title  text-center"  id="exampleModalCenterTitle">
+								
+							</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="main-wrapper" style="height" oncontextmenu="return false">
+
+							{# {% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} #}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		{%endblock%}
+		
+		{% block javascripts %} 
+
+			<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
+
+
+			{%endblock%}

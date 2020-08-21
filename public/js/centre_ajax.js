@@ -8,8 +8,15 @@ $(document).ready(function() {
 	$(".js-centre_show").on('click', function( e ){
 
 		e.preventDefault();
-
+		
 		var $a = $(this);
+		// affichage spinner
+		var $spinner_container = $a.parent().parent().parent().parent().children().children();
+
+		console.log($spinner_container);
+
+		$spinner_container.removeClass('hide');
+
 		var url = $a.attr('href');
 		var $id = parseInt(url.slice(8, url.length), 10);
 		var $img_centre = $('.detail_centre').find('img');
@@ -23,7 +30,9 @@ $(document).ready(function() {
 			var adresse = data.adresse.split(",");
 
 			if (ville == faritany) {
-			$('#bouton').trigger('click');
+				$('#bouton').trigger('click');
+
+				$spinner_container.addClass('hide'); //cacher de nouveau spinner
 
 				$(".detail_centre").show();
 				$(".madagascar").hide();
@@ -34,8 +43,7 @@ $(document).ready(function() {
 				$( '.ville' ).text(adresse[0]);
 				$( '.faritany' ).text(data.faritany);
 				$img_centre.attr('src', "/uploads/images/centres/"+ data.filename +"");
-				
-				console.log($("li"));
+
 
 				if ($a.text().trim()==adresse[0]) {
 
@@ -50,7 +58,10 @@ $(document).ready(function() {
 
 			}else{
 				
-			$('#bouton').trigger('click');
+				$('#bouton').trigger('click');
+
+				$spinner_container.addClass('hide'); //cacher de nouveau spinner
+
 				$(".detail_centre").show();
 				$(".madagascar").hide();
 				$( '.adresse' ).text(data.adresse);
@@ -63,9 +74,6 @@ $(document).ready(function() {
 
 				//trim() sert à supprimer les espaces avant et apèrs les chaines de caractères
 				
-				console.log($a.parent().children());
-				console.log($a);
-
 				if ($a.text().trim()==data.ville) {
 					$("li").removeClass("centre_actif");
 					$a.parent().addClass("centre_actif");

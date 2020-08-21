@@ -14,39 +14,45 @@
 
 
 	{% block content %}
-		<h3> Tarif constatation avant dédouanement </h3>	
-		<div>
-			<a href="" class="btn" data-toggle="modal" data-target=".bd-example-modal-md"> Liste des abreviations</a>
-		</div>
-		{% include 'pages/tarifs/tarif_consta/consta.html.twig' %} 
 
-		{# ceci est le modal  #}
+		{% block banniere%}  {%endblock %}
+		{% block nav %}
+			<p style="display : none"></p>
+			{%endblock%}
 
-		<div  style="height:570px;" class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-md" role="document">
-				<div class="modal-content" style="background-color : #fff">
-					<div class="actu_detail" >
-						<div class="modal-header">
-							<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"> Liste des abbreviations</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="main-wrapper" oncontextmenu="return false">
-							<div class="container-fluid ">
-								{% include 'pages/tarifs/abreviations.html.twig' %} 
+
+			{# ceci est le modal  #}
+
+			<div  style="height:570px;" class="modal fade bd-example-modal-md " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-md" role="document">
+					<div class="modal-content" style="background-color : #fff">
+						<div class="actu_detail" >
+							<div class="modal-header">
+								<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"> Liste des abbreviations</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
+							<div class="main-wrapper" oncontextmenu="return false">
+								<div class="container-fluid ">
+									{% include 'pages/tarifs/tarif_consta/consta.html.twig' %} 
+								</div>
+							</div>
+							<p class="actu_content p-4"> </p>
 						</div>
-						<p class="actu_content p-4"> </p>
 					</div>
 				</div>
 			</div>
-		</div>
-		{%endblock%}
-
-		{% block javascripts %}  
-
-			<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
-			<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
-
 			{%endblock%}
+
+			{% block footer %}
+				<p style="display : none"></p>
+				{%endblock%}
+
+
+				{% block javascripts %}  
+
+					<script type="text/javascript" src="{{ asset( 'jquery/jquery.basictable.min.js') }}"></script>
+					<script type="text/javascript" src="{{ asset( 'js/resp_table.js') }}"></script>
+
+					{%endblock%}

@@ -35,7 +35,7 @@
             <div class="faq">
               <div class="single-item ">
 
-                <h4 >{{ faritany.faritany  }}</h4>
+                <h4 class="nom_faritany">{{ faritany.faritany  }} <i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></h4>
                 <div class="content">
 
                   <ul class="liste_centres">
@@ -45,10 +45,10 @@
                         <a style="text-decoration:none" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show " id="centre.id">
                           {% if centre.ville | lower == faritany.faritany | lower %}
                             {% set adresse = centre.adresse|split(',') %}
-                              {{ adresse[0] }}
+                              {{ adresse[0] }}  
 
                             {% else %}
-                              {{centre.ville}}
+                              {{centre.ville}} 
                             {% endif %}
                           </a>
                         </li>
