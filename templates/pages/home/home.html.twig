@@ -5,116 +5,117 @@
 
 {% block title %}Accueil{% endblock %}
 
-	{% block banniere %} {% include 'layouts/banniere.html.twig' %} {%endblock %}
-		{% block carousel %} 
-			
-			<div class="hero-slider">
-				<div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite1, 'imageFile')  }}')">
-					<div class="inner">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-lg-6 text-center">
-									<div class="slide-content">
-										
-										<p class="title">{{ actu1_title }}</p>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite2, 'imageFile')  }}')">
-					<div class="inner">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-lg-6 text-center">
-									<div class="slide-content">
-										
-										<p class="title">{{ actu2_title }}</p>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite3, 'imageFile')}}')">
-					<div class="inner">
-						<div class="container">
-							<div class="row justify-content-center">
-								<div class="col-lg-6 text-center">
-									<div class="slide-content">
-										
-										<p class="title">{{ actu3_title }}</p>
-
-									</div>
-								</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {%endblock%}
-      {% block content %}
-
-       <div class="service-area bg2 sp">
-        <div class="container">
-         <div class="section-title">
-          <h2>Nos Services</h2>
-          <!-- <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> -->
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 single-service">
-           <div class="inner">
-            <div class="title">
-             <div class="icon">
-              <i class="fa fa-film"></i>
-            </div>
-            <h4>Video Making</h4>
-          </div>
-          <div class="content">
-           <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-         </div>
-       </div>
-     </div>
-     <div class="col-lg-3 col-md-6 single-service">
-       <div class="inner">
-        <div class="title">
-         <div class="icon">
-          <i class="fa fa-camera"></i>
-        </div>
-        <h4>Photography</h4>
-      </div>
-      <div class="content">
-       <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-     </div>
-   </div>
- </div>
- <div class="col-lg-3 col-md-6 single-service">
-   <div class="inner">
-    <div class="title">
-     <div class="icon">
-      <i class="fa fa-music"></i>
+	{% block banniere %} 
+    <div class="banniere">
+      {% include 'layouts/banniere.html.twig' %} 
     </div>
-    <h4>Music </h4>
+    {%endblock %}
+    {% block carousel %} 
+      <div class="caroussel">
+       <div class="hero-slider">
+        <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite1, 'imageFile')  }}')">
+         <div class="inner">
+          <div class="container">
+           <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+             <div class="slide-content">
+
+              <p class="title">{{ actu1_title }}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="content">
-   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
- </div>
+  <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite2, 'imageFile')  }}')">
+   <div class="inner">
+    <div class="container">
+     <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+       <div class="slide-content">
+
+        <p class="title">{{ actu2_title }}</p>
+
+      </div>
+    </div>
+  </div>
 </div>
 </div>
-<div class="col-lg-3 col-md-6 single-service">
+</div>
+<div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite3, 'imageFile')}}')">
+ <div class="inner">
+  <div class="container">
+   <div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+     <div class="slide-content">
+
+      <p class="title">{{ actu3_title }}</p>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+{%endblock%}
+{% block content %}
+
+ <div class="service-area bg2 sp">
+  <div class="container">
+   <div class="section-title">
+    <h2>Nos Services</h2>
+    <!-- <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> -->
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 single-service text-center">
+     <div class="inner">
+      <div class="title">
+       <div class="icon">
+        <i class="fa fa-taxi"></i>
+      </div>
+      <h4>Vsite Technique</h4>
+    </div>
+    <div class="content">
+    </div>
+  </div>
+</div>
+<div class="col-lg-3 col-md-6 single-service text-center">
  <div class="inner">
   <div class="title">
    <div class="icon">
-    <i class="fa fa-bullhorn"></i>
+    <i class="fa fa-car"></i>
   </div>
-  <h4>Product </h4>
+  <h4>Réception Tehcnique</h4>
 </div>
 <div class="content">
- <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 single-service text-center">
+ <div class="inner">
+  <div class="title">
+   <div class="icon">
+    <i class="fa fa-bus"></i>
+  </div>
+  <h4>Constatation avant Dédouanement </h4>
+</div>
+<div class="content">
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 single-service text-center">
+ <div class="inner">
+  <div class="title">
+   <div class="icon">
+    <i class="fa fa-truck"></i>
+  </div>
+  <h4>Controle inopiné </h4>
+</div>
+<div class="content">
 </div>
 </div>
 </div>
@@ -123,32 +124,16 @@
 </div>
 </div>
 
-<div class="about-area sp">
-  <div class="container">
-   <div class="row">
-    <div class="col-md-6">
-     <div class="about-content">
-      <h3>USA’s most trusted 3D and graphic designing studio, a very passionate team inside.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. </p>
-      <p>Exa commodo consequat.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-      <a href="#" class="button">More about</a>
-    </div>
+<div class="about-area sp text-center">
+  <div class="iframe">    
+    <iframe
+    src="{{ spot }}"
+    frameborder="0"
+    allowfullscreen
+
+    class="iframe_spot"
+    ></iframe>
   </div>
-  <div class="col-md-6">
-   <div class="about-img">
-    <div class="iframe">    
-      <iframe
-      src="{{ spot }}"
-      frameborder="0"
-      allowfullscreen
-      width="100%"
-      height = "100%"
-      ></iframe>
-    </div>
-  </div>
-</div>
-</div>
-</div>
 </div>
 
 <div class="faq-area sp bg2">
@@ -159,64 +144,62 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-                       <!--  <div class="faq-img text-center">
-                            <img src="assets/img/dgsr/dg/tsirivelo.jpg" alt="dg">
-                          </div> -->
-                          <div class=" single-team">
-                           <div class="inner">
-                            <div class="team-img">
-                             <img src="{{vich_uploader_asset(current_dg, 'imageFile')}}" alt="Member Photo">
-                           </div>
-                           <div class="team-content">
-                             <h5>{{ current_dg.grade }}</h5>
-                             <h4>{{ current_dg.name }}</h4>
 
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                     <div class="col-md-8">
-                       <div class="faq">
-                        <div class="single-item">
-                         <h4>{{ (last_dgword.word  | length > 50 ? last_dgword.word |slice(0, 70) ~ '...' : last_dgword.word ) | raw }} </h4>
+      <div class=" single-team">
+       <div class="inner">
+        <div class="team-img">
+         <img src="{{vich_uploader_asset(current_dg, 'imageFile')}}" alt="Member Photo">
+       </div>
+       <div class="team-content">
+         <h5>{{ current_dg.grade }}</h5>
+         <h4>{{ current_dg.name }}</h4>
 
-                         <div class="content">
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="col-md-8">
+   <div class="faq">
+    <div class="single-item">
+     <h4>{{ (last_dgword.word  | length > 50 ? last_dgword.word |slice(0, 70) ~ '...' : last_dgword.word ) | raw }} </h4>
 
-                          {{ last_dgword.word | raw }} 
-                        </div>
-                      </div>
-                      <div class="single-item">
-                       <h4>Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao...</h4>
-                       <div class="content">
-                        <p> Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao eto mba hifampizarana ireo tsara ho fantatra sy ho fanamafisana ny fihavanana sy ny fiaraha-miasa misy eo amintsika. Ary koa, araka ny tarigetran’ny orinasa:
-                         «Lahitokana ny Aina», ny tanjona apetrakay dia ny fitsimbinana ny fiainana sy ny fananan’ireo mpiara-belona. Arak’izany dia vonona ny handray anao am-pitiavana manomboka izao ny tranonkalan’ny Foibe fitsarana fiarakodia.</p>
+     <div class="content">
 
-                         <p>Ity tranonkala ity moa dia tsy natao ho fanatsarana ny tolotra avy eto amin’ny Foibe fitsarana fiarakodia fotsiny ihany, fa ny tena sarobidy indrindra dia ny fandrafetana ny rohy izay mampiray ny orinasa aminareo mpanjifa hajaina. Koa dia mamintina izany zavatra lehibe izany dia ireto teboka vitsivitsy novelarinay ato anaty tranonkala ireto :    </p>
+      {{ last_dgword.word | raw }} 
+    </div>
+  </div>
+  <div class="single-item">
+   <h4>Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao...</h4>
+   <div class="content">
+    <p> Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao eto mba hifampizarana ireo tsara ho fantatra sy ho fanamafisana ny fihavanana sy ny fiaraha-miasa misy eo amintsika. Ary koa, araka ny tarigetran’ny orinasa:
+     «Lahitokana ny Aina», ny tanjona apetrakay dia ny fitsimbinana ny fiainana sy ny fananan’ireo mpiara-belona. Arak’izany dia vonona ny handray anao am-pitiavana manomboka izao ny tranonkalan’ny Foibe fitsarana fiarakodia.</p>
+
+     <p>Ity tranonkala ity moa dia tsy natao ho fanatsarana ny tolotra avy eto amin’ny Foibe fitsarana fiarakodia fotsiny ihany, fa ny tena sarobidy indrindra dia ny fandrafetana ny rohy izay mampiray ny orinasa aminareo mpanjifa hajaina. Koa dia mamintina izany zavatra lehibe izany dia ireto teboka vitsivitsy novelarinay ato anaty tranonkala ireto :    </p>
 
 
-                         <ol>
-                          <li>Andraikitra sy anjara asan’ny Toby fitsarana fiarakodia</li>
-                          <li>Ireo Toby fitsarana fiarakodia misy eto an-toerana</li>
-                          <li>Ireo fitsipika tokony ho fantatra sy mifehy ny fitsarana fiarakodia</li>
-                          <li> ara-barotra ho fampandrosoana ny orinasa</li>
-                          <li>Ireo vina fanatsarana ny fitsarana fiarakodia</li>
-                        </ol>
+     <ol>
+      <li>Andraikitra sy anjara asan’ny Toby fitsarana fiarakodia</li>
+      <li>Ireo Toby fitsarana fiarakodia misy eto an-toerana</li>
+      <li>Ireo fitsipika tokony ho fantatra sy mifehy ny fitsarana fiarakodia</li>
+      <li> ara-barotra ho fampandrosoana ny orinasa</li>
+      <li>Ireo vina fanatsarana ny fitsarana fiarakodia</li>
+    </ol>
 
-                        <p> Ankoatr’ireo voalaza etsy ambony ireo, dia miantso ireo mpiasa sy mpanjifa ato amin'ny orinasa, mba hanafoana tanteraka izay rehetra mety ho fomba fanao ratsy amin’ny fanatanterahana ny asa.
-                        </p>
-                        <p>
-                          Noho izany, ny Foibe fitsarana fiarakodia dia vonona hatrany ny handray na hiaino ireo tsikera na fitarainana na fanatsarana avy any aminao.
-                        </p>
-                        <p>
-                          Koa ankafaliana hatrany no anasana anao hitsidika ity tranonkala : dgsrmada.com ity mba hahafahanao mamantatra be be kokoa sy ny vaovao tsara ho fantatra eto anivon’ny Foibe fitsarana fiarakodia.
-                        </p>
-                      </div>
-                    </div>
+    <p> Ankoatr’ireo voalaza etsy ambony ireo, dia miantso ireo mpiasa sy mpanjifa ato amin'ny orinasa, mba hanafoana tanteraka izay rehetra mety ho fomba fanao ratsy amin’ny fanatanterahana ny asa.
+    </p>
+    <p>
+      Noho izany, ny Foibe fitsarana fiarakodia dia vonona hatrany ny handray na hiaino ireo tsikera na fitarainana na fanatsarana avy any aminao.
+    </p>
+    <p>
+      Koa ankafaliana hatrany no anasana anao hitsidika ity tranonkala : dgsrmada.com ity mba hahafahanao mamantatra be be kokoa sy ny vaovao tsara ho fantatra eto anivon’ny Foibe fitsarana fiarakodia.
+    </p>
+  </div>
+</div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-          {%endblock%}
+{%endblock%}

@@ -1,67 +1,92 @@
-/*la bannière*/
-img{
-	display : block; 
-	height : auto;
-	width : 100%;
-}
+
+/*media query pour responsive design*/
+
+@media (max-width: 1368px) {
+
+	.mille_trois_cent{
+		display: block;
+
+	}
+	.mille_vingt_quatre{
+		display: none;
+
+	}
+	.tablette{
+		
+		display: none;
+	}
+	.telephone{
+		
+		display: none;
+	}
+
+	
+
+
+	@media (max-width: 1024px) {
+
+		.mille_trois_cent{
+			display: none;
+
+		}
+
+		.mille_vingt_quatre{
+			display: block;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: none;
+		}
+
+	}
+
+	@media (max-width: 768px) {
+
+		.ordinateur{
+
+			display: none;
+		}
+		.tablette{
+
+			display: block;
+		}
+		.telephone{
+
+			display: none;
+		}
+
+		/*custom flatdesign*/
+		/* section title */
+		.section-title h2 {
+			margin: 0 0 5px;
+			font-size: 30px;
+			font-weight: 600;
+		}
 
 
 
-/* missions */
-/*@-webkit-keyframes slidebloc {
-	0% {
-		bottom: 20vh;
-		left: 10vw;
 	}
-	25% {
-		bottom: 30vh;
-		left: 30vw;
-	}
-	50% {
-		bottom: 35vh;
-		left: 40vw;
-	}
-	75% {
-		bottom: 40vh;
-		left: 50vw;
-	}
-	100% {
-		bottom: 50vh;
-		left: 60vw;
-	}
-}
-
-p{
-	font-size: 1.2em;
-	text-align: justify;
-}
-
-.act{
-	width: auto;
-	align-items: center;
-	padding: auto;
-}
-@media (max-width: 1024px) {
-	.act{
-		width : 50vw;
-	}
-}
-@media (max-width: 768px) {
-	.act{
-		width : 70vw;
-	}
-}
 
 
-@media (max-width: 425px) {
-	.act{
-		width : 100vw;
-	}
-}
-@media (max-width: 320px) {
-	.act{
-		width : 100vw;
-	}
-}
-*/
+	@media (max-width: 600px) {
 
+		.ordinateur {
+			display: none;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: block;
+		}
+	}
+
+}

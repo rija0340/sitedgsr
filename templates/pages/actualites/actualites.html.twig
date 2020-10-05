@@ -41,7 +41,7 @@
 							<div class="single-portfolio m-0 p-0">
 								<div class="inner">
 									<div class="portfolio-content">
-										<a href="#"><h5>{{ actualite.title}}</h5></a>
+										<h5>{{ actualite.title}}</h5>
 										<span>{{ actualite.datePub | date('d-m-Y')}}</span>
 									</div>
 									<div class="portfolio-img">
@@ -75,8 +75,12 @@
 						{% endfor %}               
 
 					</div>
-				</div>   
+				</div> 
 
+				<div class="text-center mb-5" >
+					<a href="{{ path('liste_actualites') }}" class="button">Voir tous les actualités</a>
+				</div>  
+				
 
 				<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
 

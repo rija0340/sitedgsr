@@ -14,7 +14,7 @@ h1 {
 }
 
 h5 {
-  background: linear-gradient(#00abed 40%, transparent);
+  /*background: linear-gradient(#00abed 40%, transparent);*/
   text-align: left;
   text-indent: 1em;
   margin: 0.6em;
@@ -37,21 +37,21 @@ h5 p {
 }
 
 .thumbnail:hover img{
-z-index:5;
--webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-     -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-         transform: scale(1.2);
-box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
-border: solid 6px #fff;
+  z-index:5;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
+  border: solid 6px #fff;
 }
 .gallery-wrap:hover .photo:not(:hover) img{
--webkit-filter: grayscale(1) blur(5px);
-    -moz-filter: grayscale(1) blur(5px);
-     -ms-filter: grayscale(1) blur(5px);
-      -o-filter: grayscale(1) blur(5px);
-         filter: grayscale(1) blur(5px);
+  -webkit-filter: grayscale(1) blur(5px);
+  -moz-filter: grayscale(1) blur(5px);
+  -ms-filter: grayscale(1) blur(5px);
+  -o-filter: grayscale(1) blur(5px);
+  filter: grayscale(1) blur(5px);
 }
 
 .gallery-wrap {

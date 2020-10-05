@@ -103,56 +103,103 @@
 
 /*media query pour responsive design*/
 
-@media (max-width: 1024px) {
+/*media query pour responsive design*/
 
-	.card-header h6{
-		font-size: 1em;
+@media (max-width: 1368px) {
+
+	.mille_trois_cent{
+		display: block;
+
+	}
+	.mille_vingt_quatre{
+		display: none;
+
+	}
+	.tablette{
+		
+		display: none;
+	}
+	.telephone{
+		
+		display: none;
+	}
+
+	
+
+
+	@media (max-width: 1024px) {
+
+		.mille_trois_cent{
+			display: none;
+
+		}
+
+		.mille_vingt_quatre{
+			display: block;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: none;
+		}
+
+	}
+
+	@media (max-width: 768px) {
+
+		.ordinateur{
+
+			display: none;
+		}
+		.tablette{
+
+			display: block;
+		}
+		.telephone{
+
+			display: none;
+		}
+
+		/*custom flatdesign*/
+		.banniere{
+			display: none;
+		}
+		.dgsr{
+			display: block
+		}
+		.dgsr h5{
+			color : white;
+		}
+		.caroussel{
+			display: none;
+		}
+		.page-title{
+			display: none;
+		}
+
+
+
+	}
+
+
+	@media (max-width: 600px) {
+
+		.ordinateur {
+			display: none;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: block;
+		}
 	}
 
 }
-@media (max-width: 768px) {
-
-	.card-header h6{
-		font-size: 0.8em;
-	}
-
-	.card-header{
-	}
-
-	.ville{
-		font-size: 0.4em;
-		padding : 0 ;
-		margin: 0; 
-
-	}
-	.faritany{
-		padding : 0 ;
-		margin: 0; 
-		font-size: 0.4em;
-
-	}
-	.card-header{
-		margin: 0;
-		padding: 2px;
-		padding-left: 10px;
-	}
-	.image_centre{
-		margin-bottom: 1rem;
-		border: 2px solid black;
-	}
-
-}
-
-
-
-@media (max-width: 425px) {
-
-
-
-}
-@media (max-width: 320px) {
-
-
-
-}
-

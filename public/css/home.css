@@ -85,54 +85,52 @@
 
 .fa {
 	color: #00abed;
+	text-align: center;
 }
 
 .fa-bus, .fa-taxi, .fa-car, .fa-truck{
 	font-size: 2.7em;
 }
-.fa-bus:hover, .fa-taxi:hover, .fa-car:hover, .fa-truck:hover{
+/*.fa-bus:hover, .fa-taxi:hover, .fa-car:hover, .fa-truck:hover{
 	transform: scale(1.4);
 	transform: rotate3d(1, 2, 1, 35deg);
 	color: #131f51;
-}
+	}*/
 
 
 
 
-/*spot video*/
-.dgsr_ve{
+	/*spot video*/
+	.dgsr_ve{
 
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	text-align: center;
-	transform: translateY(-50%);
+		position: absolute;
+		top: 50%;
+		left: 10%;
+		text-align: center;
+		transform: translateY(-50%);
 
-}
+	}
 
-.dgsr_ve h2{
+	.dgsr_ve h2{
 
-	color: 	#222;
-	font-size: 280%;
-}
+		color: 	#222;
+		font-size: 280%;
+	}
 
-.iframe{
-	width : 50%;
-	margin: 0 auto; /*permet de centrer un block*/
-}
 
-/*directeur général*/
 
-.photo_dg{
-	width: 30%;
-	height: 30%;
-}
+	/*directeur général*/
 
-.mot_dg h2{
+	.photo_dg{
+		width: 30%;
+		height: 30%;
+	}
 
-}
+	.mot_dg h2{
 
-.label_mot_dg{
+	}
+
+	.label_mot_dg{
 /*	color: 	#222;
 	text-shadow: 1px 1px 5px #000;
 	font-size: 300%;*/
@@ -177,170 +175,122 @@
 
 
 
+.dgsr{
+	display: none;
+}
+
 
 /*media query pour responsive design*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1368px) {
 
-	/***********************************/
-	.ngezabe, .kelykely, .kely{
-		display: 	none;
-	}
-	.ngeza{
+	.mille_trois_cent{
 		display: block;
-	}
-
-	/***********************************/
-	.navbar-brand{
-
-		font-size: 1.2rem;
 
 	}
-	.padding{
-
-		padding-bottom: 1.7rem;
-	}
-
-	.carousel-caption  h4{
-
-		font-size: 140%;
+	.mille_vingt_quatre{
+		display: none;
 
 	}
-
-	.display-5{
-
-		font-size: 2.1rem;
-		font-weight: 160;
-		margin: 0;
-
-	}
-	.fa-bus, .fa-taxi, .fa-car, .fa-truck{
-		font-size: 2em;
-	}
-	.activite a{
+	.tablette{
 		
-		font-size: 0.9rem;
+		display: none;
 	}
-	.iframe{
-		width : 60%;
-		margin: 0 auto; /*permet de centrer un block*/
-	}
-	.grade_dg{
-		font-size: 1.1em;
-
-	}
-	.nom_dg{
-		font-size: 1.2em;
-	}
-	.float-left{
-		margin-right : 0rem !important;
-	}
-
-	/*dgword image*/
-	.photo_dg2{
-		width : 80%;
-		height: 80%;
-
-	}
-
-
-
-}
-@media (max-width: 768px) {
-
-	/***********************************/
-	.ngezabe, .ngeza, .kely{
-		display: 	none;
-	}
-	.kelykely{
-		display: block;
-	}
-
-	/***********************************/
-
-
-	.carousel-caption  h4{
+	.telephone{
 		
-		font-size: 90%;
-
-	}
-	.carousel-indicators{
-		display: none !important;
-	}
-	.carousel-caption{
-		/*display: block;*/
-		top:50% !important;
+		display: none;
 	}
 
-	.display-5{
+	
 
-		font-size: 1.5rem;
-		font-weight: 100;
-		line-height: 1;
 
-	}
-	.fa-bus, .fa-taxi, .fa-car, .fa-truck{
-		font-size: 1.9em;
-	}
-	.activite a{
-		
-		font-size: 0.7rem;
-	}
-	.iframe{
-		width : 80%;
-		margin: 0 auto; /*permet de centrer un block*/
-	}
-	.grade_dg{
-		font-size: 0.8em;
+	@media (max-width: 1024px) {
 
-	}
-	.nom_dg{
-		font-size: 1em;
-	}
-	.float-left{
-		margin-right : 0.6rem !important;
-	}
+		.mille_trois_cent{
+			display: none;
 
-	/*dgword image*/
-	.photo_dg2{
-		width : 70%;
-		height: 70%;
+		}
+
+		.mille_vingt_quatre{
+			display: block;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: none;
+		}
 
 	}
 
+	@media (max-width: 768px) {
+
+		.ordinateur{
+
+			display: none;
+		}
+		.tablette{
+
+			display: block;
+		}
+		.telephone{
+
+			display: none;
+		}
 
 
-}
-
-
-@media (max-width: 425px) {
-	/***********************************/
-	.ngezabe, .kelykely, .ngeza{
-		display: 	none;
+		/*custom flatdesign*/
+		.banniere{
+			display: none;
+		}
+		.dgsr{
+			display: block
+		}
+		.dgsr h5{
+			color : white;
+		}
+		.caroussel{
+			display: none;
+		}
+		.iframe_spot{
+			text-align: center;
+			position: relative;
+			width: 600px;
+			height: auto;
+			border: 1px solid red;
+		}
+		/* section title */
+		.section-title h2 {
+			margin: 0 0 5px;
+			font-size: 30px;
+			font-weight: 600;
+		}
 	}
-	.kely{
-		display: block;
+
+
+	@media (max-width: 600px) {
+
+		.ordinateur {
+			display: none;
+
+		}
+		.tablette{
+
+			display: none;
+		}
+		.telephone{
+
+			display: block;
+		}
 	}
 
-	/***********************************/
+	/*custom de main.css*/
 
-	.carousel-indicators{
-		display: none !important;
+	.single-service .inner .title h4  {
+		padding-left: 0px;
+		font-size: 15px;
+		margin: 3px 0 0; 
 	}
-	.carousel-caption{
-		/*display: block;*/
-		top:5% !important;
-	}
-
-}
-@media (max-width: 320px) {
-
-	.carousel-indicators{
-		display: none !important;
-	}
-	.carousel-caption{
-		/*display: block;*/
-		top:5% !important;
-	}
-
-}

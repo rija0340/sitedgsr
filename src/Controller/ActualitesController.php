@@ -51,6 +51,28 @@ class ActualitesController extends AbstractController
     }
 
         /**
+     * @Route("/liste_actualites", name="liste_actualites")
+     */
+        public function liste_actualites()
+        {
+            $actualites = new Actualite();
+            $actu = new Actualite();
+
+            $attachements = $this->attachrepo->findAll();
+            $attach = $this->attachrepo->find(15);
+
+            $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+
+
+            return $this->render('pages/actualites/liste_actualites.html.twig',[
+
+              'actualites' => $actualites,
+              'attachements' => $attachements
+          ]);
+
+        }
+
+        /**
     * @Route("/actualite/{id}", name="actualite.show", methods = {"GET"})
     * @param Actualite actualite
     * 
