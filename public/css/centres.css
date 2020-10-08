@@ -1,205 +1,36 @@
-.card-header {
-	background-color: rgba(0, 0, 0, 0);
-}
-
-.card-header h6{
-	
-	font-family: Comic Sans MS;
-	color : rgba(1, 1, 1, 0.6);
-}
-
-.liste_centres  li  {
-
-	color : #AEB6BF;
-}
-
-.liste_centres li:last-child {
-
-	border-bottom:1px solid rgba(0, 0, 0, 0);
-}
-
-.liste_centres  li:hover  {
-	background-color: #EBF5FB;
-	color : #DD953C;
-
-	font-family: Georgia;
-	font-size: 1.1em;
-}
-
-.liste_centres  li a  {
-	
-	color : gray;
-
-}
-.liste_centres  li a:hover  {
-	color : #DD953C;
-
-}
-
-.liste_centres{
-	padding: 0;
-	.li_class a{
-		padding: 0;
-		margin: 0;
-
-	}
-
-}
-
-.centre_actif{
-	
-	/*background-color : red;*/
-
-	background-color: #EBF9FF;
-	color : red;
-	font-family: Georgia;
-	font-size: 1.1em;
-	text-shadow: 1px 1px 2px #DD953C;
-
+.dgsr{
+	display: none;
 }
 
 
-.pressed_link{
-	color: #333;
-	border: 1px solid black;
-}
-
-
-/*style pour section detail centre*/
-.label_cc{
-
-	font-weight: bold;
-} 
-
-.label_adresse{
-
-	font-weight: bold;
-} 
-
-.label_phone{
-
-	font-weight: bold;
-}
-
-.img_centre{
-
-	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
-	border: solid 6px #fff;
-
-}
-/*.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  display: block;
-  width: 0%;
-  height: 0%;
-  overflow: hidden;
-  outline: 5;
-}
-*/
-
-
-/*media query pour responsive design*/
 
 /*media query pour responsive design*/
 
 @media (max-width: 1368px) {
 
-	.mille_trois_cent{
-		display: block;
 
-	}
-	.mille_vingt_quatre{
-		display: none;
+}
 
-	}
-	.tablette{
-		
-		display: none;
-	}
-	.telephone{
-		
+
+
+
+@media (max-width: 1024px) {
+
+	.logo-column{
 		display: none;
 	}
-
-	
-
-
-	@media (max-width: 1024px) {
-
-		.mille_trois_cent{
-			display: none;
-
-		}
-
-		.mille_vingt_quatre{
-			display: block;
-
-		}
-		.tablette{
-
-			display: none;
-		}
-		.telephone{
-
-			display: none;
-		}
-
+	.dgsr{
+		display: none;
 	}
+}
 
-	@media (max-width: 768px) {
-
-		.ordinateur{
-
-			display: none;
-		}
-		.tablette{
-
-			display: block;
-		}
-		.telephone{
-
-			display: none;
-		}
-
-		/*custom flatdesign*/
-		.banniere{
-			display: none;
-		}
-		.dgsr{
-			display: block
-		}
-		.dgsr h5{
-			color : white;
-		}
-		.caroussel{
-			display: none;
-		}
-		.page-title{
-			display: none;
-		}
+@media (max-width: 768px) {
 
 
+}
 
-	}
 
+@media (max-width: 600px) {
 
-	@media (max-width: 600px) {
-
-		.ordinateur {
-			display: none;
-
-		}
-		.tablette{
-
-			display: none;
-		}
-		.telephone{
-
-			display: block;
-		}
-	}
 
 }

@@ -1,28 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %} 
-  {# <link rel="stylesheet" type="text/css" href="{{ asset( 'css/centres.css')}}">  #}
+  <link rel="stylesheet" type="text/css" href="{{ asset( 'css/centres.css')}}"> 
   {%endblock%}
 
   {% block content %}
-   <div class="page-title sp" style="background-image: url('{{ asset ('flattheme/img/dgsr/autres/centre.jpg') }}')">
-    <div class=" text-center ">
-      <div class="d-flex  justify-content-between m-0 p-0">
+   {% include 'layouts/couverture.html.twig' %}    
 
-        <div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
-          <img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
-        </div>
-        <div class="">
-
-          <h2>Direction Générale de la Sécurité Routière</h2>
-        </div>
-        <div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
-          <img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
-        </div>
-      </div>
-    </div>
-  </div>   
-
-  <div class="service-area bg2 sp">
+   <div class="service-area bg2 sp">
     <div class="container">
       <div class="section-title">
         <h2>Les Centres</h2>

@@ -1,109 +1,37 @@
-
-.display-5{
-
-	font-size: 2.8rem;
-	font-weight: 220;
-	line-height: 1;
-}
-.padding{
-
-	padding-bottom: 2rem;
+.dgsr{
+	display: none;
 }
 
-.my-3{
-	border-top : 2px solid #b4b4b4;
-	width : 30%;
-	margin: 0 auto;
 
-}
-
-.mission_texte{
-	text-align : justify;
-	color: #5b5b5b;
-}
-.activite_texte{
-	text-align: justify;
-	color: #5b5b5b;
-}
-
-.activite_texte p{
-
-	margin: 0;
-	counter-reset
-
-}
-.ci_image{
-	position: relative;
-	top : 0%;
-}
 
 
 /*media query pour responsive design*/
 
-@media (max-width: 1024px) {
-	.display-5{
-
-		font-size: 2rem;
-		font-weight: 150;
-	}
-
-	.padding{
-
-		padding-bottom: 1.5rem;
-	}
-	.titre_activite{
-		font-size: 1.5rem;
-	}
-	.texte_activite{
-		font-size: 1.2rem;
-	}
-
-	.ci_image{
-		top : 30%;
-	}
-
+@media (max-width: 1368px) {
 
 
 }
+
+
+
+
+@media (max-width: 1024px) {
+
+	.logo-column{
+		display: none;
+	}
+	.dgsr{
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
 
-	.display-5{
-
-		font-size: 1.2rem;
-		font-weight: 120;
-	}
-	.padding{
-
-		padding-bottom: 1.2rem;
-	}
-	.mission_texte p{
-
-		font-size: 0.8em;
-	}
-
-	.titre_activite{
-		font-size: 1.2em;
-	}
-	.activite_texte li, .activite_texte p{
-		font-size: 0.8em;
-	}
-
-	.sm-none{
-		display: none !important;
-	}
-
-
-
 
 }
 
 
-@media (max-width: 425px) {
-
-
-}
-@media (max-width: 320px) {
-
+@media (max-width: 600px) {
 
 
 }

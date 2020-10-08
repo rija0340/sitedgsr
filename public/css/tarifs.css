@@ -1,87 +1,36 @@
-/*table de tarif visites*/
-
-.tarif_visite{
-	height: 500px;	
+.dgsr{
+	display: none;
 }
 
-.tarif_reception{
-	height: 500px;	
-	
-}
 
-/*style pour tableau papier utiles visite technique*/
-.table_papiers {
-	background: white;
-	border-collapse: collapse;
-	margin: 1.25em 0 0;
-	width: 100%;
-	text-align: left;
-}
 
-.table_papiers th,
-.table_papiers td {
-	/*padding: 10px; */
-	text-align: left;
-}
+/*media query pour responsive design*/
 
-.col3{
+@media (max-width: 1368px) {
 
-	padding-left: 30px; 
-}
-
-.col0{
-	padding: 0px 0px 0px 10px ; 
-	
-}
-
-.col1{
-
-	padding: 0px 0px 0px 10px ; 
 
 }
 
 
-.col2{
-	padding: 0px 0px 0px 10px ; 
-
-}
 
 
-.table_papiers th{
+@media (max-width: 1024px) {
 
-	padding: 5px;
-	text-align: center;
-}
-
-.card1, .card2{
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: white;
-	width: 300px;
-	height: 300px;
-	background: #222;
-	-webkit-backface-visibility: hidden;
-	-webkit-animation-fill-mode: forwards;
-	text-align: center;
-	font-size: 3em;
-}
-
-/*tester carte rotate*/
-.card2{
-
-	-webkit-animation: test 3s linear 0.5s ;
-	z-index: 10;
-}
-
-@-webkit-keyframes test {
-	100% {
-		transform: rotateY(-360deg);
-		z-index: 5;
+	.logo-column{
+		display: none;
+	}
+	.dgsr{
+		display: none;
 	}
 }
 
+@media (max-width: 768px) {
 
-.hide {
-	display: none;
+
+}
+
+
+@media (max-width: 600px) {
+
+
 }

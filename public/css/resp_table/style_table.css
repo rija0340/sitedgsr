@@ -158,9 +158,9 @@ h3 {
    clear: both;
  }
 
- .col-sm-3 {
+/* .col-sm-3 {
   padding-top: 1em;
-}
+}*/
 
 @media (min-width: 768px) {
   .col-sm-3,

@@ -7,6 +7,7 @@
 
 	{%endblock%}
 	{% block content %}
+		{% include 'layouts/couverture.html.twig' %} 
 
 		<section class="gallery-block grid-gallery">
 			<div class="container">
@@ -20,7 +21,7 @@
 							<div class="ml-auto"><p>{{ actualite.datePub | date("d M Y")}} </p></div>
 						</div>
 
-						<div class="gallery-wrap p-0 m-0" style="background-color : gray;">
+						<div class="gallery-wrap p-0 m-0">
 							<div class="row  m-0 p-0">
 								{% for attach in actualite.attachements %}
 									<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	{# <link rel="stylesheet" href="{{ asset('css/actualites.css') }}"> #}
+	<link rel="stylesheet" href="{{ asset('css/actualite_liste.css') }}">
 {% endblock %}
 {% block title %}Actualités {% endblock %}
 
@@ -9,23 +9,7 @@
 	{% block content %}
 
 
-		<div class="page-title sp" style="background-image: url('{{ asset ('flattheme/img/dgsr/autres/centre.jpg') }}'); background-position: fixed;">
-			<div class=" text-center ">
-				<div class="d-flex  justify-content-between m-0 p-0">
-
-					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
-						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_dgsr.png') }}" alt="logo">
-					</div>
-					<div class="">
-
-						<h2>Direction Générale de la Sécurité Routière</h2>
-					</div>
-					<div  class="" style="position: relative; width: 20%; height: 20%; top:0; left : 0;"> 
-						<img style="width:50%; height:50%;" src="{{ asset('flattheme/img/dgsr/logo/logo_gn.jpg') }}" alt="logo">
-					</div>
-				</div>
-			</div>
-		</div>   
+		{% include 'layouts/couverture.html.twig' %}    
 
 		<div class="testimonial-area spb pb-0">
 			<div class="container">

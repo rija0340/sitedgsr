@@ -5,6 +5,7 @@
 
 	{%endblock%}
 	{% block content %}
+		{% include 'layouts/couverture.html.twig' %} 
 		<div class="row mt-5">
 			{% for actualite in actualites %}
 				{% if actualite.urlVideo != null %}
@@ -40,7 +41,7 @@
 							<div class=" video_title p-1" >
 
 								<div class="divWrapper">
-								    <div class="tx">{{actualite.title}}</div>
+									<div class="tx">{{actualite.title}}</div>
 									
 								</div>
 							</div>

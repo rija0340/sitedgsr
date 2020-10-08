@@ -1,3 +1,43 @@
+body{
+	overflow-x:hidden;
+}
+
+.page-title{
+
+	background-size : cover;
+}
+
+
+.logo_dgsr{
+	position: relative;
+	width: 20%;
+	height: 20%; 
+	top:0; 
+	left : 0;
+
+}
+
+.logo_dgsr img{
+	width:50%;
+	height:50%;
+}
+
+
+.logo_gn{
+
+	position: relative;
+	width: 20%;
+	height: 20%; 
+	top:0; 
+	left : 0;
+}
+
+.logo_gn img{
+	width:50%;
+	height:50%;
+}
+
+
 
 /*media query pour responsive design*/
 
@@ -20,73 +60,144 @@
 		display: none;
 	}
 
-	
-
-
-	@media (max-width: 1024px) {
-
-		.mille_trois_cent{
-			display: none;
-
-		}
-
-		.mille_vingt_quatre{
-			display: block;
-
-		}
-		.tablette{
-
-			display: none;
-		}
-		.telephone{
-
-			display: none;
-		}
+	.sp_ {
+		padding-top: 90px;
+		padding-bottom: 90px; 
+	}
+	/* page-title */
+	.page-title {
+		font-size: 18px;
+	}
+	.page-title h2 {
+		font-size: 50px;
+		font-weight: 700;
+		color: white;
 
 	}
 
-	@media (max-width: 768px) {
-
-		.ordinateur{
-
-			display: none;
-		}
-		.tablette{
-
-			display: block;
-		}
-		.telephone{
-
-			display: none;
-		}
-
-		/*custom flatdesign*/
-		/* section title */
-		.section-title h2 {
-			margin: 0 0 5px;
-			font-size: 30px;
-			font-weight: 600;
-		}
+}
 
 
+
+
+@media (max-width: 1024px) {
+
+	.mille_trois_cent{
+		display: none;
+
+	}
+
+	.mille_vingt_quatre{
+		display: block;
+
+	}
+	.tablette{
+
+		display: none;
+	}
+	.telephone{
+
+		display: none;
+	}
+
+	.dgsr{
+		display: block
+	}
+	.dgsr h5{
+		color : white;
+		font-size: 25px;
+	}
+	.logo-column a.logo {
+		height: 40px;
+		padding: 0px 0; 
+	}
+	.sp_ {
+		padding-top: 50px;
+		padding-bottom: 50px; 
+	}
+	/* page-title */
+	.page-title {
+		font-size: 16px;
+	}
+	.page-title h2 {
+		font-size: 45px;
+		font-weight: 700;
+		color: white;
+
+	}
+}
+
+@media (max-width: 768px) {
+
+	.ordinateur{
+
+		display: none;
+	}
+	.tablette{
+
+		display: block;
+	}
+	.telephone{
+
+		display: none;
+	}
+
+	/*custom flatdesign*/
+	/* section title */
+	.section-title h2 {
+		margin: 0 0 5px;
+		font-size: 30px;
+		font-weight: 800;
+	}
+
+	.dgsr{
+		display: block
+	}
+	.dgsr h5{
+		color : white;
+		font-size: 20px;
+	}
+	.logo-column a.logo {
+		height: 35px;
+		padding: 0px 0; 
+	}
+	/*espace au dessus et en dessous dgsr lava*/
+	.sp_ {
+		padding-top: 30px;
+		padding-bottom: 30px; 
+	}
+	/* page-title */
+	.page-title {
+		font-size: 14px;
+	}
+	.page-title h2 {
+		font-size: 30px;
+		font-weight: 500;
 
 	}
 
 
-	@media (max-width: 600px) {
 
-		.ordinateur {
-			display: none;
+}
 
-		}
-		.tablette{
 
-			display: none;
-		}
-		.telephone{
+@media (max-width: 600px) {
 
-			display: block;
-		}
+	.ordinateur {
+		display: none;
+
 	}
+	.tablette{
+
+		display: none;
+	}
+	.telephone{
+
+		display: block;
+	}
+	.dgsr h5{
+		font-size: 20px;
+	}
+}
 
 }

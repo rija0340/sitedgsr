@@ -1,25 +1,36 @@
-.video_title{
-
-    width:100%;
-    top: 0px; /* IE? */
-    height: 20%;
-}
-.divWrapper{
-
-    top:0px;
-    padding-top:10%; /* center the top of child elements vetically */
-    padding-bottom:10%;
-    height:0px;
+.dgsr{
+    display: none;
 }
 
-.tx{
-    background-color: transparent;
-    text-align: center; /* horizontal centering */
 
-    -webkit-transform: translateY(-50%); /* child now centers itself relative to the  midline based on own contents */
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.5, M12=0, M21=0, M22=0.5,  SizingMethod="auto expand")'; /*IE8 */
-    filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.5, M12=0, M21=0, M22=0.5,  SizingMethod='auto expand'); /*IE6, IE7*/
-    transform: translateY(-50%);
+
+/*media query pour responsive design*/
+
+@media (max-width: 1368px) {
+
+
+}
+
+
+
+
+@media (max-width: 1024px) {
+	.logo-column{
+		display: none;
+	}
+	.dgsr{
+		display: none;
+	}
+
+}
+
+@media (max-width: 768px) {
+
+
+}
+
+
+@media (max-width: 600px) {
+
+
 }
