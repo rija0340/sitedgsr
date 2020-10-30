@@ -8,7 +8,7 @@ use App\Form\CentreType;
 use App\Form\RegistrationType;
 use App\Repository\CentreRepository;
 use App\Repository\FaritanyRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,7 +26,7 @@ use Symfony\Component\Routing\Annotation\Route;
 	private $repository;
 	private $faritanyRepo;
 
-	public function __construct (CentreRepository $repository, FaritanyRepository $faritanyRepo,  ObjectManager $em)
+	public function __construct (CentreRepository $repository, FaritanyRepository $faritanyRepo,  EntityManagerInterface $em)
 	{
 		$this->repository = $repository;
 		$this->faritanyRepo = $faritanyRepo;

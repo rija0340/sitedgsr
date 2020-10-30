@@ -71,7 +71,7 @@ class HomeController extends AbstractController
 
         $dgword = new DgWord();
         $dgword = $this->dgwordRepo->findBy(array() , array('id' => 'DESC'), 1);
-
+  
         $last_dgword = $dgword[0];
 
         return $this->render('pages/home/dgword.html.twig', [

@@ -33,6 +33,7 @@ $(document).ready(function() {
 				$('#bouton').trigger('click');
 
 				$spinner_container.addClass('hide'); //cacher de nouveau spinner
+				$('.liste_centres').removeClass('hide'); //il y un hide automatique si on ne mets pas cette ligne
 
 				$(".detail_centre").show();
 				$(".madagascar").hide();
@@ -61,6 +62,7 @@ $(document).ready(function() {
 				$('#bouton').trigger('click');
 
 				$spinner_container.addClass('hide'); //cacher de nouveau spinner
+				$('.liste_centres').removeClass('hide'); //il y un hide automatique si on ne mets pas cette ligne
 
 				$(".detail_centre").show();
 				$(".madagascar").hide();
@@ -79,15 +81,11 @@ $(document).ready(function() {
 					$a.parent().addClass("centre_actif");
 					// $a.removeClass("pressed_link");
 					// $a.addClass("pressed_link");
-
 				} else{
 
 					// $a.parent().removeClass("centre_actif");
-
 				}
-
 			}
-
 		})
 		.fail(function(jqxhr){
 			alert(jqxhr.responseText);

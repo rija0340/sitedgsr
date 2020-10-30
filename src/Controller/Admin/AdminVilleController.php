@@ -7,7 +7,7 @@ use App\Repository\FaritanyRepository;
 use App\Entity\Ville;
 use App\Form\VilleType;
 use App\Form\RegistrationType;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +22,7 @@ class AdminVilleController extends AbstractController
 	 */
 	private $repository;
 
-	public function __construct (VilleRepository $repository, FaritanyRepository $faritanyRepo, ObjectManager $em)
+	public function __construct (VilleRepository $repository, FaritanyRepository $faritanyRepo, EntityManagerInterface $em)
 	{
 		$this->repository = $repository;
 		$this->faritanyRepo = $faritanyRepo;

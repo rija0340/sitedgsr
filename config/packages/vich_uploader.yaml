@@ -39,3 +39,7 @@ vich_uploader:
           uri_prefix: '%org_image_path%'
           upload_destination: '%kernel.project_dir%/public/%org_image_path%'
 
+      entete_image:
+          uri_prefix: '%entete_image_path%'
+          upload_destination: '%kernel.project_dir%/public/%entete_image_path%'
+

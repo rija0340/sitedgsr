@@ -12,50 +12,44 @@
     {%endblock %}
     {% block carousel %} 
       <div class="caroussel">
-       <div class="hero-slider">
-        <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite1, 'imageFile')  }}')">
-         <div class="inner">
-          <div class="container">
-           <div class="row justify-content-center">
-            <div class="col-lg-6 text-center">
-             <div class="slide-content">
+        <div class="hero-slider " >
+          <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite1, 'imageFile')  }}');">
+            <div class="inner ">
+              <div class="container text-center">
+                <div class="slide-content ">
+                  <p class="title ">{{ actu1_title }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="single-slide " style="background-image: url('{{vich_uploader_asset(actualite2, 'imageFile')  }}')">
+           <div class="inner">
+            <div class="container">
+             <div class="row justify-content-center">
+              <div class="col-lg-6 text-center">
+               <div class="slide-content">
 
-              <p class="title">{{ actu1_title }}</p>
+                <p class="title">{{ actu2_title }}</p>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite2, 'imageFile')  }}')">
-   <div class="inner">
-    <div class="container">
-     <div class="row justify-content-center">
-      <div class="col-lg-6 text-center">
-       <div class="slide-content">
+    <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite3, 'imageFile')}}')">
+     <div class="inner">
+      <div class="container">
+       <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+         <div class="slide-content">
 
-        <p class="title">{{ actu2_title }}</p>
+          <p class="title">{{ actu3_title }}</p>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-<div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite3, 'imageFile')}}')">
- <div class="inner">
-  <div class="container">
-   <div class="row justify-content-center">
-    <div class="col-lg-6 text-center">
-     <div class="slide-content">
-
-      <p class="title">{{ actu3_title }}</p>
-
-    </div>
-  </div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -171,30 +165,10 @@
     </div>
   </div>
   <div class="single-item">
-   <h4>Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao...</h4>
+   <h4>{{ (last_dgword.wordGasy  | length > 50 ? last_dgword.wordGasy |slice(0, 70) ~ '...' : last_dgword.wordGasy ) | raw }} </h4>
+   
    <div class="content">
-    <p> Am-pifaliana lehibe no andraisan’ny Foibe fitsarana fiarakodia anao eto mba hifampizarana ireo tsara ho fantatra sy ho fanamafisana ny fihavanana sy ny fiaraha-miasa misy eo amintsika. Ary koa, araka ny tarigetran’ny orinasa:
-     «Lahitokana ny Aina», ny tanjona apetrakay dia ny fitsimbinana ny fiainana sy ny fananan’ireo mpiara-belona. Arak’izany dia vonona ny handray anao am-pitiavana manomboka izao ny tranonkalan’ny Foibe fitsarana fiarakodia.</p>
-
-     <p>Ity tranonkala ity moa dia tsy natao ho fanatsarana ny tolotra avy eto amin’ny Foibe fitsarana fiarakodia fotsiny ihany, fa ny tena sarobidy indrindra dia ny fandrafetana ny rohy izay mampiray ny orinasa aminareo mpanjifa hajaina. Koa dia mamintina izany zavatra lehibe izany dia ireto teboka vitsivitsy novelarinay ato anaty tranonkala ireto :    </p>
-
-
-     <ol>
-      <li>Andraikitra sy anjara asan’ny Toby fitsarana fiarakodia</li>
-      <li>Ireo Toby fitsarana fiarakodia misy eto an-toerana</li>
-      <li>Ireo fitsipika tokony ho fantatra sy mifehy ny fitsarana fiarakodia</li>
-      <li> ara-barotra ho fampandrosoana ny orinasa</li>
-      <li>Ireo vina fanatsarana ny fitsarana fiarakodia</li>
-    </ol>
-
-    <p> Ankoatr’ireo voalaza etsy ambony ireo, dia miantso ireo mpiasa sy mpanjifa ato amin'ny orinasa, mba hanafoana tanteraka izay rehetra mety ho fomba fanao ratsy amin’ny fanatanterahana ny asa.
-    </p>
-    <p>
-      Noho izany, ny Foibe fitsarana fiarakodia dia vonona hatrany ny handray na hiaino ireo tsikera na fitarainana na fanatsarana avy any aminao.
-    </p>
-    <p>
-      Koa ankafaliana hatrany no anasana anao hitsidika ity tranonkala : dgsrmada.com ity mba hahafahanao mamantatra be be kokoa sy ny vaovao tsara ho fantatra eto anivon’ny Foibe fitsarana fiarakodia.
-    </p>
+    {{ last_dgword.wordGasy | raw }}
   </div>
 </div>
 

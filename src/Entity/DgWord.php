@@ -19,7 +19,7 @@ class DgWord
 
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text",nullable=true)
      */
     private $word;
 
@@ -28,6 +28,11 @@ class DgWord
      * @ORM\JoinColumn(nullable=false)
      */
     private $dg;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $word_gasy;
 
     public function getId(): ?int
     {
@@ -66,5 +71,17 @@ class DgWord
     public function __toString()
     {
         return $this->getWord();
+    }
+
+    public function getWordGasy(): ?string
+    {
+        return $this->word_gasy;
+    }
+
+    public function setWordGasy(?string $word_gasy): self
+    {
+        $this->word_gasy = $word_gasy;
+
+        return $this;
     }
 }

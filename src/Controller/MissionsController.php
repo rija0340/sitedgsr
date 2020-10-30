@@ -3,19 +3,50 @@
 namespace App\Controller;
 
 use App\Repository\DGRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\ImagesEntete;
+use App\Repository\ImagesEnteteRepository;
 
 class MissionsController extends AbstractController
 {
+
+	private $dgwordRepo;
+	private $repo;
+
+	public function __construct( ImagesEnteteRepository $imgenteterepo ){
+
+		$this->imgenteterepo = $imgenteterepo;
+
+	}
 
     /**
      * @Route("/missions", name="missions")
      */
     public function missions()
     {
-        return $this->render('pages/missions/missions.html.twig');
+    	$i = 0;
+    	
+    	$last_image = new ImagesEntete();
+    	$images = $this->imgenteterepo->findAll();
+
+    	foreach ($images as $cle => $img) {
+
+    		if ( $img->getLabelCouverture()->getLabel() == 'missions' ) {
+    			$ity['$i'] = $img;
+    			dump($ity['$i']);
+    			$i = $i +1;
+    			dump($img);
+    		}
+    	}
+    	$i = $i -1;
+
+    	$last_image = $ity['$i'];
+    	return $this->render('pages/missions/missions.html.twig', [
+    		'last_image' =>  $last_image
+
+    	]);
     }   
-     
+
 }

@@ -8,6 +8,7 @@ parameters:
     dg_image_path: 'images/dg'
     centre_image_path: 'uploads/images/centres'
     org_image_path: 'uploads/images/organigrammes'
+    entete_image_path: 'uploads/images/entete'
 
 services:
     # default configuration for services in *this* file

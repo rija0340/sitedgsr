@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Spot;
 use App\Form\SpotType;
 use App\Repository\SpotRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 	*/
 	private $repository;
 
-	public function __construct (SpotRepository $repository, ObjectManager $em)
+	public function __construct (SpotRepository $repository, EntityManagerInterface $em)
 	{
 		$this->repository = $repository;
 		$this->em = $em;

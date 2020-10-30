@@ -36,6 +36,16 @@ easy_admin:
         children: 
           - {entity: Spot, label: "Liste Spots", icon: "th-list"}
           - {entity: Spot, label: "Nouveau Spot", icon: "plus", params: {action: "new"}}
+          
+      - label: "Images couverture"
+        children: 
+          - {entity: ImagesEntete, label: "Liste Images", icon: "th-list"}
+          - {entity: ImagesEntete, label: "Nouvelle image", icon: "plus", params: {action: "new"}}
+
+      - label: "Label couverture"
+        children: 
+          - {entity: LabelCouverture, label: "Liste labels", icon: "th-list"}
+          - {entity: LabelCouverture, label: "Nouveau label", icon: "plus", params: {action: "new"}}
 
       - {label: "Paramètres"}
       - label: "Utilisateur"

@@ -42,6 +42,12 @@
 
 }
 
+/*Caroussel*/
+.hero-slider .inner{
+	
+	position:relative; 
+	bottom:-140px;
+}
 
 /* misson et activite */
 .mission_texte{
@@ -172,6 +178,7 @@
 .dgsr{
 	display: none;
 }
+
 
 /*media query pour responsive design*/
 

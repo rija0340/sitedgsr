@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\DG;
 use App\Repository\DGRepository;
 use App\Form\DGType;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +24,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 	 */
 	private $repository;
 
-	public function __construct (DGRepository $repository, ObjectManager $em)
+	public function __construct (DGRepository $repository, EntityManagerInterface $em)
 	{
 		$this->repository = $repository;
 		$this->em = $em;

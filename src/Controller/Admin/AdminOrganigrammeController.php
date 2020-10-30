@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Organigramme;
 use App\Form\OrganigrammeType;
 use App\Repository\OrganigrammeRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +24,7 @@ class AdminOrganigrammeController extends AbstractController
 	*/
 private $repository;
 
-public function __construct (OrganigrammeRepository $repository, ObjectManager $em)
+public function __construct (OrganigrammeRepository $repository, EntityManagerInterface $em)
 {
 	$this->repository = $repository;
 	$this->em = $em;

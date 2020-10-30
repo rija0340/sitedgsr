@@ -5,14 +5,16 @@ namespace App\Controller;
 use App\Entity\Centre;
 use App\Entity\Faritany;
 use App\Entity\Ville;
+use App\Entity\Imagesentete;
 use App\Repository\CentreRepository;
 use App\Repository\FaritanyRepository;
 use App\Repository\VilleRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ImagesEnteteRepository;
 
 class CentresController extends AbstractController
 {
@@ -23,15 +25,15 @@ class CentresController extends AbstractController
  private $centreRepo;
  private $villeRepo;
 
- public function __construct (FaritanyRepository $faritanyRepo,VilleRepository $villeRepo ,CentreRepository $centreRepo, ObjectManager $em)
+ public function __construct (FaritanyRepository $faritanyRepo,VilleRepository $villeRepo ,CentreRepository $centreRepo,ImagesEnteteRepository $imgenteterepo)
  {
   $this->faritanyRepo = $faritanyRepo;
   $this->villeRepo = $villeRepo;
   $this->centreRepo = $centreRepo;
-  $this->em = $em;
+  $this->imgenteterepo = $imgenteterepo;
+
 
 }
-
 
      /**
      * @Route("/centres", name="centres")
@@ -49,11 +51,31 @@ class CentresController extends AbstractController
       
       dump($villes);
 
+      //affichage image en couveture
+      $i = 0;
+      
+      $last_image = new ImagesEntete();
+      $images = $this->imgenteterepo->findAll();
+
+      foreach ($images as $cle => $img) {
+
+        if ( $img->getLabelCouverture()->getLabel() == 'centres' ) {
+          $ity['$i'] = $img;
+          dump($ity['$i']);
+          $i = $i +1;
+          dump($img);
+        }
+      }
+      $i = $i - 1;
+
+      $last_image = $ity['$i'];
+
       return $this->render('pages/centres/centres.html.twig', [
 
         'faritany' => $faritany,
         'centres' => $centres,
         'villes' => $villes,
+        'last_image'=> $last_image
 
       ]);
     }
@@ -86,10 +108,6 @@ class CentresController extends AbstractController
       $response->headers->set('Content-Type', 'application/json');
 
       return $response;
-
     }
-
-
-
   }
 }

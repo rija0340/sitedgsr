@@ -3,12 +3,22 @@
 namespace App\Controller;
 
 use App\Repository\DGRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ImagesEnteteRepository;
+use App\Entity\ImagesEntete;
 
 class TarifsController extends AbstractController
 {
+
+
+ public function __construct (ImagesEnteteRepository $imgenteterepo)
+ {
+
+  $this->imgenteterepo = $imgenteterepo;
+
+}
 
 
     /**
@@ -16,7 +26,27 @@ class TarifsController extends AbstractController
      */
     public function tarifs()
     {
-        return $this->render('pages/tarifs/tarifs.html.twig');
+        //affichage image en couveture
+      $i = 0;
+      
+      $last_image = new ImagesEntete();
+      $images = $this->imgenteterepo->findAll();
+
+      foreach ($images as $cle => $img) {
+
+        if ( $img->getLabelCouverture()->getLabel() == 'tarifs' ) {
+          $ity['$i'] = $img;
+          dump($ity['$i']);
+          $i = $i +1;
+          dump($img);
+        }
+      }
+      $i = $i - 1;
+
+      $last_image = $ity['$i'];
+        return $this->render('pages/tarifs/tarifs.html.twig',[
+            'last_image' => $last_image
+        ]);
 
     }
     /**

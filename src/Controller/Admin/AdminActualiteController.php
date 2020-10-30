@@ -5,7 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Actualite;
 use App\Form\ActualiteType;
 use App\Repository\ActualiteRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Annotation\Route;
 	 */
 	private $repository;
 
-	public function __construct (ActualiteRepository $repository,  ObjectManager $em)
+	public function __construct (ActualiteRepository $repository,  EntityManagerInterface $em)
 	{
 		$this->repository = $repository;
 		$this->em = $em;

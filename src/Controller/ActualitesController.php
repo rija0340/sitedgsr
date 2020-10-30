@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Actualite;
 use App\Entity\Attachement;
+use App\Entity\ImagesEntete;
+use App\Repository\ImagesEnteteRepository;
 use App\Repository\ActualiteRepository;
 use App\Repository\AttachementRepository;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,10 +23,11 @@ class ActualitesController extends AbstractController
     private $attachrepo;
     private $attachement;
 
-    public function __construct(ActualiteRepository $acturepo, AttachementRepository $attachrepo, ObjectManager $em){
+    public function __construct(ActualiteRepository $acturepo, AttachementRepository $attachrepo, ImagesEnteteRepository $imgenteterepo){
 
         $this->acturepo = $acturepo;
         $this->attachrepo = $attachrepo;
+        $this->imgenteterepo = $imgenteterepo;
     }
 
     /**
@@ -41,11 +44,31 @@ class ActualitesController extends AbstractController
 
         $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
 
+         //affichage image en couveture
+      $i = 0;
+      
+      $last_image = new ImagesEntete();
+      $images = $this->imgenteterepo->findAll();
+
+      foreach ($images as $cle => $img) {
+
+        if ( $img->getLabelCouverture()->getLabel() == 'actualités' ) {
+          $ity['$i'] = $img;
+          dump($ity['$i']);
+          $i = $i +1;
+          dump($img);
+        }
+      }
+      $i = $i - 1;
+      $last_image = $ity['$i'];
+
+
 
         return $this->render('pages/actualites/actualites.html.twig',[
 
           'actualites' => $actualites,
-          'attachements' => $attachements
+          'attachements' => $attachements,
+          'last_image' => $last_image
       ]);
 
     }
