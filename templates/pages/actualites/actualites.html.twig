@@ -4,13 +4,10 @@
 	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
 {% endblock %}
 {% block title %}Actualités {% endblock %}
-
-
 	{% block content %}
-
-
-		{% include 'layouts/couverture.html.twig' %}  
-
+  {% include 'layouts/couverture.html.twig' %} 
+		
+		
 		<div class="testimonial-area">
 			<div class="container">
 				<div class="section-title ">
@@ -19,8 +16,6 @@
 				</div>
 				<div class="testimonial-slider">
 					{% for actualite in actualites %}
-
-
 						<div class="single-slide p-0 m-0">
 							<div class="single-portfolio m-0 p-0">
 								<div class="inner">
@@ -32,15 +27,10 @@
 										{% set i = 0 %} {# initialisation de i pour le compteur #}
 											{% for attachement in attachements %}  
 												{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
-
 													{% if i == 0 %} {# on veut juste afficher la première image #}
-
-
 														<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
 													{% endif %}
-
 													{%  set i = i + 1 %}
-
 												{% endif %}
 											{% endfor %}
 											<div class="hover-content">
@@ -54,24 +44,16 @@
 									</div>
 								</div>
 							</div>  
-
-
 						{% endfor %}               
-
 					</div>
 				</div> 
-
 				<div class="text-center mb-5" >
 					<a href="{{ path('liste_actualites') }}" class="button">Voir tous les actualités</a>
 				</div>  
-				
-
 				<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-
 				<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-xl" role="document">
 						<div class="modal-content" style="background-color : #fff">
-
 							<div class="actu_detail " >
 								<div class="modal-header">
 									<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
@@ -146,5 +128,7 @@
 
 				{% block javascripts %}
 					<script src="{{ asset('js/actualites_ajax.js') }}"></script>
+					{# // <script src="{{ asset('js/owl.carousel.js') }}"></script> #}
+					<script src="{{ asset('js/actualite.js') }}"></script>
 
 				{% endblock %}

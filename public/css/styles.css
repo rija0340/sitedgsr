@@ -1,7 +1,10 @@
 body{
 	overflow-x:hidden;
+
 }
 
+
+/**/
 .page-title{
 
 	background-size : cover;
@@ -41,24 +44,10 @@ body{
 
 /*media query pour responsive design*/
 
-@media (max-width: 1368px) {
+/*extra large device*/
+@media (min-width: 1200px) {
 
-	.mille_trois_cent{
-		display: block;
 
-	}
-	.mille_vingt_quatre{
-		display: none;
-
-	}
-	.tablette{
-		
-		display: none;
-	}
-	.telephone{
-		
-		display: none;
-	}
 
 	.sp_ {
 		padding-top: 90px;
@@ -80,26 +69,11 @@ body{
 
 
 
-@media (max-width: 1024px) {
+/* larges devices */
 
-	.mille_trois_cent{
-		display: none;
+@media  (min-width: 992px)and (max-width: 1199.98px) {
 
-	}
-
-	.mille_vingt_quatre{
-		display: block;
-
-	}
-	.tablette{
-
-		display: none;
-	}
-	.telephone{
-
-		display: none;
-	}
-
+	
 	.dgsr{
 		display: block
 	}
@@ -127,21 +101,10 @@ body{
 	}
 }
 
-@media (max-width: 768px) {
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
 
-	.ordinateur{
-
-		display: none;
-	}
-	.tablette{
-
-		display: block;
-	}
-	.telephone{
-
-		display: none;
-	}
-
+	
 	/*custom flatdesign*/
 	/* section title */
 	.section-title h2 {
@@ -181,23 +144,55 @@ body{
 }
 
 
-@media (max-width: 600px) {
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
 
-	.ordinateur {
-		display: none;
+
+	/*custom flatdesign*/
+	/* section title */
+	.section-title h2 {
+		margin: 0 0 5px;
+		font-size: 30px;
+		font-weight: 800;
+	}
+
+	.dgsr{
+		display: block
+	}
+	.dgsr h5{
+		color : white;
+		font-size: 20px;
+	}
+	.logo-column a.logo {
+		height: 35px;
+		padding: 0px 0; 
+	}
+	/*espace au dessus et en dessous dgsr lava*/
+	.sp_ {
+		padding-top: 30px;
+		padding-bottom: 30px; 
+	}
+	/* page-title */
+	.page-title {
+		font-size: 14px;
+	}
+	.page-title h2 {
+		font-size: 30px;
+		font-weight: 500;
 
 	}
-	.tablette{
 
-		display: none;
-	}
-	.telephone{
+}
 
-		display: block;
-	}
+/*extra small device */
+@media (max-width: 575.98px) {
+
 	.dgsr h5{
 		font-size: 20px;
 	}
 }
 
 }
+
+
+

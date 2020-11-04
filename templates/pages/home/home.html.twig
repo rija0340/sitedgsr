@@ -17,7 +17,7 @@
             <div class="inner ">
               <div class="container text-center">
                 <div class="slide-content ">
-                  <p class="title ">{{ actu1_title }}</p>
+                  <p class="carousel-caption ">{{ actu1_title }}</p>
                 </div>
               </div>
             </div>
@@ -29,7 +29,7 @@
               <div class="col-lg-6 text-center">
                <div class="slide-content">
 
-                <p class="title">{{ actu2_title }}</p>
+                <p class="carousel-caption">{{ actu2_title }}</p>
 
               </div>
             </div>
@@ -44,7 +44,7 @@
         <div class="col-lg-6 text-center">
          <div class="slide-content">
 
-          <p class="title">{{ actu3_title }}</p>
+          <p class="carousel-caption">{{ actu3_title }}</p>
 
         </div>
       </div>
@@ -65,71 +65,53 @@
     <!-- <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> -->
   </div>
   <div class="row">
-    <div class="col-lg-3 col-md-6 single-service text-center">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 single-service text-center">
      <div class="inner">
-      <div class="title">
        <div class="icon">
         <i class="fa fa-taxi"></i>
       </div>
-      <h4>Vsite Technique</h4>
+      <h5>Visite Technique</h5>
+      <div class="content">
+      </div>
     </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12  single-service text-center">
+   <div class="inner">
+     <div class="icon">
+      <i class="fa fa-car"></i>
+    </div>
+    <h5>Réception Tehcnique</h5>
     <div class="content">
     </div>
   </div>
 </div>
-<div class="col-lg-3 col-md-6 single-service text-center">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12  single-service text-center">
  <div class="inner">
-  <div class="title">
-   <div class="icon">
-    <i class="fa fa-car"></i>
-  </div>
-  <h4>Réception Tehcnique</h4>
-</div>
-<div class="content">
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-6 single-service text-center">
- <div class="inner">
-  <div class="title">
    <div class="icon">
     <i class="fa fa-bus"></i>
   </div>
-  <h4>Constatation avant Dédouanement </h4>
+  <h5>Constatation avant Dédouanement </h5>
+  <div class="content">
+  </div>
 </div>
-<div class="content">
 </div>
-</div>
-</div>
-<div class="col-lg-3 col-md-6 single-service text-center">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12  single-service text-center">
  <div class="inner">
-  <div class="title">
    <div class="icon">
     <i class="fa fa-truck"></i>
   </div>
-  <h4>Controle inopiné </h4>
-</div>
-<div class="content">
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div class="about-area sp text-center">
-  <div class="iframe">    
-    <iframe
-    src="{{ spot }}"
-    width="300"
-    height="200"
-    frameborder="0"
-    allowfullscreen
-
-    class="iframe_spot"
-    ></iframe>
+  <h5>Controle inopiné </h5>
+  <div class="content">
   </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="about-area sp m-0 p-0 text-center">
+  <iframe src="{{ spot }}" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe>
 </div>
 
 <div class="faq-area sp bg2">
@@ -166,7 +148,7 @@
   </div>
   <div class="single-item">
    <h4>{{ (last_dgword.wordGasy  | length > 50 ? last_dgword.wordGasy |slice(0, 70) ~ '...' : last_dgword.wordGasy ) | raw }} </h4>
-   
+
    <div class="content">
     {{ last_dgword.wordGasy | raw }}
   </div>

@@ -6,48 +6,49 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo.css')}}">
 
 	{%endblock%}
-{% block title %}Galerie Photo {% endblock %}
+	{% block title %}Galerie Photo {% endblock %}
 
-	{% block content %}
-		{% include 'layouts/couverture.html.twig' %} 
+		{% block content %}
+			{% include 'layouts/couverture.html.twig' %} 
 
-		<section class="gallery-block grid-gallery">
-			<div class="container">
-				<div class="heading">
-					<h2 class="text-center">Grid Gallery</h2>
-				</div>
-				{% for actualite in actualites %}
-					<div class="p-4" >
-						<div class="d-flex">
-							<div class=""><h5> {{ actualite.title }}</h5></div>
-							<div class="ml-auto"><p>{{ actualite.datePub | date("d M Y")}} </p></div>
-						</div>
+			<section class="gallery-block grid-gallery">
+				<div class="container">
+					<div class="section-title">
+						<h2>DGSR en photo</h2>
+						{# <p>Centres de visite technique et de réception technique</p> #}
+					</div>
+					{% for actualite in actualites %}
+						<div class="p-4" >
+							<div class="d-flex">
+								<div class=""><h5> {{ actualite.title }}</h5></div>
+								<div class="ml-auto"><p>{{ actualite.datePub | date("d M Y")}} </p></div>
+							</div>
 
-						<div class="gallery-wrap p-0 m-0">
-							<div class="row  m-0 p-0">
-								{% for attach in actualite.attachements %}
-									<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">
-										<div class="item p-2 m-0 photo ">
+							<div class="gallery-wrap p-0 m-0">
+								<div class="row  m-0 p-0">
+									{% for attach in actualite.attachements %}
+										<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">
+											<div class="item p-2 m-0 photo ">
 
-											<a  href="{{vich_uploader_asset(attach, 'imageFile')  }}">
-												<img class="img-fluid image scale-on-hover thumbnail" src="{{vich_uploader_asset(attach, 'imageFile')  }}">
-											</a>
+												<a  href="{{vich_uploader_asset(attach, 'imageFile')  }}">
+													<img class="img-fluid image scale-on-hover thumbnail" src="{{vich_uploader_asset(attach, 'imageFile')  }}">
+												</a>
+											</div>
 										</div>
-									</div>
-								{% endfor %}
+									{% endfor %}
 
+								</div>
 							</div>
 						</div>
-					</div>
 
-				{% endfor %}
-			</div>
-		</section>
-		{%endblock%}
+					{% endfor %}
+				</div>
+			</section>
+			{%endblock%}
 
-		{% block javascripts %}
-			<script src="{{ asset ('js/gallerie_photo/baguetteBox.min.js') }}"></script>
-			<script>
-			baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
-			</script>
-		{% endblock %}
+			{% block javascripts %}
+				<script src="{{ asset ('js/gallerie_photo/baguetteBox.min.js') }}"></script>
+				<script>
+				baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+				</script>
+			{% endblock %}

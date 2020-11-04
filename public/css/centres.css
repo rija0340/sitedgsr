@@ -1,6 +1,41 @@
 .dgsr{
 	display: none;
 }
+.list-ville {
+	list-style-type: none;
+	padding: 5px;
+}
+
+.detail_centre{
+	margin: 10px;
+}
+.label{
+	font-weight : bold;
+}
+.img_centre {
+	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
+	border: solid 6px #fff;
+}
+.faritany{
+	color : #a8a8a8;
+
+}
+.label_cc{
+
+	font-weight: bold;
+} 
+
+.label_adresse{
+
+	font-weight: bold;
+} 
+
+.label_phone{
+
+	font-weight: bold;
+}
+
+
 
 
 

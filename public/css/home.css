@@ -1,52 +1,17 @@
+/*carousel mise en forme*/
 
-.display-5{
-
-	font-size: 3rem;
-	font-weight: 250;
-	line-height: 1;
-}
-.padding{
-
-	padding-bottom: 2rem;
-}
-
-.carousel-item,
-.carousel-inner,
-.carousel-inner img {
-
-}
-
-.carousel-item {
-	text-align: center;
-}
-.carousel {
-}
-.carousel-caption  h4{
-	font-size: 200%;
+.carousel-caption {
 	text-align: center;
 	text-shadow: 1px 1px 10px #000;
 	/*background-color: gray;*/
-}
-.carousel-caption{
-
-	/*position: absolute;
-	top : 10%;*/
 
 }
 
-
-.my-3{
-	border-top : 2px solid #b4b4b4;
-	width : 50%;
-	margin: 0 auto;
-
-}
-
-/*Caroussel*/
+/*positionner carousel caption en bas, en haut */
 .hero-slider .inner{
 	
 	position:relative; 
-	bottom:-140px;
+	bottom:-220px;
 }
 
 /* misson et activite */
@@ -60,18 +25,6 @@
 	-webkit-animation: slidebloc 0.8s infinite;
 }
 
-.link-services{
-	text-decoration: none;
-	color: inherit;
-	font-size: 1em;
-	padding: 0 0 0 0;
-	display: block;
-	
-}
-.link-services:hover{
-	text-decoration : none;
-	color : #222;
-}
 
 .text-service{
 
@@ -81,7 +34,7 @@
 
 .activite{
 	text-align: center;
-	
+
 }
 
 .activite:hover{
@@ -97,82 +50,20 @@
 .fa-bus, .fa-taxi, .fa-car, .fa-truck{
 	font-size: 2.7em;
 }
-/*.fa-bus:hover, .fa-taxi:hover, .fa-car:hover, .fa-truck:hover{
-	transform: scale(1.4);
-	transform: rotate3d(1, 2, 1, 35deg);
-	color: #131f51;
-	}*/
 
 
-
-
-	/*spot video*/
-	.dgsr_ve{
-
-		position: absolute;
-		top: 50%;
-		left: 10%;
-		text-align: center;
-		transform: translateY(-50%);
-
-	}
-
-	.dgsr_ve h2{
-
-		color: 	#222;
-		font-size: 280%;
-	}
-
-
-
-	/*directeur général*/
-
-	.photo_dg{
-		width: 30%;
-		height: 30%;
-	}
-
-	.mot_dg h2{
-
-	}
-
-	.label_mot_dg{
-/*	color: 	#222;
-	text-shadow: 1px 1px 5px #000;
-	font-size: 300%;*/
-	text-align : center;
-
-}
-.photo_dg img {
-	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
-	border: solid 6px #fff;
+/*spot video*/
+iframe{
+	height: 400px;
+	width: 600px;
+	border: none;
 }
 
+/*directeur général*/
 
-.grade_dg{
-	font-size: 1.2em;
-	color: #221;
-
-}
-.nom_dg{
-	font-size: 1.3em;
-}
-
-
-/*style dans page mot du dg*/
-
-.photo_dg2 img {
-	box-shadow: -3px 6px 11px rgba(69, 69, 69, 0.6);
-	/*border: solid 6px #fff;*/
-}
-.mot{
-	padding-top: 2rem;
-}
-
-.float-left{
-
-	margin-right : 1rem !important;
-
+.photo_dg{
+	width: 30%;
+	height: 30%;
 }
 
 .dgsr{
@@ -182,27 +73,32 @@
 
 /*media query pour responsive design*/
 
-@media (max-width: 1368px) {
+/*extra large device*/
+@media (min-width: 1200px) {
 
 	
 
 }
 
 
-@media (max-width: 1024px) {
+/* larges devices */
 
-	
+@media  (min-width: 992px)and (max-width: 1199.98px) {
+
+}
+
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
 	.banniere{
 		display: none;
 	}
 
-
-
-
 }
 
-@media (max-width: 768px) {
 
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
 
 
 	/*custom flatdesign*/
@@ -228,19 +124,38 @@
 		font-size: 30px;
 		font-weight: 600;
 	}
+
+
 }
 
+/*extra small device */
+@media (max-width: 575.98px) {
+	.banniere{
+		display: none;
+	}
 
-@media (max-width: 600px) {
 
 	
+	.caroussel{
+		display: none;
+	}
+	iframe{
+		height: 200px;
+		width: 300px;
+		border: none;
+	}
+	.dgsr{
+		display: block;
+	}
+	
+	.dgsr h5
+	{
+		color: white;
+	}
+
+
 
 }
 
-/*custom de main.css*/
 
-.single-service .inner .title h4  {
-	padding-left: 0px;
-	font-size: 15px;
-	margin: 3px 0 0; 
-}
+
