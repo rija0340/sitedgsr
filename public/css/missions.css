@@ -2,8 +2,13 @@
 	display: none;
 }
 
+.single-service-2 .inner{
+	padding: 40px 20px;
+}
 
-
+.single-service-2 .inner:hover{
+	background-color : #18a8e0;
+}
 
 /*media query pour responsive design*/
 
@@ -11,7 +16,6 @@
 
 
 }
-
 
 
 

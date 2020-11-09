@@ -36,9 +36,7 @@ class TarifsController extends AbstractController
 
         if ( $img->getLabelCouverture()->getLabel() == 'tarifs' ) {
           $ity['$i'] = $img;
-          dump($ity['$i']);
           $i = $i +1;
-          dump($img);
         }
       }
       $i = $i - 1;

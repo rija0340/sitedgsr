@@ -37,35 +37,112 @@
 
 
 
+/*centres*/
+
+.liste_centres li a {
+	color: #5b5b5b;
+
+}
+
+.liste_centres {
+	padding: 0;
+	list-style: none;
+	margin: 0; 
+}
+.liste_centres li {
+	position: relative;
+
+}
+.liste_centres li a:hover {
+	color: white; 
+}
+.liste_centres li span {
+	color: #7d91aa;
+	position: absolute;
+	left: 0;
+	top: 0; 
+}
+
+.liste_centres li a {
+	-webkit-transition: all 0.3s cubic-bezier(0.84, 0.35, 0.39, 0.74) 0s;
+	transition: all 0.3s cubic-bezier(0.84, 0.35, 0.39, 0.74) 0s; 
+}
+
+
+
+.owl-dot{
+	display:inline-block;zoom:1
+}
+.testimonial-slider .owl-dots .owl-dot span{
+	width:10px;
+	height:10px;
+	margin:5px 7px;
+	background:#D6D6D6;
+	display:block;
+	-webkit-backface-visibility:visible;
+	transition:opacity .2s ease;border-radius:30px
+}
+.testimonial-slider .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{
+	background:#869791
+}
+.owl-dots{
+	text-align: center;
+	margin: 1.5rem;
+}
+
+
+.hide{
+	display: none;
+}
+
+.single-service h4{
+
+	font-size: 1em;
+}
+
+
 
 
 /*media query pour responsive design*/
 
-@media (max-width: 1368px) {
+/*extra large device*/
+@media (min-width: 1200px) {
+
+	
+
+}
+
+
+/* larges devices */
+
+@media  (min-width: 992px)and (max-width: 1199.98px) {
+
+}
+
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
 
 
 }
 
 
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
 
-
-@media (max-width: 1024px) {
-
-	.logo-column{
-		display: none;
+	.section-title p{
+		font-size: 15px;
 	}
-	.dgsr{
-		display: none;
+
+
+}
+
+/*extra small device */
+@media (max-width: 575.98px) {
+
+	.section-title p{
+		font-size: 15px;
 	}
 }
 
-@media (max-width: 768px) {
 
 
-}
-
-
-@media (max-width: 600px) {
-
-
-}

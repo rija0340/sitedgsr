@@ -2,35 +2,66 @@
 	display: none;
 }
 
+.modal-xl {
+	min-width: 1140px;
+}
+.col-6{
+	padding : 0;
+}
+.actu_photos{
+	margin-right : 10px;
+	margin-bottom: 10px;
+}
 
 
 /*media query pour responsive design*/
 
-@media (max-width: 1368px) {
+/*extra large device*/
+@media (min-width: 1200px) {
+
 
 
 }
 
 
+/* larges devices */
+
+@media  (min-width: 992px)and (max-width: 1199.98px) {
+
+}
+
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
 
 
-@media (max-width: 1024px) {
-	.logo-column{
+}
+
+
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.container-fluid .actu_photos{
 		display: none;
 	}
-	.dgsr{
-		display: none;
+	.actu_mobile_photo{
+		display: block;
 	}
 
 }
 
-@media (max-width: 768px) {
+/*extra small device */
+@media (max-width: 575.98px) {
 
 
-}
-
-
-@media (max-width: 600px) {
+	.modal-dialog{
+		max-width: 350px;
+	}
+	.container-fluid .actu_photos{
+		display: none;
+	}
+	.actu_mobile_photo{
+		display: block;
+	}
 
 
 }

@@ -66,10 +66,6 @@ iframe{
 	height: 30%;
 }
 
-.dgsr{
-	display: none;
-}
-
 
 /*media query pour responsive design*/
 
@@ -90,24 +86,17 @@ iframe{
 /*  medium device(tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-	.banniere{
+	.caroussel{
 		display: none;
 	}
-
 }
 
 
 /* small device */
 @media (min-width: 576px) and (max-width: 767.98px) {
 
-
 	/*custom flatdesign*/
-	.banniere{
-		display: none;
-	}
 
-
-	
 	.caroussel{
 		display: none;
 	}
@@ -125,17 +114,11 @@ iframe{
 		font-weight: 600;
 	}
 
-
 }
 
 /*extra small device */
 @media (max-width: 575.98px) {
-	.banniere{
-		display: none;
-	}
 
-
-	
 	.caroussel{
 		display: none;
 	}
@@ -144,14 +127,10 @@ iframe{
 		width: 300px;
 		border: none;
 	}
-	.dgsr{
+	.service-area{
 		display: block;
 	}
 	
-	.dgsr h5
-	{
-		color: white;
-	}
 
 
 

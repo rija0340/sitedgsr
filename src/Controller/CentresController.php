@@ -49,7 +49,6 @@ class CentresController extends AbstractController
       $centres = $this->centreRepo->findAll();
       $villes = $this->villeRepo->findAll(['ville' => 'ASC']);
       
-      dump($villes);
 
       //affichage image en couveture
       $i = 0;
@@ -61,9 +60,7 @@ class CentresController extends AbstractController
 
         if ( $img->getLabelCouverture()->getLabel() == 'centres' ) {
           $ity['$i'] = $img;
-          dump($ity['$i']);
           $i = $i +1;
-          dump($img);
         }
       }
       $i = $i - 1;

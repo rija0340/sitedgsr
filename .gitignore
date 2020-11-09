@@ -23,6 +23,6 @@
 ###< liip/imagine-bundle ###
 
 # ignore all jpg files
-*.jpg 
+# *.jpg 
 
-*.png
+# *.png

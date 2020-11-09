@@ -31,35 +31,18 @@ class HistoriqueController extends AbstractController
         $image = new ImagesEntete();
         $last_image = new ImagesEntete();
 
-        // $image = $this->imgenteterepo->findBy([ 'labelCouverture' => 'historique'], array('id' => 'DESC'), 1);
         // $image = $this->imgenteterepo->findBy(array('LabelCouverture'=>'historique') , array('id' => 'DESC'), 1);
 
         $images = $this->imgenteterepo->findAll();
 
-        dump($images);
-
         foreach ($images as $cle => $img) {
-
-            // echo $img->getLabelCouverture()->getLabel();
-            // echo '[' . $cle . '] vaut ' . $img . '<br />';
 
             if ( $img->getLabelCouverture()->getLabel() == 'historique' ) {
                 $ity['$i'] = $img;
-                dump($ity['$i']);
                 $i = $i +1;
-
-                dump($img);
             }
-            
-            
         }
-
-        // var_dump($image[0]);
         
-        // $labelName = $image[0]->getLabelCouverture()->getLabel();
-
-         
-
         $last_image = $ity['$i'];
 
         $directors = $this->repo->findAll(); 

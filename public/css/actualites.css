@@ -6,6 +6,7 @@
 .testimonial-area{
 
 	padding-top: 50px;
+
 }
 
 .modal{
@@ -13,8 +14,12 @@
 }
 
 .modal-content {
-  min-height: calc(75vh - 1rem);
-  overflow: hidden;
+	min-height: calc(75vh - 1rem);
+	overflow: hidden;
+}
+
+.modal-xl {
+	min-width: 1140px;
 }
 
 /*zoom image au survo dans section show actualité*/
@@ -27,6 +32,18 @@
 	margin-bottom: 0;
 }
 
+.actu_photos{
+
+	float : left; 
+	clear : both; 
+	margin: 15px;
+}
+
+footer{
+	margin-top: 15px;
+}
+
+/*
 .content-box {
 	width: 100%;
 	padding-top: 100%;
@@ -54,8 +71,8 @@
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-}
-.bg-one .content-box-expend {
+	}*/
+/*.bg-one .content-box-expend {
 	background: #fff;
 	height: auto;
 	top: 0;
@@ -82,7 +99,7 @@
 	left: auto;
 	right: 0;
 	bottom: 0;
-}
+	}
 .content-box-expend:hover {
 	width: 200%;
 	height: auto;
@@ -98,35 +115,88 @@
 	height: auto;
 	padding: 20px;
 	z-index: 99;
-}
+	}*/
 
-/*media query pour responsive design*/
-
-@media (max-width: 1368px) {
-
-
-}
-
-
-
-
-@media (max-width: 1024px) {
-
-	.logo-column{
-		display: none;
+	.col-6{
+		padding : 0;
 	}
-	.dgsr{
-		display: none;
+	.actu_photos{
+		margin-right : 10px;
+		margin-bottom: 10px;
 	}
-}
 
-@media (max-width: 768px) {
+	/*media query pour responsive design*/
+
+	/*extra large device*/
+	@media (min-width: 1200px) {
+		.actu_mobile_photo{
+			display: none;
+		}
+		.modal-dialog{
+			max-width: 1140px;
+		}
 
 
-}
+	}
 
 
-@media (max-width: 600px) {
+	/* larges devices */
+
+	@media  (min-width: 992px)and (max-width: 1199.98px) {
+
+		.modal-dialog{
+			max-width:  1000px;
+		}
+		.actu_mobile_photo{
+			display: none;
+		}
+	}
+
+	/*  medium device(tablets) */
+	@media (min-width: 768px) and (max-width: 991.98px) {
+
+		.modal-dialog{
+			max-width: 680px;
+		}
+		.actu_mobile_photo{
+			display: none;
+		}
+	}
 
 
-}
+	/* small device */
+	@media (min-width: 576px) and (max-width: 767.98px) {
+
+		.owl-dots{
+			display:none;
+		}
+		.container-fluid .actu_photos{
+			display: none;
+		}
+		.actu_mobile_photo{
+			display: block;
+		}
+
+	}
+
+	/*extra small device */
+	@media (max-width: 575.98px) {
+
+		.owl-dots{
+			display:none;
+		}
+		.bg-two, .bg-three, .bg-four{
+			display: none;
+		}
+		.modal-dialog{
+			max-width: 350px;
+		}
+		.container-fluid .actu_photos{
+			display: none;
+		}
+		.actu_mobile_photo{
+			display: block;
+		}
+
+
+	}

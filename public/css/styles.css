@@ -47,8 +47,6 @@ body{
 /*extra large device*/
 @media (min-width: 1200px) {
 
-
-
 	.sp_ {
 		padding-top: 90px;
 		padding-bottom: 90px; 
@@ -68,12 +66,10 @@ body{
 
 
 
-
 /* larges devices */
 
 @media  (min-width: 992px)and (max-width: 1199.98px) {
 
-	
 	.dgsr{
 		display: block
 	}
@@ -103,8 +99,10 @@ body{
 
 /*  medium device(tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
-	
+	/*bannière dgsr */
+	.banniere{
+		display: block;
+	}
 	/*custom flatdesign*/
 	/* section title */
 	.section-title h2 {
@@ -113,13 +111,7 @@ body{
 		font-weight: 800;
 	}
 
-	.dgsr{
-		display: block
-	}
-	.dgsr h5{
-		color : white;
-		font-size: 20px;
-	}
+
 	.logo-column a.logo {
 		height: 35px;
 		padding: 0px 0; 
@@ -136,13 +128,12 @@ body{
 	.page-title h2 {
 		font-size: 30px;
 		font-weight: 500;
-
+	}
+	header{
+		display: none;
 	}
 
-
-
 }
-
 
 /* small device */
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -150,19 +141,18 @@ body{
 
 	/*custom flatdesign*/
 	/* section title */
+	.section-title {
+		text-align: center;
+		font-size: 30px;
+		font-weight: 300;
+		margin-bottom: 15px; 
+	}
 	.section-title h2 {
 		margin: 0 0 5px;
 		font-size: 30px;
-		font-weight: 800;
+		font-weight: 450;
 	}
 
-	.dgsr{
-		display: block
-	}
-	.dgsr h5{
-		color : white;
-		font-size: 20px;
-	}
 	.logo-column a.logo {
 		height: 35px;
 		padding: 0px 0; 
@@ -172,27 +162,48 @@ body{
 		padding-top: 30px;
 		padding-bottom: 30px; 
 	}
-	/* page-title */
-	.page-title {
-		font-size: 14px;
+	.banniere{
+		display: block;
 	}
-	.page-title h2 {
-		font-size: 30px;
-		font-weight: 500;
-
+	/*space before container*/
+	.sp{
+		padding: 30px;
 	}
-
+	header{
+		display: none;
+	}
 }
+
+
 
 /*extra small device */
 @media (max-width: 575.98px) {
 
-	.dgsr h5{
-		font-size: 20px;
+	.banniere{
+		display: block;
+	}
+	/* section title */
+	.section-title {
+		text-align: center;
+		font-size: 30px;
+		font-weight: 300;
+		margin-bottom: 15px; 
+	}
+	.section-title h2 {
+		margin: 0 0 5px;
+		font-size: 30px;
+		font-weight: 450;
+	}
+	/*space before container*/
+	.sp{
+		padding: 30px;
+	}
+	header{
+		display: none;
 	}
 }
 
-}
+
 
 
 

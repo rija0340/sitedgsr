@@ -1,4 +1,92 @@
 .titre_dgsr{
 	
-text-shadow: 1px 1px 10px #000;
+	text-shadow: 1px 1px 10px #000;
 }
+.titre_dgsr h2{
+	color: white;
+}
+/*media query pour responsive design*/
+
+/*extra large device*/
+@media (min-width: 1200px) {
+
+	.titre_dgsr h2 {
+		margin: 0 0 5px;
+		font-size: 50px;
+		font-weight: 900;
+	}
+	.container_couverture{
+		height: 300px;
+	}
+
+}
+
+
+/* larges devices */
+
+@media  (min-width: 992px)and (max-width: 1199.98px) {
+	.titre_dgsr h2 {
+		margin: 0 0 5px;
+		font-size: 40px;
+		font-weight: 800;
+	}
+	.container_couverture{
+		height: 250px;
+	}
+}
+
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+
+}
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.titre_dgsr h2 {
+		margin: 0 0 5px;
+		font-size: 25px;
+		font-weight: 500;
+	}
+	.container_couverture{
+		height: 150px;
+	}
+	.logo_dgsr{
+		width: 50%;
+	}
+	.logo_gn{
+		width: 50%;
+
+	}
+	.couverture{
+		padding-top: 30px;
+	}
+
+}
+
+/*extra small device */
+@media (max-width: 575.98px) {
+
+	.titre_dgsr h2 {
+		margin: 0 0 5px;
+		font-size: 22px;
+		font-weight: 500;
+	}
+	.container_couverture{
+		height: 150px;
+	}
+	.logo_dgsr{
+		width: 80%;
+
+	}
+	.logo_gn{
+		width: 80%;
+
+	}
+	.couverture{
+		padding-top: 35px;
+	}
+
+}
+
+

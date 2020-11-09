@@ -4,14 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>{% block title %} dgsrmada {% endblock %}</title>
-	{# <meta nema="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"> #}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{# <link rel="stylesheet" type="text/css" href="{{ asset( 'vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}"> #}
-	<!-- for material style -->
-	{# <link rel="stylesheet" type="text/css" href="{{asset( 'css/material.indigo-blue.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/nav.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'font-awesome/css/font-awesome.css')}}"> #}
 
 	{# style css pour flatheme #}
 	<!-- Required CSS files -->
@@ -22,15 +15,14 @@
 	<link rel="stylesheet" href="{{asset('flattheme/css/animate.css')}}">
 	<link rel="stylesheet" href="{{asset('flattheme/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{asset('flattheme/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('flattheme/css/slicknav.css')}}">
 	<link rel="stylesheet" href="{{asset('flattheme/css/main.css')}}">
-	{# <link rel="stylesheet" href="{{asset('flattheme/css/custom.css')}}"> #}
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
-
 	<link rel="shortcut icon" href="{{asset('flattheme/img/dgsr/icon/dgsr.ico')}}">
 	<link rel="stylesheet"  href="{{ asset( 'css/styles.css')}}">
+	<link rel="stylesheet"  href="{{ asset( 'css/couverture.css')}}">
 	
-
 	{# cdn pour font awesome #}
 	{# <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> #}
 	{% block stylesheets %} {%endblock%}

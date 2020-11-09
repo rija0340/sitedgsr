@@ -1,25 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/actualite_liste.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
 {% endblock %}
 {% block title %}Actualités {% endblock %}
-
-
 	{% block content %}
-
-
 		{% include 'layouts/couverture.html.twig' %}    
-
 		<div class="testimonial-area spb pb-0">
 			<div class="container">
-				<div class="section-title white">
-					<h2>Clients Review 2</h2>
-					<p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+				<div class="section-title">
+					<h2>Les actualités</h2>
 				</div >
 				<div class="row">	
 					{% for actualite in actualites %}
-
 						<div class="col-lg-4 col-md-6 col-sm-6 col-xs-2">	
 							<div class="single-portfolio m-0 p-0">
 								<div class="inner">
@@ -52,97 +45,65 @@
 										</div>
 									</div>
 								</div>
-
-
 							</div>
-
 						{% endfor %}  
 						<div>	</div>
-
-
 					</div> 
-
-
 					<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-
-					<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-						<div class="modal-dialog modal-xl" role="document">
+					<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
 							<div class="modal-content" style="background-color : #fff">
-
 								<div class="actu_detail " >
 									<div class="modal-header">
-										<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
+										<div>
+											<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
+											<p class="actu_datepub m-0 p-0"></p>
+
+										</div>
+
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="main-wrapper" oncontextmenu="return false">
 										<div class="container-fluid ">
-											<div class="row">
-												<div class="col-lg-6">
-													<div class="row ten-cols">
-														<div class="col-md-6 no-space">
-															<div class="content-box bg-one">
-																<div class="content-box-expend">
-																	<a class="content-box-title">
-																		<div class="content-box-icon">
-																			<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
-																		</div> 
-																	</a>
-																</div>
-															</div>
-															<div class="content-box bg-two">
-																<div class="content-box-expend">
-																	<a class="content-box-title">
-																		<div class="content-box-icon">
-																			<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
-																		</div>
-																	</a>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6 no-space">
-															<div class="content-box bg-three">
-																<div class="content-box-expend">
-																	<a class="content-box-title">
-																		<div class="content-box-icon">
-																			<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
-																		</div>
-																	</a>
-																</div>
-															</div>
-															<div class="content-box bg-four">
-																<div class="content-box-expend">
-																	<a class="content-box-title">
-																		<div class="content-box-icon">
-																			<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
-																		</div>
-																	</a>
-																</div>
-															</div>
+											<div class=" actu_mobile_photo bg-one">	
+												<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+											</div>
+											<div class="actu_photos mr-4" style="float : left; clear : both; width:600px">	
+												<div class="row ten-cols">
+													<div class="col-6">
+														<div class="bg-one">	
+															<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
 														</div>
 													</div>
-												</div>
-												<div class="col-lg-6">
-													<p class="actu_content pb-5"> </p>
-
-												</div>
-
+													<div class="col-6">
+														<div class="bg-two">	
+															<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="bg-three">	
+															<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="bg-four">	
+															<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
+														</div>
+													</div>
+												</div> {# fin row #}
 											</div>
-
-
+											<p  class="actu_content " style="text-aling:justify"> </p>
 										</div>
 									</div>
-
 								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
-
 				{%endblock%}
-
 				{% block javascripts %}
 					<script src="{{ asset('js/actualites_ajax.js') }}"></script>
-
 				{% endblock %}

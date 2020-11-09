@@ -3,7 +3,7 @@
 
 $(document).ready(function() {
 
-	$(".detail_centre").hide();
+		$(".detail_centre").hide();
 
 	$(".js-centre_show").on('click', function( e ){
 

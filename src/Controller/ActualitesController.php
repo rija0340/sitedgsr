@@ -40,7 +40,6 @@ class ActualitesController extends AbstractController
 
       $attachements = $this->attachrepo->findAll();
       $attach = $this->attachrepo->find(15);
-      dump($attach);
 
       $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
 
@@ -54,9 +53,7 @@ class ActualitesController extends AbstractController
 
         if ( $img->getLabelCouverture()->getLabel() == 'actualités' ) {
           $ity['$i'] = $img;
-          dump($ity['$i']);
           $i = $i +1;
-          dump($img);
         }
       }
       $i = $i - 1;
@@ -74,9 +71,9 @@ class ActualitesController extends AbstractController
     }
 
         /**
-     * @Route("/liste_actualites", name="liste_actualites")
+     * @Route("/actualites_liste", name="actualites_liste")
      */
-        public function liste_actualites()
+        public function actualites_liste()
         {
 
           $actualites = new Actualite();
@@ -96,19 +93,13 @@ class ActualitesController extends AbstractController
 
             if ( $img->getLabelCouverture()->getLabel() == 'actualités' ) {
               $ity['$i'] = $img;
-              dump($ity['$i']);
               $i = $i +1;
-              dump($img);
             }
           }
           $i = $i - 1;
           $last_image = $ity['$i'];
 
-
-
-
           return $this->render('pages/actualites/liste_actualites.html.twig',[
-
             'actualites' => $actualites,
             'attachements' => $attachements,
             'last_image' => $last_image,
@@ -146,6 +137,7 @@ class ActualitesController extends AbstractController
 
               'titre' => $actualite->getTitle(),
               'contenu' => $actualite->getContent(),
+              'img' => $actualite->getFilename(),
               'img' => $actualite->getFilename(),
               'url_video' => $actualite->getUrlVideo(),
               'datepub' => $actualite->getDatePub(),
