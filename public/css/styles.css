@@ -108,7 +108,7 @@ body{
 	.section-title h2 {
 		margin: 0 0 5px;
 		font-size: 30px;
-		font-weight: 800;
+		font-weight: 700;
 	}
 
 
@@ -149,7 +149,7 @@ body{
 	}
 	.section-title h2 {
 		margin: 0 0 5px;
-		font-size: 30px;
+		font-size: 28px;
 		font-weight: 450;
 	}
 
@@ -175,7 +175,6 @@ body{
 }
 
 
-
 /*extra small device */
 @media (max-width: 575.98px) {
 
@@ -191,7 +190,7 @@ body{
 	}
 	.section-title h2 {
 		margin: 0 0 5px;
-		font-size: 30px;
+		font-size: 25px;
 		font-weight: 450;
 	}
 	/*space before container*/

@@ -120,8 +120,8 @@ window;
                 // dotsEach: false,
                 // dotsData: false,
                 // dotsSpeed: false,
-                // dotsContainer: true,
-                // slideBy:2,
+                // dotsContainer: false,
+                slideBy:1,
                 nav: true,
                 navText: [
                 '<i class="fa fa-arrow-left"></i>',

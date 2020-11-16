@@ -13,13 +13,15 @@
 			
 			<div class="faq-area-2 sp">
 				<div class="container">
-					<div class="single-faq">
-						{% for org in org %}
-							{% if org.filename %}
-								<img style="width : 100%" class="card-img-top" src="{{ vich_uploader_asset(org, 'imageFile') }}" alt="organigramme de la DGSR">
-							{% endif %}
-						{% endfor %}
+					<div class="section-title" data-margin="0 0 40px">
+						<h2>Organigramme</h2>
+						{# <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> #}
 					</div>
+					{% for org in org %}
+						{% if org.filename %}
+							<img style="width : 100%" class="card-img-top" src="{{ vich_uploader_asset(org, 'imageFile') }}" alt="organigramme de la DGSR">
+						{% endif %}
+					{% endfor %}
 				</div>
 			</div>
 

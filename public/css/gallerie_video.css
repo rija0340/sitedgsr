@@ -3,34 +3,51 @@
 }
 
 
-
 /*media query pour responsive design*/
 
-@media (max-width: 1368px) {
+/*extra large device*/
+@media (min-width: 1200px) {
 
-
-}
-
-
-
-
-@media (max-width: 1024px) {
-	.logo-column{
-		display: none;
-	}
-	.dgsr{
-		display: none;
+		.divWrapper{
+		height: 45px;
 	}
 
-}
-
-@media (max-width: 768px) {
-
 
 }
 
 
-@media (max-width: 600px) {
+/* larges devices */
+
+@media  (min-width: 992px)and (max-width: 1199.98px) {
+.divWrapper{
+		height: 55px;
+	}
+
+}
+
+/*  medium device(tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+.divWrapper{
+		height: 80px;
+	}
+
+}
+
+
+/* small device */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
 
 
 }
+
+/*extra small device */
+@media (max-width: 575.98px) {
+
+	.divWrapper{
+		height: auto;
+	}
+
+}
+

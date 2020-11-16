@@ -27,10 +27,24 @@
 /* small device */
 @media (min-width: 576px) and (max-width: 767.98px) {
 
+
 	.single-faq h2{
 		font-size: 20px;
 		font-weight: 500;
 		
+	}
+
+	.single-faq{
+		padding: 5px;
+		margin: 5px;
+	}
+
+	.container {
+		padding: 0px;
+		margin: 0 0 0 0;
+	}
+	.sp{
+		padding: 5px;
 	}
 
 }
@@ -43,6 +57,20 @@
 		font-weight: 500;
 
 	}
+
+	.single-faq{
+		padding: 5px;
+		margin: 5px;
+	}
+
+	.container {
+		padding: 0px;
+		margin: 0px;
+	}
+	.sp{
+		padding: 5px;
+	}
+
 
 }
 

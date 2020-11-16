@@ -37,7 +37,11 @@
 
 /*  medium device(tablets) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
+	.titre_dgsr h2 {
+		margin: 0 0 5px;
+		font-size: 30px;
+		font-weight: 700;
+	}
 
 }
 /* small device */
@@ -69,22 +73,22 @@
 
 	.titre_dgsr h2 {
 		margin: 0 0 5px;
-		font-size: 22px;
-		font-weight: 500;
+		font-size: 24px;
+		font-weight: 600;
 	}
 	.container_couverture{
 		height: 150px;
 	}
 	.logo_dgsr{
-		width: 80%;
+		width: 70%;
 
 	}
 	.logo_gn{
-		width: 80%;
+		width: 70%;
 
 	}
 	.couverture{
-		padding-top: 35px;
+		padding-top: 25px;
 	}
 
 }

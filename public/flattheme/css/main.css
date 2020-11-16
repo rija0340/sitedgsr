@@ -486,11 +486,12 @@ form.search-form button {
 }
 @media only screen and (max-width: 991px) {
   .hero-slider .single-slide {
-    height: auto;
+    /*height: auto;*/
+    height: 200px;
     padding: 60px 30px 100px;
     z-index: 1; 
   }
-  .hero-slider .single-slide::after {
+/*  .hero-slider .single-slide::after {
     content: "";
     height: 100%;
     width: 100%;
@@ -499,7 +500,7 @@ form.search-form button {
     left: 0;
     top: 0;
     position: absolute; 
-  } 
+  } */
 }
 @media only screen and (max-width: 767px) {
   .hero-slider .single-slide {

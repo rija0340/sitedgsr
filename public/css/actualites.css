@@ -43,6 +43,7 @@ footer{
 	margin-top: 15px;
 }
 
+
 /*
 .content-box {
 	width: 100%;
@@ -167,9 +168,6 @@ footer{
 	/* small device */
 	@media (min-width: 576px) and (max-width: 767.98px) {
 
-		.owl-dots{
-			display:none;
-		}
 		.container-fluid .actu_photos{
 			display: none;
 		}
@@ -182,14 +180,12 @@ footer{
 	/*extra small device */
 	@media (max-width: 575.98px) {
 
-		.owl-dots{
-			display:none;
-		}
+
 		.bg-two, .bg-three, .bg-four{
 			display: none;
 		}
 		.modal-dialog{
-			max-width: 350px;
+			max-width: 400px;
 		}
 		.container-fluid .actu_photos{
 			display: none;
@@ -197,6 +193,8 @@ footer{
 		.actu_mobile_photo{
 			display: block;
 		}
-
+		.portfolio-content h5{
+			font-size: 15px;
+		}
 
 	}

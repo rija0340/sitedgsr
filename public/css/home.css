@@ -87,7 +87,10 @@ iframe{
 @media (min-width: 768px) and (max-width: 991.98px) {
 
 	.caroussel{
-		display: none;
+		display: block;
+	}
+	 .hero-slider .single-slide {
+  		height: 400px;
 	}
 }
 
@@ -98,7 +101,7 @@ iframe{
 	/*custom flatdesign*/
 
 	.caroussel{
-		display: none;
+		display: block;
 	}
 	.iframe_spot{
 		text-align: center;
@@ -120,7 +123,7 @@ iframe{
 @media (max-width: 575.98px) {
 
 	.caroussel{
-		display: none;
+		display: block;
 	}
 	iframe{
 		height: 200px;
@@ -131,8 +134,27 @@ iframe{
 		display: block;
 	}
 	
+	.section-title p{
+		font-size: 15px
+	}
 
+	.hero-slider .owl-dots {
+	  display: none;
+	}
+	.hero-slider .owl-nav > div {
+	  display: none;
+	}
+	/*positionner carousel caption en bas, en haut */
+	.hero-slider .inner{
+		
+		position:relative; 
+		bottom:-150px;
+	}
+	.carousel-caption {
+	
+		font-size: 14px;
 
+	}
 
 }
 

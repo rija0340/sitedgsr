@@ -29,6 +29,7 @@ $(document).ready(function() {
 		var url = '/'+ id ;
 		// var url = '/tarif_consta';
 		//ceci permet de recuperer un element html et le met dans le div main-wrapper de la page fille
+		//bouton clické -> ce code ci dessous active url dans controle et recupere element html dans render
 		$('.main-wrapper').load(url, function() {
 			$('.modal-title').html(title);
 			$('#bouton').trigger('click');

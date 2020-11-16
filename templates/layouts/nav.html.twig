@@ -13,7 +13,7 @@
 
           <nav id="menu" class="d-none d-lg-block">
             <ul>
-              <li class="{% if app.request.attributes.get('_route') starts with 'index' %}current-menu-item{% endif %}"><a href="{{ path ( 'index')}}">Acceuil</a></li>
+              <li class="{% if app.request.attributes.get('_route') starts with 'index' %}current-menu-item{% endif %}"><a href="{{ path ( 'index')}}">Accueil</a></li>
               <li class="{% if app.request.attributes.get('_route') starts with 'historique' %}current-menu-item{% endif %}"><a href="{{ path ( 'historique')}}">Historique</a></li>
               <li class="{% if app.request.attributes.get('_route') starts with 'missions' %}current-menu-item{% endif %}"><a href="{{ path ( 'missions')}}">Missions</a></li>
               <li class="{% if app.request.attributes.get('_route') starts with 'organigramme' %}current-menu-item{% endif %}"><a href="{{ path ( 'organigramme')}}">Organigramme</a></li>

@@ -132,7 +132,18 @@
 	.section-title p{
 		font-size: 15px;
 	}
-
+	.single-service{
+		padding: 0px 5px;
+		margin: 5px 0px;
+	}
+	
+	.label_cc, .label_adresse, .label_phone{
+		margin: 0 !important;
+	}
+	.hr{
+		margin: 0 !important;
+		
+	}
 
 }
 
@@ -141,6 +152,18 @@
 
 	.section-title p{
 		font-size: 15px;
+	}
+	.single-service{
+		padding: 0px 5px;
+		margin: 5px 0px;
+	}
+
+	.label_cc, .label_adresse, .label_phone{
+		margin: 0 !important;
+	}
+	.hr{
+		margin: 0 !important;
+		
 	}
 }
 
