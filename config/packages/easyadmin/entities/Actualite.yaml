@@ -1,4 +1,5 @@
 easy_admin:
+
   entities:
     Actualite:
       class: App\Entity\Actualite
@@ -31,6 +32,8 @@ easy_admin:
           - {property: 'attachements', template: 'attachement.html.twig'}
 
       edit:
+        design:
+          form_theme: 'vertical'
         help: "hello there"
         fields:
           - '-tags'
