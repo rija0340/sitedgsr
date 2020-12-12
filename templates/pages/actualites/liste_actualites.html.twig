@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/material.indigo-blue.min.css') }}">
 {% endblock %}
 {% block title %}Actualités {% endblock %}
 	{% block content %}
@@ -14,10 +15,10 @@
 				<div class="row">	
 					{% for actualite in actualites %}
 						<div class="col-lg-4 col-md-6 col-sm-6 col-xs-2">	
-							<div class="single-portfolio m-0 p-0">
+							<div class="single-portfolio card mdl-shadow--3dp">
 								<div class="inner">
 									<div class="portfolio-content">
-										<h5>{{ actualite.title}}</h5>
+										<h5>{{ actualite.title | length > 60 ? actualite.title  |slice(0, 60) ~ '...' : actualite.title   }}</h5>
 										<span>{{ actualite.datePub | date('d-m-Y')}}</span>
 									</div>
 									<div class="portfolio-img">
@@ -46,8 +47,13 @@
 									</div>
 								</div>
 							</div>
-						{% endfor %}  
-						<div>	</div>
+						{% endfor %} 
+						<div class="paginator text-center">	
+							<div class=" ">	
+								{{ knp_pagination_render(actualites) }}
+							</div>
+						</div> 
+
 					</div> 
 					<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
 					<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">

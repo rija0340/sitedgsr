@@ -21,15 +21,23 @@ easy_admin:
         actions: ['show', 'edit', 'delete']
         batch_actions: ['delete']
         title: "Liste des centres "
-        fields: [ 'ville.faritany', 'ville', 'adresse', , {property: 'filename', type: 'image', base_path: '%centre_image_path%'} ]
+        fields:
+          - {property: 'ville.faritany', label: 'Faritany'} 
+          - ville
+          - adresse
+          - {property: 'filename',label: 'Photo', type: 'image', base_path: '%centre_image_path%'}
 
-      # show:
-      #   fields:
-      #     - title
-      #     - {property: 'content', type: 'raw'}
-      #     - datePub
-      #     - {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'}
-      #     - {property: 'attachements', template: 'attachement.html.twig'}
+      show:
+        fields:
+          - type
+          - adresse
+          - grade_cc
+          - nom_cc
+          - num_cc
+          - ville
+          - annexe
+          - {property: 'filename', label: Photo ,type: 'image', base_path: '%centre_image_path%'}
+       
       # edit:
       #   help: "hello there"
       #   fields:

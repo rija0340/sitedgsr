@@ -9,6 +9,10 @@
         <source>form.are_you_sure</source>
         <target>__form.are_you_sure</target>
       </trans-unit>
+       <trans-unit id="edit">
+          <source>edit</source>
+          <target>modifier</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

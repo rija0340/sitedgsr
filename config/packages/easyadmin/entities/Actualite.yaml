@@ -9,31 +9,35 @@ easy_admin:
       label: "Actualite"
       form:
         fields:
-          - title
-          - {property: 'content', type: 'text_editor'} 
+          - {property: 'title', label: 'Titre'} 
+          - {property: 'content',label: Contenu ,type: 'text_editor'} 
           - url_video
-          - datePub
-          - { property: 'imageFile', type: 'vich_image' }
-          - { property: 'attachements', type: 'collection', type_options: {entry_type: 'App\Form\AttachementType', by_reference: false}}
+          - {property: 'datePub', label: 'Date'} 
+          - { property: 'imageFile',label: photo Caroussel, type: 'vich_image' }
+          - { property: 'attachements',label: Autre photos, type: 'collection', type_options: {entry_type: 'App\Form\AttachementType', by_reference: false}}
           
       list:
         collapse_actions: true
         actions: ['show', 'edit', 'delete']
         batch_actions: ['delete']
         title: "Liste Actualites "
-        fields: ['title', 'content', 'datePub', {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'} ]
+        fields:
+          - {property: 'title', label: 'Titre'} 
+          - {property: 'content', label: 'Contenu'} 
+          - {property: 'datePub', label: 'Date'} 
+          - {property: 'filename',label: 'Photo',  type: 'image', base_path: '%uploads_actualite_path%'} 
 
       show:
         fields:
-          - title
+          - {property: 'title', label: 'Titre'} 
           - {property: 'content', type: 'raw'}
           - datePub
-          - {property: 'filename', type: 'image', base_path: '%uploads_actualite_path%'}
-          - {property: 'attachements', template: 'attachement.html.twig'}
+          - {property: 'filename', label: Photo caroussel,type: 'image', base_path: '%uploads_actualite_path%'}
+          - {property: 'attachements',label: Autre photos, template: 'attachement.html.twig'}
 
       edit:
         design:
           form_theme: 'vertical'
-        help: "hello there"
+        help: "Aza atao betsaka ny fahadisoana"
         fields:
           - '-tags'

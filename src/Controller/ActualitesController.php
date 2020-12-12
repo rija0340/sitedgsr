@@ -13,7 +13,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request; // Nous avons besoin d'accéder à la requête pour obtenir le numéro de page
+use Knp\Component\Pager\PaginatorInterface;
+
 
 
 class ActualitesController extends AbstractController
@@ -73,16 +75,23 @@ class ActualitesController extends AbstractController
         /**
      * @Route("/actualites_liste", name="actualites_liste")
      */
-        public function actualites_liste()
+        public function actualites_liste(Request $request,PaginatorInterface $paginator)
         {
 
           $actualites = new Actualite();
           $actu = new Actualite();
 
           $attachements = $this->attachrepo->findAll();
+          $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
           $attach = $this->attachrepo->find(15);
 
-          $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+          //pagination
+          $actualites = $paginator->paginate(
+            $actualites, // Requête contenant les données à paginer (ici nos articles)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            9 // Nombre de résultats par page
+          );
+
                //affichage image en couveture
           $i = 0;
 

@@ -12,6 +12,19 @@
 .modal{
 	min-height: 500px;
 }
+.portfolio-content h5{
+	height: 38px;
+	font-size: 16px;
+	margin: 5px;
+}
+.single-portfolio{
+	margin-bottom: 5px;
+
+}
+.single-portfolio .inner .portfolio-content{
+	padding-top: 15px;
+
+}
 
 .modal-content {
 	min-height: calc(75vh - 1rem);
@@ -37,6 +50,10 @@
 	float : left; 
 	clear : both; 
 	margin: 15px;
+}
+
+.btn_liste_actu{
+		margin-top: 20px;
 }
 
 footer{

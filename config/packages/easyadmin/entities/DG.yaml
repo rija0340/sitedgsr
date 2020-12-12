@@ -16,16 +16,20 @@ easy_admin:
         actions: ['show', 'edit', 'delete']
         batch_actions: ['delete']
         title: "Liste des centres "
-        fields: [ 'grade', 'name', 'periode', , {property: 'filename', type: 'image', base_path: '%dg_image_path%'} ]
+        fields:
+          - {property: 'grade', label: 'Grade'} 
+          - {property: 'name', label: 'Nom'} 
+          - {property: 'periode', label: 'Periode'} 
+          - {property: 'filename', label: 'Photo',type: 'image', base_path: '%dg_image_path%'}
 
       show:
         fields:
-          - grade
-          - name
+          - {property: 'grade', label: 'Grade'} 
+          - {property: 'name', label: 'Nom'} 
           - periode
           - dgWords
           # - {property: 'dgWords', type: 'text'}
-          - {property: 'filename', type: 'image', base_path: '%dg_image_path%'}
+          - {property: 'filename',label: Photo, type: 'image', base_path: '%dg_image_path%'}
 
       # edit:
       #   help: "hello there"

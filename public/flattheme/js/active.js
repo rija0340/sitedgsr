@@ -115,7 +115,7 @@ window;
                 autoplay: true,
                 loop: true,
                 margin: 30,
-                dots: true,
+                dots: false,
                 // test dots
                 // dotsEach: false,
                 // dotsData: false,
