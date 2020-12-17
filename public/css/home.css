@@ -59,11 +59,21 @@ iframe{
 	border: none;
 }
 
+/*actualites*/
+.btn_liste_actu{
+	margin-top: 30px;
+}
+
 /*directeur général*/
 
 .photo_dg{
 	width: 30%;
 	height: 30%;
+}
+
+.mdl-shadow--2dp
+{
+	box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)
 }
 
 
@@ -89,8 +99,8 @@ iframe{
 	.caroussel{
 		display: block;
 	}
-	 .hero-slider .single-slide {
-  		height: 400px;
+	.hero-slider .single-slide {
+		height: 400px;
 	}
 }
 
@@ -139,10 +149,10 @@ iframe{
 	}
 
 	.hero-slider .owl-dots {
-	  display: none;
+		display: none;
 	}
 	.hero-slider .owl-nav > div {
-	  display: none;
+		display: none;
 	}
 	/*positionner carousel caption en bas, en haut */
 	.hero-slider .inner{
@@ -151,7 +161,7 @@ iframe{
 		bottom:-150px;
 	}
 	.carousel-caption {
-	
+
 		font-size: 14px;
 
 	}

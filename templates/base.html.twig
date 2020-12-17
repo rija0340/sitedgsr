@@ -13,8 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/barfiller.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/animate.css')}}">
 	<link rel="stylesheet"type="text/css"  href="{{asset('flattheme/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('vendor_bootstrap/bootstrap/css/bootstrap.min.css')}}">
+	{# <link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/bootstrap.min.css')}}"> #}
+	<link rel="stylesheet" type="text/css" href="{{asset('vendor_bootstrap/bootstrap/css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/slicknav.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/main.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/footer.css')}}">
@@ -31,15 +31,15 @@
 		
 		{% block banniere%}  {%endblock %}
 		{% block nav %} {% include 'layouts/nav.html.twig' %}{%endblock%}
-		{% block carousel %} {%endblock%}
-		{% block content %}  {%endblock%}
+			{% block carousel %} {%endblock%}
+				{% block content %}  {%endblock%}
 
-		{% block sidenav %}
+					{% block sidenav %}
 
 						<!-- pour l'administration qui n'a pas besoin de class container -->
-		{% endblock %} 
+					{% endblock %} 
 
-		{% block footer %} {% include 'layouts/footer.html.twig' %} {%endblock%}
+					{% block footer %} {% include 'layouts/footer.html.twig' %} {%endblock%}
 						<!-- Bootstrap core JavaScript -->
 
 						<!-- veuillez respecter l'odre des declarations des sripts -->
@@ -55,7 +55,7 @@
 						<script type="text/javascript" src="{{asset('flattheme/js/jquery-2.2.4.min.js') }}"></script>
 						<script type="text/javascript" src="{{asset('flattheme/js/vendor/popper.min.js') }}"></script>
 						<script type="text/javascript" src="{{asset('flattheme/js/vendor/bootstrap.min.js') }}"></script>
-		 				<script type="text/javascript" src="{{ asset('js/owl.carousel.js') }}"></script>
+						<script type="text/javascript" src="{{ asset('js/owl.carousel.js') }}"></script>
 						<script type="text/javascript" src="{{asset('flattheme/js/vendor/owl.carousel.min.js') }}"></script>
 						<script type="text/javascript" src="{{asset('flattheme/js/vendor/isotope.pkgd.min.js') }}"></script>
 						<script type="text/javascript" src="{{asset('flattheme/js/vendor/jquery.barfiller.js') }}"></script>

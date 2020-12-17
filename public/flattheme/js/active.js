@@ -111,18 +111,18 @@ window;
             flat.tstSlider = $('.testimonial-slider');
             flat.tstSlider.addClass('owl-carousel');
             flat.tstSlider.owlCarousel({
-                items: 3,
+                items: 1,
                 autoplay: true,
                 loop: true,
-                margin: 30,
-                dots: false,
+                margin: 15,
+                dots: true,
                 // test dots
                 // dotsEach: false,
                 // dotsData: false,
                 // dotsSpeed: false,
                 // dotsContainer: false,
                 slideBy:1,
-                nav: true,
+                nav: false,
                 navText: [
                 '<i class="fa fa-arrow-left"></i>',
                 '<i class="fa fa-arrow-right"></i>'
@@ -132,10 +132,10 @@ window;
                         items: 1
                     },
                     768: {
-                        items: 2
+                        items: 1
                     },
                     992: {
-                        items: 3
+                        items: 1
                     }
                 }
             });
