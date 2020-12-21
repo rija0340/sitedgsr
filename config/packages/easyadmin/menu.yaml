@@ -45,7 +45,12 @@ easy_admin:
       - label: "Label couverture"
         children: 
           - {entity: LabelCouverture, label: "Liste labels", icon: "th-list"}
-          - {entity: LabelCouverture, label: "Nouveau label", icon: "plus", params: {action: "new"}}
+          - {entity: LabelCouverture, label: "Nouveau label", icon: "plus", params: {action: "new"}}   
+
+      - label: "Image Carousel"
+        children: 
+          - {entity: Carousel, label: "Liste Carousel", icon: "th-list"}
+          - {entity: Carousel, label: "Nouvelle image", icon: "plus", params: {action: "new"}}
 
       - {label: "Paramètres"}
       - label: "Utilisateur"

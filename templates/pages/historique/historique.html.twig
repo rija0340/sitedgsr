@@ -78,18 +78,18 @@
 							<img src="{{vich_uploader_asset(director, 'imageFile')  }}" alt="Member Photo">
 						</div>
 						<div class="team-content">
-							<h4>{{director.grade}}</h4>
-							<h5>{{director.name}}</h5>
-							<p>{{director.periode}}</p>
+              <h5>{{director.grade}}</h5>
+              <h4>{{director.name}}</h4>
+              <p>{{director.periode}}</p>
 
-						</div>
-					</div>
-				</div>
+            </div>
+          </div>
+        </div>
 
-			{% endfor %}
-		</div>   
+      {% endfor %}
+    </div>   
 
-	</div>   
+  </div>   
 </div>   
 
 
@@ -97,5 +97,7 @@
 
 {% block javascripts %}  
   {# // <script src="timeline/js/main.js"></script> #}
+  <script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
+
 
   {%endblock%}

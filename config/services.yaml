@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     uploads_actualite_path: 'uploads/images/actualite'
+    uploads_carousel_path: 'uploads/images/carousel'
     dg_image_path: 'images/dg'
     centre_image_path: 'uploads/images/centres'
     org_image_path: 'uploads/images/organigrammes'

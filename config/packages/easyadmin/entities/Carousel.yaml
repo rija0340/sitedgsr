@@ -1,0 +1,28 @@
+easy_admin:
+  entities:
+    Carousel:
+      class: App\Entity\Carousel
+      # templates:
+      #   show: 'easyadmin/actualite/show.html.twig'
+      #   edit: 'easyadmin/actualite/edit.html.twig'
+      label: "Carousel"
+      form:
+        fields:
+          - { property: 'imageFile', type: 'vich_image' }
+          
+      list:
+        collapse_actions: true
+        actions: ['show', 'edit', 'delete']
+        batch_actions: ['delete']
+        title: "Liste Images"
+        fields:
+          - {property: 'filename',label: Image, type: 'image', base_path: '%uploads_carousel_path%'}
+
+      show:
+        fields:
+          - {property: 'filename', label: Image ,type: 'image', base_path: '%uploads_carousel_path%'}
+
+      edit:
+        help: "hello there"
+        fields:
+          - '-tags'

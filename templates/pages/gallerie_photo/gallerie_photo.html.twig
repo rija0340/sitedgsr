@@ -48,7 +48,11 @@
 						</div>
 
 					{% endfor %}
-					{{ knp_pagination_render(actualites) }}
+						<div class="d-flex justify-content-center mt-5">	
+						<div class=" ">	
+							{{ knp_pagination_render(actualites) }}
+						</div>
+					</div> 
 				</div>
 			</section>
 			{%endblock%}
@@ -58,4 +62,6 @@
 				<script>
 				baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
 				</script>
+				<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
+				
 			{% endblock %}

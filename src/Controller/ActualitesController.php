@@ -35,7 +35,7 @@ class ActualitesController extends AbstractController
     /**
      * @Route("/actualites", name="actualites")
      */
-    public function actualites()
+    public function actualites(Request $request,PaginatorInterface $paginator)
     {
       $actualites = new Actualite();
       $actu = new Actualite();
@@ -44,6 +44,13 @@ class ActualitesController extends AbstractController
       $attach = $this->attachrepo->find(15);
 
       $actualites = $this->acturepo->findBy(array(),  array('datePub' => 'DESC'));
+
+                //pagination
+      $actualites = $paginator->paginate(
+            $actualites, // Requête contenant les données à paginer (ici nos articles)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            12 // Nombre de résultats par page
+          );
 
          //affichage image en couveture
       $i = 0;

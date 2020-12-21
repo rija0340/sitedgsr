@@ -9,39 +9,42 @@
 		{% block content %}
 			{% include 'layouts/couverture.html.twig' %} 
 			<div class="container">
-			<div class="row mt-5">
-				{% for actualite in actualites %}
-					{% if actualite.urlVideo != null %}
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-							<div class="card mdl-shadow--3dp">
-								<div class=" video_title p-1" >
-									<div class="divWrapper text-center">
-										<div class="tx">{{actualite.title}}</div>
+				<div class="row" >
+					{% for actualite in actualites %}
+						{% if actualite.urlVideo != null %}
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 mt-3">
+								<div class="card mdl-shadow--3dp">
+									<div class=" video_title p-1" >
+										<div class="divWrapper text-center">
+											<div class="tx">{{actualite.title}}</div>
+										</div>
 									</div>
-								</div>
-								<div class="d-flex justify-content-center">
-									<div>
-										<em>{{ actualite.datePub | date("d M Y")}}</em>	
+									<div class="d-flex justify-content-center">
+										<div>
+											<em>{{ actualite.datePub | date('d-m-Y')}}</em>	
+
+										</div>
 									</div>
-								</div>
-								<div style="height:15em;">
-									<iframe class="rounded" 
-									src = "https://www.youtube.com/embed/{{ actualite.urlVideo }}"
-									frameborder="0"
-									title="Example2"
-									allowfullscreen
-									width="100%"
-									height = "100%"
-									></iframe>
+									<div style="height:15em;">
+										<iframe class="rounded" 
+										src = "https://www.youtube.com/embed/{{ actualite.urlVideo }}"
+										frameborder="0"
+										title="Example2"
+										allowfullscreen
+										width="100%"
+										height = "100%"
+										></iframe>
+									</div>
 								</div>
 							</div>
-						</div>
-					{% endif %}
-				{% endfor %}
-			</div>
+						{% endif %}
+					{% endfor %}
+				</div>
 			</div>
 
 			{%endblock%}
 
 			{% block javascripts %}
+				<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
+				
 			{% endblock %}

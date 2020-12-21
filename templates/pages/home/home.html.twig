@@ -15,8 +15,8 @@
     {% block carousel %} 
       <div class="caroussel">
         <div class="hero-slider " >
-          {# <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite1, 'imageFile')  }}'); "> #}
-          <div class="single-slide" style="background-image: url(images/carousel/dgsr1.jpg); ">
+          <div class="single-slide" style="background-image: url('{{vich_uploader_asset(car1, 'imageFile')  }}'); ">
+            {# <div class="single-slide" style="background-image: url(images/carousel/dgsr1.jpg); "> #}
 
 
             <div class="inner ">
@@ -27,8 +27,8 @@
               </div>
             </div>
           </div>
-          <div class="single-slide" style="background-image: url(images/carousel/dgsr2.jpg); ">
-            {# <div class="single-slide " style="background-image: url('{{vich_uploader_asset(actualite2, 'imageFile')  }}')"> #}
+          {# <div class="single-slide" style="background-image: url(images/carousel/dgsr2.jpg); "> #}
+          <div class="single-slide " style="background-image: url('{{vich_uploader_asset(car2, 'imageFile')  }}')">
             <div class="inner">
               <div class="container">
                <div class="row justify-content-center">
@@ -43,8 +43,8 @@
           </div>
         </div>
       </div>
-      <div class="single-slide" style="background-image: url(images/carousel/dgsr3.jpg); ">
-        {# <div class="single-slide" style="background-image: url('{{vich_uploader_asset(actualite3, 'imageFile')}}')"> #}
+      {# <div class="single-slide" style="background-image: url(images/carousel/dgsr3.jpg); "> #}
+      <div class="single-slide" style="background-image: url('{{vich_uploader_asset(car3, 'imageFile')}}')">
         <div class="inner">
           <div class="container">
            <div class="row justify-content-center">
@@ -148,7 +148,7 @@
                     </div>
                   </div> #}
                 </div>
-                <div class="portfolio-content">
+                <div class="portfolio-content titre_actu">
                   {# <h5>{{ actualite.title}}</h5> #}
                   <h5 style="height: 38px">{{ actualite.title | length > 60 ? actualite.title  |slice(0, 60) ~ '...' : actualite.title   }}</h5>
                   <span>{{ actualite.datePub | date('d-m-Y')}}</span>
@@ -160,7 +160,7 @@
       </div>
     </div>
     <div class="text-center btn_liste_actu">
-      <a href="{{ path('actualites_liste') }}" class="button">Voir toutes les actualités</a>
+      <a href="{{ path('actualites') }}" class="button">Voir toutes les actualités</a>
     </div> 
   </div>
   {# fin section actualites #}
@@ -169,7 +169,7 @@
     <div class="container">
      <div class="section-title">
       <h2>Mot du Directeur Général</h2>
-      <p>Tsy ny tonga lafatra ihany fa ny tsara tsara kokoa</p>
+      {# <p>Tsy ny tonga lafatra ihany fa ny tsara tsara kokoa</p> #}
     </div>
     <div class="row">
       <div class="col-md-4">
@@ -212,3 +212,10 @@
 </div>
 
 {%endblock%}
+{% block javascripts %}
+  {# permet de regler parametre slide actualite dans la section testimonial slider #}
+  <script type="text/javascript" src="{{asset('flattheme/js/active_home.js') }}"></script> 
+
+
+{% endblock %}
+

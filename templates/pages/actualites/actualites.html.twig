@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/actuModal.css') }}">
+	{# <link rel="stylesheet" href="{{ asset('css/material.indigo-blue.min.css') }}"> #}
+	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
 
 {% endblock %}
 {% block title %}Actualités {% endblock %}
@@ -16,36 +17,46 @@
 					<h2>Les actualités</h2>
 				</div>
 
-				<!-- Responsive card start -->
-				<div class="card-container">
+				<div class="row">	
 					{% for actualite in actualites %}
-						<div class="card">
-							<div class="imgBx">
-								{% set i = 0 %} {# initialisation de i pour le compteur #}
-									{% for attachement in attachements %}
-										{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
-											{% if i == 0 %} {# on veut juste afficher la première image #}
-												<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
-											{% endif %}
-											{%  set i = i + 1 %}
-										{% endif %}
-									{% endfor %}
-									<h4><span>{{ actualite.datePub | date('d F Y')}}</span></h4>
-								</div>
-								<div class="content">
-									<h5>{{ actualite.title  | length > 10 ? actualite.content | slice(0, 30) ~ '...' : actualite.content | raw}}</h5>
-									<p>{{ actualite.content  | length > 10 ? actualite.content | slice(0, 40) ~ '...' : actualite.content | raw }} </p>
-									<div class="hover-content">
-										<div>
-											<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
-												Voir
-											</a>
+						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-2">	
+							<div class="single-portfolio card mdl-shadow--2dp">
+								<div class="inner">
+									<div class="portfolio-img">
+										{% set i = 0 %} {# initialisation de i pour le compteur #}
+											{% for attachement in attachements %}  
+												{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
+													{% if i == 0 %} {# on veut juste afficher la première image #}
+														<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
+													{% endif %}
+
+													{%  set i = i + 1 %}
+
+												{% endif %}
+											{% endfor %}
+											<div class="hover-content">
+												<div>
+													<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
+														Voir
+													</a>
+												</div>
+											</div>
+											<div class="portfolio-content">
+												<h5>{{ actualite.title | length > 50 ? actualite.title  |slice(0, 50) ~ '...' : actualite.title   }}</h5>
+												<span>{{ actualite.datePub | date('d-m-Y')}}</span>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						{% endfor %}
-					</div>
+						{% endfor %} 
+
+					</div> 
+					<div class="d-flex justify-content-center mt-5">	
+						<div class=" ">	
+							{{ knp_pagination_render(actualites) }}
+						</div>
+					</div> 
 				</div>
 			</div>
 
@@ -58,49 +69,40 @@
 		<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" s>
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
-					<div class="actu_detail " >
-					{# 	<div class="modal-header">
-							<div>
-								<h5 class="modal-title actu_title"  id="exampleModalCenterTitle"></h5>
-								<p class="actu_datepub m-0 p-0"></p>
 
-							</div>
-
+					<div class="main-wrapper" oncontextmenu="return false">
+						<div class="container-fluid ">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-						</div> #}
-						<div class="main-wrapper" oncontextmenu="return false">
-							<div class="container-fluid ">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
 
-								{# essai #}
-								<!--New modal template ok start-->
-								<div class="modal-content">
-									<section class="modalOpen">
-										<div class="wrapper">
+							{# essai #}
+							<!--New modal template ok start-->
+							<div class="modal-content">
+								<section class="modalOpen">
+									<div class="wrapper">
 
 
-											<div class="container">
-												<span class="icon-close"></span>
-												<div class="left">
-													<div class="details">
-														<div>
-															<h5 class="modal-title actu_title title"  id="exampleModalCenterTitle"></h5>
-															<p class="actu_datepub m-0 p-0"></p>
-
-														</div>
+										<div class="container">
+											<span class="icon-close"></span>
+											<div class="left">
+												<div class="details">
+													<div class=" text-center">
+														<h5 class=" actu_title title"  id="exampleModalCenterTitle"></h5>
+														<p class="actu_datepub m-0 p-0"></p>
 
 
-														<!-- Slider main container -->
-														<div class="swiper-container">
-															<!-- Additional required wrapper -->
-															<div class="swiper-wrapper">
-																<!-- Slides -->
+													</div>
 
-																<div class="testimonial-slider">
+
+													<!-- Slider main container -->
+													<div class="swiper-container">
+														<!-- Additional required wrapper -->
+														<div class="swiper-wrapper">
+															<!-- Slides -->
+
+															<div class="slide_actu">
+																<div class="testimonial-slider ">
 																	<div class="single-slide p-0 m-0">
 																		<div class="single-portfolio m-0 p-0">
 																			<div class="inner">
@@ -151,36 +153,53 @@
 																	</div>
 																</div>
 															</div>
+															{# version mobile probleme affichage #}
+
+															<div class="single-portfolio m-0 p-0 mobile_photo">
+																<div class="inner">
+
+																	<div class="portfolio-img">
+																		<div class="bg-one">	
+																			<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															{# fin version mobile #}
 														</div>
-
-														<article>
-															<h3 class="dateActu">Actualité du:</h3>
-															<p class="date">01 Dec 2015</p>
-														</article>
 													</div>
-												</div>
-												<div class="right">
-													<article class="actuContent">
 
-														<p  class="actu_content " > </p>
+													<article>
+														{# <h3 class="dateActu">Actualité du:</h3> #}
+														
+														{# <p class="date">01 Dec 2015</p> #}
+
 													</article>
 												</div>
 											</div>
+											<div class="right " >
+												<article class="actuContent">
+
+													<p  class="actu_content " > </p>
+												</article>
+											</div>
 										</div>
 									</div>
-								</section>
-								<!--New modal template ok end-->
+								</div>
+							</section>
+							<!--New modal template ok end-->
 
-								{# fin essai #}
+							{# fin essai #}
 
-							</div>
 						</div>
 					</div>
-
 				</div>
+
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </div>
 
@@ -190,7 +209,9 @@
 
 {% block javascripts %}
 	<script src="{{ asset('js/actualites_ajax.js') }}"></script>
-	{# // <script src="{{ asset('js/actualite.js') }}"></script> #}
+	// <script src="{{ asset('js/actualite.js') }}"></script>
 	<script src="{{ asset('js/actuModal.js') }}"></script>
+	<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
+	
 
 {% endblock %}
