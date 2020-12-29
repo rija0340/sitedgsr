@@ -1,6 +1,6 @@
 .titre_dgsr{
 	
-	/*text-shadow: 1px 1px 10px #000;*/
+	text-shadow: 1px 1px 10px #000;
 }
 .titre_dgsr h2{
 	color: white;
@@ -9,6 +9,11 @@
 .container_couveture{
 	background-size: cover;
 }
+
+/*.container_couverture{
+	opacity: 0.7	;
+	background-color:  red;
+	}*/
 /*media query pour responsive design*/
 
 /*extra large device*/

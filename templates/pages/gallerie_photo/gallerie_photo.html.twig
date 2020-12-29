@@ -22,12 +22,12 @@
 							<div class="desktop_title">
 								<div class="d-flex ">
 									<div class=""><h5> {{ actualite.title }}</h5></div>
-									<div class="ml-auto"><p>{{ actualite.datePub | date("d M Y")}} </p></div>
+									<div class="ml-auto"><p>{{ actualite.datePub | date("d-m-Y")}} </p></div>
 								</div>
 							</div>
 							<div class="m-0 p-0 mobile_title">
 								<div class="m-0 p-0"><h5> {{ actualite.title }}</h5></div>
-								<div class="m-0 p-0"><p>{{ actualite.datePub | date("d M Y")}} </p></div>
+								<div class="m-0 p-0"><p>{{ actualite.datePub | date("d-m-Y")}} </p></div>
 							</div>
 
 							<div class="gallery-wrap p-0 m-0">
@@ -48,7 +48,7 @@
 						</div>
 
 					{% endfor %}
-						<div class="d-flex justify-content-center mt-5">	
+					<div class="d-flex justify-content-center mt-5">	
 						<div class=" ">	
 							{{ knp_pagination_render(actualites) }}
 						</div>
