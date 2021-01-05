@@ -28,7 +28,7 @@ h3 {
 }
 @media screen and (max-width: 511px) {
   .btn {
-    margin-top: 5px;
+    margin-top : 5px;
   }
 }
 .btn span {

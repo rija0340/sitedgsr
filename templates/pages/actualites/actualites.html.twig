@@ -7,9 +7,9 @@
 {% endblock %}
 {% block title %}Actualités {% endblock %}
 	{% block content %}
-		{% include 'layouts/couverture.html.twig' %} 
-		
-		
+		{% include 'layouts/couverture.html.twig' %}
+
+
 		<div class="testimonial-area sp">
 			<div class="container">
 				<div class="section-title">
@@ -34,28 +34,26 @@
 								</div>
 								<div class="content">
 									<h5>{{ actualite.title  | length > 10 ? actualite.content | slice(0, 30) ~ '...' : actualite.content | raw}}</h5>
-									<p>{{ actualite.content  | length > 10 ? actualite.content | slice(0, 40) ~ '...' : actualite.content | raw }} </p>
-									<div class="hover-content">
-										<div>
-											<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
-												Voir
-											</a>
-										</div>
+									<p>{{ actualite.content  | length > 10 ? actualite.content | slice(0, 35) ~ '...' : actualite.content | raw }} </p>
+								</div>
+								<div class="hover-content">
+									<div>
+										<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
+											Voir
+										</a>
 									</div>
 								</div>
 							</div>
 						{% endfor %}
 					</div>
+					<!--			 Responsive card end -->
 				</div>
 			</div>
 
-			<!--			 Responsive card end -->
-
-
-		</div> 
 
 		<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
 		<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" s>
+
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="actu_detail " >
@@ -73,7 +71,7 @@
 						<div class="main-wrapper" oncontextmenu="return false">
 							<div class="container-fluid ">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
+									<span aria-hidden="true"></span>
 								</button>
 
 								{# essai #}
@@ -106,7 +104,7 @@
 																			<div class="inner">
 
 																				<div class="portfolio-img">
-																					<div class="bg-one">	
+																					<div class="bg-one">
 																						<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
 																					</div>
 																				</div>
@@ -118,7 +116,7 @@
 																			<div class="inner">
 
 																				<div class="portfolio-img">
-																					<div class="bg-two">	
+																					<div class="bg-two">
 																						<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
 																					</div>
 																				</div>
@@ -130,7 +128,7 @@
 																			<div class="inner">
 
 																				<div class="portfolio-img">
-																					<div class="bg-three">	
+																					<div class="bg-three">
 																						<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
 																					</div>
 																				</div>
@@ -142,7 +140,7 @@
 																			<div class="inner">
 
 																				<div class="portfolio-img">
-																					<div class="bg-four">	
+																					<div class="bg-four">
 																						<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
 																					</div>
 																				</div>

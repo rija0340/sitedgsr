@@ -47,8 +47,8 @@
 
 .actu_photos{
 
-	float : left; 
-	clear : both; 
+	float : left;
+	clear : both;
 	margin: 15px;
 }
 
@@ -254,7 +254,8 @@ footer{
 	.card-container{
 		position: relative;
 		width: 100vw;
-		display: flex;justify-content: center;
+		display: flex;
+		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -266,6 +267,7 @@ footer{
 		position: relative;
 		max-width: 300px;
 		min-width: 200px;
+		height: 165px;
 		background: rgba(99, 98, 100, 0.781);
 		margin: 25px;
 		margin-top: 45px;
@@ -274,14 +276,11 @@ footer{
 		display: flex;
 		flex-direction: column;
 		box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.212);
-		transition: 0.8s ease-in-out;
+		transition: 1.8s ease-in;
 	}
 
 	.card-container .card:hover{
-		width: 100%;
-		height: auto !important;
-		transition-duration: 3s;
-		transition-delay: 2s;
+		height: 350px !important;
 	}
 
 	.card-container .card .imgBx{
@@ -314,16 +313,21 @@ footer{
 		border: solid 6px #fff;
 	}
 
-	.card-container .card .content{
-		position: relative;
-		margin-top: 140px;
-		padding: 10px 5px;
+	.content{
+		display: none;
+		transition: 3.8s ease-in;
+	}
+	.card:hover .content{
+		display: block;
+	}
+	.js-actu_show{
 		text-align: center;
+		display: none;
 		color: #ffffff;
-		visibility: collapse;
-		opacity: 0;
-		transition: 0.8s ease-in-out;
-		line-height: 29px;
+		transition: 5.8s ease-in;
+	}
+	.card:hover .js-actu_show {
+		display: block;
 	}
 
 	.card-container .card .content h5{
@@ -333,14 +337,6 @@ footer{
 
 	.card-container .card .content p{
 		padding: 0.9em;
-	}
-
-	.card-container .card:hover .content{
-		visibility: visible;
-		opacity: 1;
-		margin-top: -40px;
-		max-height: 350px;
-		transition-delay: 0.4s;
 	}
 
 	/*Responsive Card - end*/
@@ -358,18 +354,45 @@ footer{
 
 	.close {
 		float: right;
+		height: 40px;
+			margin: 0;
+			width: 40px;
 		font-size: 2rem;
 		font-weight: 700;
 		line-height: 1;
-		color: #000;
+		color: #ff0000;
 		text-shadow: 0 1px 0 #fff;
 		opacity: .9;
+		background-image: -webkit-linear-gradient(top, #f4f1ee, #fff);
+			background-image: linear-gradient(top, #f4f1ee, #fff);
+		border-radius: 50%;
+		box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5);
+		width: 40px;
+		-webkit-transition: all .1s linear;
+			transition: all .1s linear;
 	}
+	.close:after{
+			color:#e9e6e4;
+			content: "✖";
+			display: contents;
+			text-align: center;
+			font-size: 25px;
+			height: 25px;
+			width: 25px;
+			text-decoration: none;
+			text-shadow: 0px -1px 1px #bdb5b4, 1px 1px 1px white;
+		}
 
 	.close:hover {
 		color: #000;
+		background-color: #ff0000;
+		border-radius: 50%;
 		text-decoration: none;
 	}
+	.close:hover:after{
+			color:#eb2f2f;
+			text-shadow:0px 0px 6px #eb2f2f;
+		}
 
 
 	/*owl dots pour testimonial slider*/
@@ -379,7 +402,7 @@ footer{
 		left: 50%;
 		bottom: 20px;
 		-webkit-transform: translateX(-50%);
-		transform: translateX(-50%); 
+		transform: translateX(-50%);
 	}
 	.testimonial-slider .owl-dots .owl-dot {
 		background-color: #fff;
@@ -387,19 +410,19 @@ footer{
 		width: 10px;
 		height: 4px;
 		margin: 0 3px;
-		border-radius: 30px; 
+		border-radius: 30px;
 	}
 	.testimonial-slider .owl-dots .owl-dot.active {
-		width: 15px; 
+		width: 15px;
 	}
 
 
 	.testimonial-slider .owl-dots .owl-dot.active{
-		background-color: #18a9e1; 
+		background-color: #18a9e1;
 	}
 
 
 	.testimonial-slider .owl-dots .owl-dot {
 		-webkit-transition: all 0.3s cubic-bezier(0.84, 0.35, 0.39, 0.74) 0s;
-		transition: all 0.3s cubic-bezier(0.84, 0.35, 0.39, 0.74) 0s; 
+		transition: all 0.3s cubic-bezier(0.84, 0.35, 0.39, 0.74) 0s;
 	}
