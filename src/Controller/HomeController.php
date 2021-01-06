@@ -29,9 +29,6 @@ class HomeController extends AbstractController
         $this->actuRepo = $actuRepo;
         $this->attachrepo = $attachrepo;
         $this->carouselRepo = $carouselRepo;
-
-
-
     }
     /**
      * @Route("/", name="index")
