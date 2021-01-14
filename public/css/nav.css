@@ -22,6 +22,7 @@ nav{
 
 .nav-item  {
 	color: white;
+	font-weight: bold;
 }
 
 .nav-item .nav-link{
@@ -70,8 +71,8 @@ nav{
 }
 
 .dropdown-menu>a{
-	
-	color: white; 
+
+	color: white;
 }
 
 
@@ -125,7 +126,7 @@ font-size: 1.2em;
 	}
 	.dropdown-item{
 		font-size: 1em;
-		
+
 	}
 	.dropdown-menu > a:hover{
 
@@ -147,7 +148,7 @@ font-size: 1.2em;
 	}
 	.dropdown-item{
 		font-size: 0.8em;
-		
+
 	}
 	.dropdown-menu > a:hover{
 

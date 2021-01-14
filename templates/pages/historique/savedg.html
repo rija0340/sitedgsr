@@ -1,0 +1,24 @@
+
+<!-- timeline dg -start
+<div class="container">
+  <h1 class="title">Les Directeurs généraux successifs de la Direction Générale de la Sécurité Routière</h1>
+  <div class="timeline">
+		{% for  director in directors %}
+		{% set i = 0 %} {# initialisation de i pour le compteur #}
+    <div class="timeline-nav">
+      <div class="timeline-nav__item">{{director.periode}}</div>
+    </div>
+    <div class="timeline-wrapper">
+      <div class="timeline-slider">
+        <div class="timeline-slide" style="background-image: url({{vich_uploader_asset(director, 'imageFile')  }})" data-year="1985">      <span class="timeline-year">{{director.periode}}</span>
+          <div class="timeline-slide__content">
+            <h4 class="timeline-title">{{director.name}}</h4>
+            <p class="timeline-text">{{director.grade}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+		{% endfor %}
+  </div>
+</div>
+ timeline dg -end -->

@@ -18,7 +18,6 @@
      <div class="container max-width-lg cd-timeline__container">
        <div class="cd-timeline__block">
          <div class="cd-timeline__img cd-timeline__gauche">
-           <img src="" alt="">
          </div> <!-- cd-timeline__img -->
          <div class="cd-timeline__content text-component">
            <h2>Signature convention ACM</h2>
@@ -32,7 +31,6 @@
 
        <div class="cd-timeline__block">
          <div class="cd-timeline__img cd-timeline__gauche">
-           <img src="" alt="">
          </div> <!-- cd-timeline__img -->
          <div class="cd-timeline__content text-component">
            <h2>Création des centres de visite techniques</h2>
@@ -86,7 +84,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__img--picture">
+         <div class="cd-timeline__img cd-timeline__droite">
          </div> <!-- cd-timeline__img -->
          <div class="cd-timeline__content text-component">
            <h2>la responsabilité de la visite technique à la Zandarimariam-Pirenena</h2>
@@ -99,7 +97,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__droite">
+         <div class="cd-timeline__img cd-timeline__gauche">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -114,7 +112,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__gauche">
+         <div class="cd-timeline__img cd-timeline__droite">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -128,7 +126,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__droite">
+         <div class="cd-timeline__img cd-timeline__gauche">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -142,7 +140,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__gauche">
+         <div class="cd-timeline__img cd-timeline__droite">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -156,7 +154,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__droite">
+         <div class="cd-timeline__img cd-timeline__gauche">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -170,7 +168,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__gauche">
+         <div class="cd-timeline__img cd-timeline__droite">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -184,7 +182,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__droite">
+         <div class="cd-timeline__img cd-timeline__gauche">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -198,7 +196,7 @@
        </div> <!-- cd-timeline__block -->
 
        <div class="cd-timeline__block">
-         <div class="cd-timeline__img cd-timeline__gauche">
+         <div class="cd-timeline__img cd-timeline__droite">
          </div> <!-- cd-timeline__img -->
 
          <div class="cd-timeline__content text-component">
@@ -231,14 +229,14 @@
 			{% for  director in directors %}
 
 				<div class="col-sm-6 col-md-4 col-lg-3 single-team" data-aos="fade-up">
-					<div class="inner">
+					<div class="inner cardDg">
 						<div class="team-img">
 							<img src="{{vich_uploader_asset(director, 'imageFile')  }}" alt="Member Photo">
 						</div>
 						<div class="team-content">
-							<h4>{{director.grade}}</h4>
-							<h5>{{director.name}}</h5>
-							<p>{{director.periode}}</p>
+							<h3 class="grade">{{director.grade}}</h3>
+							<h2 class="name">{{director.name}}</h2>
+							<p class="periode">{{director.periode}}</p>
 
 						</div>
 					</div>
@@ -250,10 +248,9 @@
 	</div>
 </div>
 
-
 {%endblock%}
 
 {% block javascripts %}
        <script src="timeline/js/main.js"></script>
-
+       <script src="timeline/js/dgsuc.js"></script>
   {%endblock%}
