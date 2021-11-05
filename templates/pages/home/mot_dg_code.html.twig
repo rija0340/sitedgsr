@@ -1,0 +1,39 @@
+  <div class="faq-area sp ">
+    <div class="container">
+     <div class="section-title">
+      <h2>Mot du Directeur Général</h2>
+      {# <p>Tsy ny tonga lafatra ihany fa ny tsara tsara kokoa</p> #}
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+
+        <div class=" single-team">
+         <div class="inner">
+          <div class="team-img">
+           <img src="{{vich_uploader_asset(current_dg, 'imageFile')}}" alt="Member Photo">
+         </div>
+         <div class="team-content">
+           <h5>{{ current_dg.grade }}</h5>
+           <h4>{{ current_dg.name }}</h4>
+
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="col-md-8">
+     <div class="faq">
+      <div class="single-item  mdl-shadow--2dp">
+       <h4>{{ (last_dgword.word  | length > 50 ? last_dgword.word |slice(0, 70) ~ '...' : last_dgword.word ) | raw }} </h4>
+
+       <div class="content">
+
+        {{ last_dgword.word | raw }} 
+      </div>
+    </div>
+    <div class="single-item  mdl-shadow--2dp">
+     <h4>{{ (last_dgword.wordGasy  | length > 50 ? last_dgword.wordGasy |slice(0, 70) ~ '...' : last_dgword.wordGasy ) | raw }} </h4>
+
+     <div class="content">
+      {{ last_dgword.wordGasy | raw }}
+    </div>
+  </div>
