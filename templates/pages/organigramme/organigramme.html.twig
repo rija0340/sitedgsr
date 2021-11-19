@@ -1,38 +1,37 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %} 
+{% block stylesheets %}
 
 	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/organigramme.css')}}">
 
-	{%endblock%}
-	{% block title %}Organigramme{% endblock %}
+{% endblock %}
+{% block title %}Organigramme
+{% endblock %}
 
 
-		{% block content %}
-			
-			{% include 'layouts/couverture.html.twig' %} 
-			
-			<div class="faq-area-2 sp">
-				<div class="container">
-					<div class="section-title" data-margin="0 0 40px">
-						<h2>Organigramme</h2>
-						{# <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> #}
-					</div>
-					{% for org in org %}
-						{% if org.filename %}
-							<img style="width : 100%" class="card-img-top" src="{{ vich_uploader_asset(org, 'imageFile') }}" alt="organigramme de la DGSR">
-						{% endif %}
-					{% endfor %}
-				</div>
+{% block content %}
+
+	{% include 'layouts/couverture.html.twig' %}
+
+	<div class="faq-area-2 sp">
+		<div class="container">
+			<div class="section-title" data-margin="0 0 40px">
+				<h2>Organigramme</h2>
+				{# <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p> #}
 			</div>
+			{% for org in org %}
+				{% if org.filename %}
+					<img style="width : 100%" class="card-img-top" src="{{ vich_uploader_asset(org, 'imageFile') }}" alt="organigramme de la DGSR">
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
 
-			{%endblock%}
+{% endblock %}
 
-			{% block javascripts %}
+{% block javascripts %}
 
-				<script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
-				<script src="{{ asset('js/caroussel_card.js') }}"></script>
-				<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
-				
-			{% endblock %}
+	<script src="{{ asset('js/jquery-1.12.4.min.js') }}"></script>
+	<script src="{{ asset('js/caroussel_card.js') }}"></script>
+	<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script>
 
-
+{% endblock %}

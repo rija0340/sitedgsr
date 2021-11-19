@@ -1,232 +1,220 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/style_table.css')}}">
-	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/resp_table/basictable.css')}}">
-	<link rel="stylesheet" type="text/css"href="{{ asset( 'css/tarifs.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/resp_table/style_table.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/resp_table/basictable.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/tarifs.css')}}">
 {% endblock %}
 
-{% block title %}Tarifs {% endblock %}
+{% block title %}Tarifs
+{% endblock %}
 
-	{% block content %}
-		{% include 'layouts/couverture.html.twig' %}     
+{% block content %}
+	{# {% include 'layouts/couverture.html.twig' %} #}
 
-		<div class="service-area bg2 sp">
-			<div class="container">
-				<div class="section-title">
-					<h2>Tarifs et papiers utiles</h2>
-					<p>Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</p>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/VT.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="" data-toggle="modal" data-target=".visite_domicile">Visite Technique à domicile 
-											</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>					
-
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/VTAp.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_apte">Visite Technique sur site, Apte</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>	
-
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/VTIn.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_inapte">Visite Technique sur site, Inapte</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>			
-
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/RT.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_reception">Réception Technique</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/VTDo.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_consta">Constatation avant dédouanement</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-
-						<div class="inner p-2">
-							<div class="row">
-								<div class="col-3">
-									<div class="text-center">
-										<img   src="{{ asset('flattheme/img/dgsr/icon/papier.png') }}" alt="logo">
-									</div>
-								</div>
-								<div class="col-9">
-									<div class="title d-flex ">
-										<h4 class="p-0">
-											<a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">Abbreviations et papiers utiles</a>
-										</h4>
-									</div>
-									<div class="content">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-		{# 			
-					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-						<div class="inner">
-							<div class="title">
-								<div class="icon">
-									<i class="fa fa-music"></i>
-								</div>
-								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">Abbreviations et papiers utiles<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
-							</div>
-							<div class="content">
-							</div>
-						</div>
-					</div>
-
-					<div style="display:none" class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
-						<div  style="display:none" class="inner">
-							<div class="title">
-								<div class="icon">
-									<i class="fa fa-music"></i>
-								</div>
-								<h4><a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">Abbreviations et papiers utiles<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></a></h4>
-							</div>
-							<div class="content">
-							</div>
-						</div>
-					</div> #}
-				</div>
+	<div class="service-area bg2 sp">
+		<div class="container text-center">
+			<div class="section-title">
+				<h2>Tarifs et papiers utiles</h2>
+				<p>Référence : Arrêté Interministériel N° 040/2017 du 03 jan 2017</p>
 			</div>
-		</div> 
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
 
-
-		{# modal pour mobile #}
-
-		<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal-target ">Extra large modal</button>
-
-		<div   style="height:600px;" class=" modal fade modal-target " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog " role="document">
-				<div class="modal-content" style="background-color : #fff">
-
-					<div class="actu_detail " >
-						<div class="modal-header">
-							<h5 class="modal-title  text-center"  id="exampleModalCenterTitle">
-
-							</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="main-wrapper" style="height" oncontextmenu="return false">
-
-							{# {% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} #}
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/VT.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="{{ path ('visite_domicile')}}">
+									<div class="title d-flex ">
+										<h4 class="p-0">
+											{# utilisé pour modal #}
+											{# <a class="btn_tarif" href="" data-toggle="modal" data-target=".visite_domicile">Visite Technique à domicile</a> #}
+										Visite Technique à domicile
+									</h4>
+								</div>
+								</a><div class="content"> </div>
+							</div>
 						</div>
 
 					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
+
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/VTAp.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="{{path('visite_site_apte')}}">
+									<div class="title d-flex ">
+										<h4
+											class="p-0">
+											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_apte">Visite Technique sur site, Apte</a> #}
+
+											Visite Technique sur site (APTE)
+										</h4>
+									</div>
+								</a>
+								<div class="content"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
+
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/VTIn.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="{{path('visite_site_inapte')}}">
+									<div class="title d-flex ">
+										<h4
+											class="p-0">
+											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_inapte">Visite Technique sur site, Inapte</a> #}
+											Visite Technique sur site (INAPTE)
+										</h4>
+									</div>
+								</a>
+								<div class="content"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
+
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/RT.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="{{path('tarif_reception')}}">
+									<div class="title d-flex ">
+										<h4
+											class="p-0">
+											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_reception">Réception Technique</a> #}
+											Réceptions Techniques
+											<br>
+											(isolé et par type)
+										</h4>
+									</div>
+								</a>
+								<div class="content"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
+
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/VTDo.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="{{path('tarif_consta')}}">
+									<div class="title d-flex ">
+										<h4
+											class="p-0">
+											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_consta">Constatation avant dédouanement</a> #}
+											Constatation avant dédouanement
+										</h4>
+									</div>
+								</a>
+								<div class="content"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 single-service">
+
+					<div class="inner p-2">
+						<div class="row">
+							<div class="col-3">
+								<div class="text-center">
+									<img src="{{ asset('flattheme/img/dgsr/icon/papier.png') }}" alt="logo">
+								</div>
+							</div>
+							<div class="col-9">
+								<a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">
+									<div class="title d-flex ">
+										<h4 class="p-0">
+											Abbreviations et papiers utiles
+										</h4>
+									</div>
+								</a>
+								<div class="content"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	{# modal pour mobile #}
+
+	<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal-target ">Extra large modal</button>
+
+	<div style="height:600px;" class=" modal fade modal-target " tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog " role="document">
+			<div class="modal-content" style="background-color : #fff">
+
+				<div class="actu_detail ">
+					<div class="modal-header">
+						<h5 class="modal-title  text-center" id="exampleModalCenterTitle"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div
+						class="main-wrapper" style="height" oncontextmenu="return false">{# {% include 'pages/tarifs/tarif_visite/visite_site_apte.html.twig' %} #}
+					</div>
+
 				</div>
 			</div>
 		</div>
+	</div>
 
+{% endblock %}
 
+{% block javascripts %}
 
-		{%endblock%}
+	<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
+	<script type="text/javascript" src="{{asset('flattheme/js/tarifs.js') }}"></script>
 
-		{% block javascripts %} 
-
-			<script type="text/javascript" src="{{ asset( 'js/tarifs.js') }}"></script>
-			<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
-
-			{%endblock%}
+{% endblock %}

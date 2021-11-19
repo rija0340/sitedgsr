@@ -13,12 +13,11 @@ class TarifsController extends AbstractController
 {
 
 
- public function __construct (ImagesEnteteRepository $imgenteterepo)
- {
+    public function __construct(ImagesEnteteRepository $imgenteterepo)
+    {
 
-  $this->imgenteterepo = $imgenteterepo;
-
-}
+        $this->imgenteterepo = $imgenteterepo;
+    }
 
 
     /**
@@ -26,78 +25,86 @@ class TarifsController extends AbstractController
      */
     public function tarifs()
     {
-        //affichage image en couveture
-      $i = 0;
-      
-      $last_image = new ImagesEntete();
-      $images = $this->imgenteterepo->findAll();
 
-      foreach ($images as $cle => $img) {
-
-        if ( $img->getLabelCouverture()->getLabel() == 'tarifs' ) {
-          $ity['$i'] = $img;
-          $i = $i +1;
-        }
-      }
-      $i = $i - 1;
-
-      $last_image = $ity['$i'];
-        return $this->render('pages/tarifs/tarifs.html.twig',[
-            'last_image' => $last_image
-        ]);
-
+        return $this->render('pages/tarifs/tarifs.html.twig');
     }
     /**
-     * @Route("/visite_site_apte", name="visite_site_apte")
+     * @Route("/tarifs/visite-sur-site-apte", name="visite_site_apte")
      */
     public function visite_site_apte()
     {
-        return $this->render('pages/tarifs/tarif_visite/visite_site_apte.html.twig');
-
+        return $this->render('pages/tarifs/tarif_visite/visite_site_apte.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
     }
     /**
-     * @Route("/visite_site_inapte", name="visite_site_inapte")
+     * @Route("/tarifs/visite-sur-site-inapte", name="visite_site_inapte")
      */
     public function visite_site_inapte()
     {
-        return $this->render('pages/tarifs/tarif_visite/visite_site_inapte.html.twig');
-
+        return $this->render('pages/tarifs/tarif_visite/visite_site_inapte.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
     }
     /**
-     * @Route("/visite_domicile", name="visite_domicile")
+     * @Route("/tarifs/visite-a-domicile", name="visite_domicile")
      */
     public function visite_domicile()
     {
-        return $this->render('pages/tarifs/tarif_visite/visite_domicile.html.twig');
-
+        return $this->render('pages/tarifs/tarif_visite/visite_domicile.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
     }
 
     /**
-     * @Route("/tarif_reception", name="tarif_reception")
+     * @Route("/tarifs/réception", name="tarif_reception")
      */
     public function tarif_reception()
     {
-        return $this->render('pages/tarifs/tarif_reception/reception.html.twig');
-
-    }  
-     /**
-     * @Route("/tarif_consta", name="tarif_consta")
+        return $this->render('pages/tarifs/tarif_reception/reception.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
+    }
+    /**
+     * @Route("/tarifs/constatation-avant-dedouanement", name="tarif_consta")
      */
-     public function tarif_consta()
-     {
-        return $this->render('pages/tarifs/tarif_consta/consta.html.twig');
-
-    }  
+    public function tarif_consta()
+    {
+        return $this->render('pages/tarifs/tarif_consta/consta.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
+    }
 
     /**
      * @Route("/liste_abbrev", name="liste_abbrev")
      */
     public function liste_abbrev()
     {
-        return $this->render('pages/tarifs/abbreviations.html.twig');
+        return $this->render('pages/tarifs/abbreviations.html.twig', [
+            'last_image' => $this->getImageCouverture()
+        ]);
+    }
 
-    }   
 
 
+    public function getImageCouverture()
+    {
+        //affichage image en couveture
+        $i = 0;
 
+        $last_image = new ImagesEntete();
+        $images = $this->imgenteterepo->findAll();
+
+        foreach ($images as $cle => $img) {
+
+            if ($img->getLabelCouverture()->getLabel() == 'tarifs') {
+                $ity['$i'] = $img;
+                $i = $i + 1;
+            }
+        }
+        $i = $i - 1;
+
+        $last_image = $ity['$i'];
+        return $last_image;
+    }
 }

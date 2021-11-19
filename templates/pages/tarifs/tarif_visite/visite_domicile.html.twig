@@ -1,59 +1,619 @@
+{% extends 'base.html.twig' %}
 
-<div class="overflow-auto tarif_visite" style=" max-height : 500px;">
-  <table id="table-two-axis" class="two-axis table_tarif">
-    <thead>
-     <tr>
-      <th class="text-center">Usage effectif des vehicules</th>
-      <th class="text-center">Validité (mois)</th>
-      <th class="text-center">Droit</th>
-      <th class="text-center">Pv</th>
-      <th class="text-center">Carte</th>
-      <th class="text-center">Carnet</th>
-      <th class="text-center">Tht</th>
-      <th class="text-center">Tva</th>
-      <th class="text-center">Net à payer</th>
-    </tr>
-  </thead>
-  <tbody>
-   <tr><td> VP</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> -</td><td>    -</td><td>    32 000</td><td> 6 400</td><td> 38 400</td></tr>
-   <tr><td> VP</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    34 000</td><td> 6 800</td><td> 40 800</td></tr>
+{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/resp_table/style_table.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/resp_table/basictable.css')}}">
+	<link
+	rel="stylesheet" type="text/css" href="{{ asset( 'css/tarifs.css')}}">
 
-   <tr><td> VL</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> -</td><td>    -</td><td>    32 000</td><td> 6 400</td><td> 38 400</td></tr>
-   <tr><td> VL</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    34 000</td><td> 6 800</td><td> 40 800</td></tr>
-   <tr><td> VL</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> -</td><td>    6 000</td><td>38 000</td><td> 7 600</td><td> 45 600</td></tr>
-   <tr><td> VL</td><td>  0</td><td>  30 000</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>40 000</td><td> 8 000</td><td> 48 000</td></tr>
 
-   <tr><td> VL<6plcs (VL6)</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> -</td><td>    -</td><td>    24 500</td><td> 4 900</td><td> 29 400</td></tr>
-   <tr><td> VL<6plcs (VL6)</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    26 500</td><td> 5 300</td><td> 31 800</td></tr>
-   <tr><td> VL<6plcs (VL6)</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> -</td><td>    6 000</td><td>30 500</td><td> 6 100</td><td> 36 600</td></tr>
-   <tr><td> VL<6plcs (VL6)</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>32 500</td><td> 6 500</td><td> 39 000</td></tr>
+	{# datatables #}
+	<link href="{{asset('datatables/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
+	<link
+	href="{{asset('datatables/datatables.net/css/jquery.dataTables.min.css')}}" rel="stylesheet">
+{# fin datatables #}
+{% endblock %}
 
-   <tr><td> TM3 - REM3 - SREM3 - TA - TMTPERS</td><td>  0</td><td>  9 000</td><td> 2 000</td><td> -</td><td>    -</td><td>    11 000</td><td> 2 200</td><td> 13 200</td></tr>
-   <tr><td> TM3 - REM3 - SREM3 - TA - TMTPERS</td><td>  0</td><td>  9 000</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    13 000</td><td> 2 600</td><td> 15 600</td></tr>
-   <tr><td> TM3 - REM3 - SREM3 - TA - TMTPERS</td><td>  0</td><td>  9 000</td><td> 2 000</td><td> -</td><td>    6 000</td><td>17 000</td><td> </td><td> 20 400</td></tr>
-   <tr><td> TM3 - REM3 - SREM3 - TA - TMTPERS</td><td>  0</td><td>  9 000</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>19 000</td><td> 3 800</td><td> 22 800</td></tr>
+{% block title %}Visite technique à domicile
+{% endblock %}
 
-   <tr><td> VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td><td>  0</td><td>  15 000</td><td> 2 000</td><td> -</td><td>    -</td><td>    17 000</td><td> 3 400</td><td> 20 400</td></tr>
-   <tr><td> VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td><td>  0</td><td>  15 000</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    19 000</td><td> 3 800</td><td> 22 800</td></tr>
-   <tr><td> VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td><td>  0</td><td>  15 000</td><td> 2 000</td><td> -</td><td>    6 000</td><td>23 000</td><td> 4 600</td><td> 27 600</td></tr>
-   <tr><td> VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td><td>  0</td><td>  15 000</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>25 000</td><td> 5 000</td><td> 30 000</td></tr>
+{% block content %}
+	{% include 'layouts/couverture.html.twig' %}
+	<div class="service-area bg2 sp">
+		<div style="margin-left : 50px; margin-right:50px">
+			<div class="section-title" data-margin="0 0 40px">
+				<h2 class="text-center">
+					Tarif visite technique à domicile</h2>
+			</div>
+			<div class="overflow-auto tarif_visite">
+				<table id="visite_domicile" class="two-axis table_tarif">
+					<thead>
+						<tr>
+							<th class="text-center">Usage effectif des vehicules</th>
+							<th class="text-center">Droit</th>
+							<th class="text-center">Pv</th>
+							<th class="text-center">Carte</th>
+							<th class="text-center">Carnet</th>
+							<th class="text-center">Tht</th>
+							<th class="text-center">Tva</th>
+							<th class="text-center">Net à payer</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								VP</td>
 
-   <tr><td> TM7-TRR7-REM7-SREM7</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> -</td><td>    -</td><td>    24 500</td><td> 4 900</td><td> 29 400</td></tr>
-   <tr><td> TM7-TRR7-REM7-SREM7</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    26 500</td><td> 5 300</td><td> 31 800</td></tr>
-   <tr><td> TM7-TRR7-REM7-SREM7</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> -</td><td>    6 000</td><td>30 500</td><td> 6 100</td><td> 36 600</td></tr>
-   <tr><td> TM7-TRR7-REM7-SREM7</td><td>  0</td><td>  22 500</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>32 500</td><td> 6 500</td><td> 39 000</td></tr>
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								32 000</td>
+							<td>
+								6 400</td>
+							<td>
+								38 400</td>
+						</tr>
+						<tr>
+							<td>
+								VP</td>
 
-   <tr><td> TM10 - TRR10 - REM 10 - SREM 10</td><td>  0</td><td>  37 500</td><td> 2 000</td><td> -</td><td>    -</td><td>    39 500</td><td> 7 900</td><td> 47 400</td></tr>
-   <tr><td> TM10 - TRR10 - REM 10 - SREM 10</td><td>  0</td><td>  37 500</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    41 500</td><td> 8 300</td><td> 49 800</td></tr>
-   <tr><td> TM10 - TRR10 - REM 10 - SREM 10</td><td>  0</td><td>  37 500</td><td> 2 000</td><td> -</td><td>    6 000</td><td>45 500</td><td> 9 100</td><td> 54 600</td></tr>
-   <tr><td> TM10 - TRR10 - REM 10 - SREM 10</td><td>  0</td><td>  37 500</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>47 500</td><td> 9 500</td><td> 57 000</td></tr>
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								34 000</td>
+							<td>
+								6 800</td>
+							<td>
+								40 800</td>
+						</tr>
 
-   <tr><td> TM 16 - TRR 16 - REM 16 - SREM 16</td><td>  0</td><td>  63 000</td><td> 2 000</td><td> -</td><td>    -</td><td>    65 000</td><td> 13 000</td><td> 78 000</td></tr>
-   <tr><td> TM 16 - TRR 16 - REM 16 - SREM 16</td><td>  0</td><td>  63 000</td><td> 2 000</td><td> 2 000</td><td>-</td><td>    67 000</td><td> 13 400</td><td> 80 400</td></tr>
-   <tr><td> TM 16 - TRR 16 - REM 16 - SREM 16</td><td>  0</td><td>  63 000</td><td> 2 000</td><td> -</td><td>    6 000</td><td>71 000</td><td> 14 200</td><td> 85 200</td></tr>
-   <tr><td> TM 16 - TRR 16 - REM 16 - SREM 16</td><td>  0</td><td>  63 000</td><td> 2 000</td><td> 2 000</td><td>6 000</td><td>73 000</td><td> 14 600</td><td> 87 600</td></tr>
+						<tr>
+							<td>
+								VL</td>
 
- </tbody>
-</table>
-</div>
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								32 000</td>
+							<td>
+								6 400</td>
+							<td>
+								38 400</td>
+						</tr>
+						<tr>
+							<td>
+								VL</td>
 
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								34 000</td>
+							<td>
+								6 800</td>
+							<td>
+								40 800</td>
+						</tr>
+						<tr>
+							<td>
+								VL</td>
+
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>38 000</td>
+							<td>
+								7 600</td>
+							<td>
+								45 600</td>
+						</tr>
+						<tr>
+							<td>
+								VL</td>
+
+							<td>
+								30 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>40 000</td>
+							<td>
+								8 000</td>
+							<td>
+								48 000</td>
+						</tr>
+
+						<tr>
+							<td>
+								VL<6plcs (VL6)</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								24 500</td>
+							<td>
+								4 900</td>
+							<td>
+								29 400</td>
+						</tr>
+						<tr>
+							<td>
+								VL<6plcs (VL6)</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								26 500</td>
+							<td>
+								5 300</td>
+							<td>
+								31 800</td>
+						</tr>
+						<tr>
+							<td>
+								VL<6plcs (VL6)</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>30 500</td>
+							<td>
+								6 100</td>
+							<td>
+								36 600</td>
+						</tr>
+						<tr>
+							<td>
+								VL<6plcs (VL6)</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>32 500</td>
+							<td>
+								6 500</td>
+							<td>
+								39 000</td>
+						</tr>
+
+						<tr>
+							<td>
+								TM3 - REM3 - SREM3 - TA - TMTPERS</td>
+
+							<td>
+								9 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								11 000</td>
+							<td>
+								2 200</td>
+							<td>
+								13 200</td>
+						</tr>
+						<tr>
+							<td>
+								TM3 - REM3 - SREM3 - TA - TMTPERS</td>
+
+							<td>
+								9 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								13 000</td>
+							<td>
+								2 600</td>
+							<td>
+								15 600</td>
+						</tr>
+						<tr>
+							<td>
+								TM3 - REM3 - SREM3 - TA - TMTPERS</td>
+
+							<td>
+								9 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>17 000</td>
+							<td></td>
+							<td>
+								20 400</td>
+						</tr>
+						<tr>
+							<td>
+								TM3 - REM3 - SREM3 - TA - TMTPERS</td>
+
+							<td>
+								9 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>19 000</td>
+							<td>
+								3 800</td>
+							<td>
+								22 800</td>
+						</tr>
+
+						<tr>
+							<td>
+								VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td>
+
+							<td>
+								15 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								17 000</td>
+							<td>
+								3 400</td>
+							<td>
+								20 400</td>
+						</tr>
+						<tr>
+							<td>
+								VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td>
+
+							<td>
+								15 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								19 000</td>
+							<td>
+								3 800</td>
+							<td>
+								22 800</td>
+						</tr>
+						<tr>
+							<td>
+								VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td>
+
+							<td>
+								15 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>23 000</td>
+							<td>
+								4 600</td>
+							<td>
+								27 600</td>
+						</tr>
+						<tr>
+							<td>
+								VP300-TPP ≤ 25 plcs-TM6-RM6-SREM6</td>
+
+							<td>
+								15 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>25 000</td>
+							<td>
+								5 000</td>
+							<td>
+								30 000</td>
+						</tr>
+
+						<tr>
+							<td>
+								TM7-TRR7-REM7-SREM7</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								24 500</td>
+							<td>
+								4 900</td>
+							<td>
+								29 400</td>
+						</tr>
+						<tr>
+							<td>
+								TM7-TRR7-REM7-SREM7</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								26 500</td>
+							<td>
+								5 300</td>
+							<td>
+								31 800</td>
+						</tr>
+						<tr>
+							<td>
+								TM7-TRR7-REM7-SREM7</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>30 500</td>
+							<td>
+								6 100</td>
+							<td>
+								36 600</td>
+						</tr>
+						<tr>
+							<td>
+								TM7-TRR7-REM7-SREM7</td>
+
+							<td>
+								22 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>32 500</td>
+							<td>
+								6 500</td>
+							<td>
+								39 000</td>
+						</tr>
+
+						<tr>
+							<td>
+								TM10 - TRR10 - REM 10 - SREM 10</td>
+
+							<td>
+								37 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								39 500</td>
+							<td>
+								7 900</td>
+							<td>
+								47 400</td>
+						</tr>
+						<tr>
+							<td>
+								TM10 - TRR10 - REM 10 - SREM 10</td>
+
+							<td>
+								37 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								41 500</td>
+							<td>
+								8 300</td>
+							<td>
+								49 800</td>
+						</tr>
+						<tr>
+							<td>
+								TM10 - TRR10 - REM 10 - SREM 10</td>
+
+							<td>
+								37 500</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>45 500</td>
+							<td>
+								9 100</td>
+							<td>
+								54 600</td>
+						</tr>
+						<tr>
+							<td>
+								TM10 - TRR10 - REM 10 - SREM 10</td>
+
+							<td>
+								37 500</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>47 500</td>
+							<td>
+								9 500</td>
+							<td>
+								57 000</td>
+						</tr>
+
+						<tr>
+							<td>
+								TM 16 - TRR 16 - REM 16 - SREM 16</td>
+
+							<td>
+								63 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								-</td>
+							<td>
+								65 000</td>
+							<td>
+								13 000</td>
+							<td>
+								78 000</td>
+						</tr>
+						<tr>
+							<td>
+								TM 16 - TRR 16 - REM 16 - SREM 16</td>
+
+							<td>
+								63 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>-</td>
+							<td>
+								67 000</td>
+							<td>
+								13 400</td>
+							<td>
+								80 400</td>
+						</tr>
+						<tr>
+							<td>
+								TM 16 - TRR 16 - REM 16 - SREM 16</td>
+
+							<td>
+								63 000</td>
+							<td>
+								2 000</td>
+							<td>
+								-</td>
+							<td>
+								6 000</td>
+							<td>71 000</td>
+							<td>
+								14 200</td>
+							<td>
+								85 200</td>
+						</tr>
+						<tr>
+							<td>
+								TM 16 - TRR 16 - REM 16 - SREM 16</td>
+
+							<td>
+								63 000</td>
+							<td>
+								2 000</td>
+							<td>
+								2 000</td>
+							<td>6 000</td>
+							<td>73 000</td>
+							<td>
+								14 600</td>
+							<td>
+								87 600</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascripts %}
+	<!-- Datatables -->
+	<script src="{{asset('vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-buttons/js/buttons.flash.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-keytable/js/dataTables.keyTable.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
+	<script src="{{asset('vendors/datatables.net-scroller/js/dataTables.scroller.min.js')}}"></script>
+	<script src="{{asset('vendors/jszip/dist/jszip.min.js')}}"></script>
+	<script src="{{asset('vendors/pdfmake/build/pdfmake.min.js')}}"></script>
+	<script src="{{asset('vnedors/pdfmake/build/vfs_fonts.js')}}"></script>
+	<script src="{{asset('js/tarifs/visite_domicile.datatable.fr.js')}}"></script>
+{% endblock %}

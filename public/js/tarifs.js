@@ -1,10 +1,10 @@
 
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 
-	$(".btn_tarif").on('click', function( e ){
+	$(".btn_tarif").on('click', function (e) {
 
 
 		//recuperaton de l'element cliqué (unique car chacun a son href)
@@ -26,19 +26,16 @@ $(document).ready(function() {
 
 		// console.log(include);
 
-		var url = '/'+ id ;
+		var url = '/' + id;
 		// var url = '/tarif_consta';
 		//ceci permet de recuperer un element html et le met dans le div main-wrapper de la page fille
 		//bouton clické -> ce code ci dessous active url dans controle et recupere element html dans render
-		$('.main-wrapper').load(url, function() {
+		$('.main-wrapper').load(url, function () {
 			$('.modal-title').html(title);
 			$('#bouton').trigger('click');
 			$a.children().addClass('hide');
-			
-		}); 
 
-
-
+		});
 
 	});
 });
