@@ -14,6 +14,7 @@
         "fzaninotto/faker": "^1.9",
         "knplabs/knp-paginator-bundle": "^4.1",
         "liip/imagine-bundle": "^2.2",
+        "mailjet/mailjet-apiv3-php": "^1.5",
         "sensio/framework-extra-bundle": "^5.1",
         "stfalcon/tinymce-bundle": "^2.4",
         "symfony/asset": "4.3.*",

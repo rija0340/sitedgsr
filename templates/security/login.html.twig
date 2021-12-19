@@ -4,6 +4,13 @@
 
 	{% block content %}
 		<div class="container p-5">
+		{% for message in app.flashes('notice') %}
+		<div class="text-center">
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+		</div>
+{% endfor %}
 			<form method="post">
 				{% if error %}
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -41,6 +48,8 @@
         <button class="btn btn-lg btn-primary mt-2" type="submit">
         	connexion
         </button>
+		<a href="{{path('change_password')}}" class="">Mot de passe oublié</a>
+		
     </form>
 </div>
 
