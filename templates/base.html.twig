@@ -47,11 +47,12 @@ f.parentNode.insertBefore(j, f);
 		<link rel="stylesheet" type="text/css" href="{{ asset( 'css/styles.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('flattheme/css/owl.carousel.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{ asset( 'css/couverture.css')}}">
+		<link rel="stylesheet" href="{{ asset('css/from_khobor_template/style.css') }}">
+
 
 		{# cdn pour font awesome #}
-		{# <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> #}
-		{% block stylesheets %}
-	{%endblock%}
+		{# <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> #}{% block stylesheets %}
+	{% endblock %}
 	</head>
 		<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -59,13 +60,12 @@ f.parentNode.insertBefore(j, f);
 		</noscript>
 		<!-- End Google Tag Manager (noscript) -->
 
-		{% block banniere%}{%endblock %}
+		{% block banniere %}{% endblock %}
 		{% block nav %}
-		{% include 'layouts/nav.html.twig' %}{%endblock%}
-		{% block carousel %}
-		{%endblock%}
-		{% block content %}
-		{%endblock%}
+			{% include 'layouts/nav.html.twig' %}
+		{% endblock %}
+		{% block carousel %}{% endblock %}
+		{% block content %}{% endblock %}
 
 		{% block sidenav %}
 
@@ -73,17 +73,11 @@ f.parentNode.insertBefore(j, f);
 		{% endblock %}
 
 		{% block footer %}
-		{% include 'layouts/footer.html.twig' %}
-		{%endblock%}<!-- Bootstrap core JavaScript -->
+			{% include 'layouts/footer.html.twig' %}
+		{% endblock %}
+		<!-- Bootstrap core JavaScript -->
 
 		<!-- veuillez respecter l'odre des declarations des sripts -->
-
-		{# <script src="{{ asset( 'vendor_bootstrap/jquery/jquery.min.js') }}"></script>
-																		<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.min.js') }}"></script>
-																		<script src="{{ asset( 'vendor_bootstrap/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-																		<script type="text/javascript" src="{{ asset( 'js/material.min.js') }}"></script>
-																		<script type="text/javascript" src="{{ asset( 'js/nav.js') }}"></script>#}
-
 
 		{# {# liste des js pour flattheme #}<script type="text/javascript" src="{{asset('flattheme/js/jquery-2.2.4.min.js') }}"> </script>
 		<script type="text/javascript" src="{{asset('flattheme/js/vendor/popper.min.js') }}"></script>
@@ -94,9 +88,8 @@ f.parentNode.insertBefore(j, f);
 		<script type="text/javascript" src="{{asset('flattheme/js/vendor/jquery.barfiller.js') }}"></script>
 		<script type="text/javascript" src="{{asset('flattheme/js/vendor/loopcounter.js') }}"></script>
 		<script type="text/javascript" src="{{asset('flattheme/js/vendor/slicknav.min.js') }}"></script>
-		{# // <script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script>  #}
+		<!-- carousel dans details actualités-->
 		<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script>
-		{% block javascripts %}
-		{%endblock%}
+		{% block javascripts %}{% endblock %}
 	</body>
 </html>

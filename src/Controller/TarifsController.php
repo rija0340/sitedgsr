@@ -25,8 +25,10 @@ class TarifsController extends AbstractController
      */
     public function tarifs()
     {
-
-        return $this->render('pages/tarifs/tarifs.html.twig');
+        $last_image =  $this->getImageCouverture();
+        return $this->render('pages/tarifs/tarifs.html.twig', [
+            'last_image' => $last_image
+        ]);
     }
     /**
      * @Route("/tarifs/visite-sur-site-apte", name="visite_site_apte")

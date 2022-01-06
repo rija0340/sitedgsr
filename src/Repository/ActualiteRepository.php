@@ -19,6 +19,19 @@ class ActualiteRepository extends ServiceEntityRepository
         parent::__construct($registry, Actualite::class);
     }
 
+    /**
+     * @return Actualite[] Returns an array of Actualite objects
+     */
+
+    public function findNotVideoOnly()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.video_only = FALSE')
+            ->orderBy('a.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Actualite[] Returns an array of Actualite objects
     //  */

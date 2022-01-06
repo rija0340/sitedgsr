@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Actualite;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -69,13 +68,17 @@ class Actualite
      */
     private $attachements;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $video_only;
+
 
 
     public function __construct()
     {
-        
-        $this->attachements = new ArrayCollection();
 
+        $this->attachements = new ArrayCollection();
     }
 
 
@@ -128,7 +131,7 @@ class Actualite
         return $this;
     }
 
-   
+
     public function getUrlVideo(): ?string
     {
         return $this->url_video;
@@ -150,9 +153,9 @@ class Actualite
     public function setImageFile(?File $imageFile): Actualite
     {
         $this->imageFile = $imageFile;
-        
+
         if ($this->imageFile instanceof UploadedFile) {
-            $this->updated_at = new \Datetime('now');            
+            $this->updated_at = new \Datetime('now');
         }
 
         return $this;
@@ -173,32 +176,32 @@ class Actualite
         return $this->updated_at;
     }
 
-       /**
+    /**
      * @param null|Datetime 
      *
      * @return self
      */
-       public function setUpdatedAt(\DateTimeInterface $updated_at): self
-       {
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
         $this->updated_at = $updated_at;
 
         return $this;
     }
 
-     
-        public function getDatePub(): ?\DateTimeInterface
-        {
-         return $this->datePub;
-     }
 
-     public function setDatePub(\DateTimeInterface $datePub): self
-     {
-         $this->datePub = $datePub;
+    public function getDatePub(): ?\DateTimeInterface
+    {
+        return $this->datePub;
+    }
 
-         return $this;
-     }
+    public function setDatePub(\DateTimeInterface $datePub): self
+    {
+        $this->datePub = $datePub;
 
-     /**
+        return $this;
+    }
+
+    /**
      * @return Collection|Attachement[]
      */
     public function getAttachements(): Collection
@@ -229,4 +232,15 @@ class Actualite
         return $this;
     }
 
- }
+    public function getVideoOnly(): ?bool
+    {
+        return $this->video_only;
+    }
+
+    public function setVideoOnly(?bool $video_only): self
+    {
+        $this->video_only = $video_only;
+
+        return $this;
+    }
+}

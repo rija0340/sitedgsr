@@ -1,175 +1,175 @@
 /*carousel mise en forme*/
 
 .carousel-caption {
-	text-align: center;
-	text-shadow: 1px 1px 10px #000;
-	/*background-color: gray;*/
-
+    text-align: center;
+    text-shadow: 1px 1px 10px #000;
+    /*background-color: gray;*/
 }
+
 
 /*positionner carousel caption en bas, en haut */
-.hero-slider .inner{
-	
-	position:relative; 
-	bottom:-220px;
+
+.hero-slider .inner {
+    position: relative;
+    bottom: -220px;
 }
+
 
 /* misson et activite */
-.mission_texte{
-	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	font-size: 0.9em;
-	text-align: justify;
-	text-indent: 2em;
-}
-.mission_texte:hover{
-	-webkit-animation: slidebloc 0.8s infinite;
+
+.mission_texte {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 0.9em;
+    text-align: justify;
+    text-indent: 2em;
 }
 
-
-.text-service{
-
-	font-size: 1em;
-	margin: 0;
+.mission_texte:hover {
+    -webkit-animation: slidebloc 0.8s infinite;
 }
 
-.activite{
-	text-align: center;
-
+.text-service {
+    font-size: 1em;
+    margin: 0;
 }
 
-.activite:hover{
-	background-color : #bae1ff;
+.activite {
+    text-align: center;
 }
 
+.activite:hover {
+    background-color: #bae1ff;
+}
 
 .fa {
-	color: #00abed;
-	text-align: center;
+    color: #00abed;
+    text-align: center;
 }
 
-.fa-bus, .fa-taxi, .fa-car, .fa-truck{
-	font-size: 2.7em;
+.fa-bus,
+.fa-taxi,
+.fa-car,
+.fa-truck {
+    font-size: 2.7em;
+}
+
+.image_service {
+    width: 58px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 
 /*spot video*/
-iframe{
-	height: 400px;
-	width: 600px;
-	border: none;
+
+iframe {
+    height: 400px;
+    width: 600px;
+    border: none;
 }
 
+
 /*actualites*/
-.btn_liste_actu{
-	margin-top: 30px;
+
+.btn_liste_actu {
+    margin-top: 30px;
 }
+
 .titre_actu h5 {
-	font-size: 16px;
+    font-size: 16px;
 }
+
 
 /*directeur général*/
 
-.photo_dg{
-	width: 30%;
-	height: 30%;
+.photo_dg {
+    width: 30%;
+    height: 30%;
 }
 
-.mdl-shadow--2dp
-{
-	box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)
+.mdl-shadow--2dp {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
 
 
 /*media query pour responsive design*/
 
+
 /*extra large device*/
-@media (min-width: 1200px) {
 
-	
-
-}
+@media (min-width: 1200px) {}
 
 
 /* larges devices */
 
-@media  (min-width: 992px)and (max-width: 1199.98px) {
+@media (min-width: 992px)and (max-width: 1199.98px) {}
 
-}
 
 /*  medium device(tablets) */
-@media (min-width: 768px) and (max-width: 991.98px) {
 
-	.caroussel{
-		display: block;
-	}
-	.hero-slider .single-slide {
-		height: 400px;
-	}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .caroussel {
+        display: block;
+    }
+    .hero-slider .single-slide {
+        height: 400px;
+    }
 }
 
 
 /* small device */
+
 @media (min-width: 576px) and (max-width: 767.98px) {
-
-	/*custom flatdesign*/
-
-	.caroussel{
-		display: block;
-	}
-	.iframe_spot{
-		text-align: center;
-		position: relative;
-		width: 600px;
-		height: auto;
-		border: 1px solid red;
-	}
-	/* section title */
-	.section-title h2 {
-		margin: 0 0 5px;
-		font-size: 30px;
-		font-weight: 600;
-	}
-
+    /*custom flatdesign*/
+    .caroussel {
+        display: block;
+    }
+    .iframe_spot {
+        text-align: center;
+        position: relative;
+        width: 600px;
+        height: auto;
+        border: 1px solid red;
+    }
+    /* section title */
+    .section-title h2 {
+        margin: 0 0 5px;
+        font-size: 30px;
+        font-weight: 600;
+    }
 }
+
 
 /*extra small device */
+
 @media (max-width: 575.98px) {
-
-	.caroussel{
-		display: block;
-	}
-	iframe{
-		height: 200px;
-		width: 300px;
-		border: none;
-	}
-	.service-area{
-		display: block;
-	}
-	
-	.section-title p{
-		font-size: 15px
-	}
-
-	.hero-slider .owl-dots {
-		display: none;
-	}
-	.hero-slider .owl-nav > div {
-		display: none;
-	}
-	/*positionner carousel caption en bas, en haut */
-	.hero-slider .inner{
-		
-		position:relative; 
-		bottom:-150px;
-	}
-	.carousel-caption {
-
-		font-size: 14px;
-
-	}
-
+    .caroussel {
+        display: block;
+    }
+    iframe {
+        height: 200px;
+        width: 300px;
+        border: none;
+    }
+    .service-area {
+        display: block;
+    }
+    .section-title p {
+        font-size: 15px
+    }
+    .hero-slider .owl-dots {
+        display: none;
+    }
+    .hero-slider .owl-nav>div {
+        display: none;
+    }
+    /*positionner carousel caption en bas, en haut */
+    .hero-slider .inner {
+        position: relative;
+        bottom: -150px;
+    }
+    .carousel-caption {
+        font-size: 14px;
+    }
 }
-
-
-

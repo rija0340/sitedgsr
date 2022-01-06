@@ -6,15 +6,19 @@
 	<link
 	rel="stylesheet" type="text/css" href="{{ asset( 'css/tarifs.css')}}">
 
-
 	{# datatables #}
 	<link href="{{asset('datatables/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{asset('datatables/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{asset('datatables/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{asset('datatables/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{asset('datatables/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('datatables/datatables.net/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 	<link
+<<<<<<< HEAD
 	href="{{asset('datatables/datatables.net/css/dataTables.min.css')}}" rel="stylesheet">
+=======
+	href="{{asset('/css/datatables/pagination_style.css')}}" rel="stylesheet">
+>>>>>>> innovation
 {# fin datatables #}
 {% endblock %}
 
@@ -29,7 +33,7 @@
 				<h2 class="text-center">
 					Tarif visite technique à domicile</h2>
 			</div>
-			<div class="overflow-auto tarif_visite">
+			<div class=" tarif_visite">
 				<table id="visite_domicile" class="two-axis table_tarif">
 					<thead>
 						<tr>

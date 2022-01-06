@@ -1,7 +1,7 @@
 /* jshint esnext: true */
 var document,
-window;
-(function ($) {
+    window;
+(function($) {
     'use stict';
 
     const flat = {};
@@ -18,28 +18,28 @@ window;
     flat.customCode = () => {
         // dynamic-margin-padding
         var dataMargin = $('[data-margin]');
-        dataMargin.each(function () {
+        dataMargin.each(function() {
             var getMargin = $(this).attr('data-margin');
             $(this).css('margin', getMargin);
         });
         var dataPadding = $('[data-padding]');
-        dataPadding.each(function () {
+        dataPadding.each(function() {
             var getPadding = $(this).attr('data-padding');
             $(this).css('padding', getPadding);
         });
 
         flat.faq = $('.faq');
-        flat.faq.each(function () {
+        flat.faq.each(function() {
             flat.singleFaq = $(this).find('.single-item');
-            flat.singleFaq.on('click', function () {
+            flat.singleFaq.on('click', function() {
                 $(this).find('.content').slideToggle();
                 $(this).toggleClass('active');
             });
         });
-        
+
         flat.windowHeight = $(window).height();
-        $('.window-height').css('min-height',flat.windowHeight);
-        
+        $('.window-height').css('min-height', flat.windowHeight);
+
         flat.searchIcon = $('.search-icon');
         flat.searchForm = $('.search-form');
         flat.searchIcon.on('click', function() {
@@ -48,11 +48,11 @@ window;
     };
 
     flat.fnPlugins = () => {
-        if($.fn.barfiller){
+        if ($.fn.barfiller) {
             flat.b_filler = $('.barfiller');
             flat.b_filler.barfiller();
         }
-        if($.fn.slicknav){
+        if ($.fn.slicknav) {
             $('#menu > ul').slicknav();
         }
     };
@@ -67,7 +67,7 @@ window;
                 layoutMode: 'fitRows'
             });
 
-            flat.portfolio_menu.on('click', function () {
+            flat.portfolio_menu.on('click', function() {
                 flat.portfolio_menu.removeClass("active");
                 $(this).addClass("active");
                 var selector = $(this).attr('data-filter');
@@ -101,41 +101,35 @@ window;
                 loop: true,
                 autoplayHoverPause: true,
                 nav: true,
-                autoHeight:true,
+                autoHeight: true,
                 navText: [
-                '<i class="fa fa-angle-left"></i>',
-                '<i class="fa fa-angle-right"></i>'
+                    '<i class="fa fa-angle-left"></i>',
+                    '<i class="fa fa-angle-right"></i>'
                 ]
             });
 
             flat.tstSlider = $('.testimonial-slider');
             flat.tstSlider.addClass('owl-carousel');
             flat.tstSlider.owlCarousel({
-                items: 1,
+                items: 3,
                 autoplay: true,
                 loop: true,
-                margin: 15,
-                dots: true,
-                // test dots
-                // dotsEach: false,
-                // dotsData: false,
-                // dotsSpeed: false,
-                // dotsContainer: false,
-                slideBy:1,
-                nav: false,
+                margin: 30,
+                dots: false,
+                nav: true,
                 navText: [
-                '<i class="fa fa-arrow-left"></i>',
-                '<i class="fa fa-arrow-right"></i>'
+                    '<i class="fa fa-arrow-left"></i>',
+                    '<i class="fa fa-arrow-right"></i>'
                 ],
                 responsive: {
                     0: {
                         items: 1
                     },
                     768: {
-                        items: 1
+                        items: 2
                     },
                     992: {
-                        items: 1
+                        items: 3
                     }
                 }
             });

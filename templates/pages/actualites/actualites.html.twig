@@ -1,217 +1,203 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/actuModal.css') }}">
+	<link
+	rel="stylesheet" href="{{ asset('css/actuModal.css') }}">
 	{# <link rel="stylesheet" href="{{ asset('css/material.indigo-blue.min.css') }}"> #}
 	<link rel="stylesheet" href="{{ asset('css/actualites.css') }}">
 
 {% endblock %}
-{% block title %}Actualités {% endblock %}
-	{% block content %}
-		{% include 'layouts/couverture.html.twig' %} 
-		
-		
-		<div class="testimonial-area sp">
-			<div class="container">
-				<div class="section-title">
-					<h2>Les actualités</h2>
-				</div>
+{% block title %}Actualités
+{% endblock %}
+{% block content %}
+{% include 'layouts/couverture.html.twig' %}
 
-				<div class="row">	
-					{% for actualite in actualites %}
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-2">	
-							<div class="single-portfolio card mdl-shadow--2dp">
-								<div class="inner">
-									<div class="portfolio-img" style="height : 250px;">
-										{% set i = 0 %} {# initialisation de i pour le compteur #}
-											{% for attachement in attachements %}  
-												{% if actualite == attachement.actualite %} {# verifier si attachement correspond à curent actualite #}
-													{% if i == 0 %} {# on veut juste afficher la première image #}
-														<img src="{{vich_uploader_asset(attachement, 'imageFile')  }}" alt="">
-													{% endif %}
 
-													{%  set i = i + 1 %}
+<div class="testimonial-area sp">
+	<div class="container">
+		<div class="section-title">
+			<h2>Les actualités</h2>
+		</div>
 
-												{% endif %}
-											{% endfor %}
-											<div class="hover-content">
-												<div>
-													<a class="js-actu_show button " id="actu-{{ actualite.id }}"	href="{{ path('actualite.show', { id : actualite.id }) }}">
-														Voir
-													</a>
-												</div>
-											</div>
-											<div class="portfolio-content">
-												<h5>{{ actualite.title | length > 50 ? actualite.title  |slice(0, 50) ~ '...' : actualite.title   }}</h5>
-												<span>{{ actualite.datePub | date('d-m-Y')}}</span>
-											</div>
-										</div>
-									</div>
-								</div>
+		<div class="row">
+			{% for actualite in actualites %}
+				<div class="post post-large politic-post post-separator-border col-md-6 col-sm-12 col-xs-12">
+					<div
+						class="post-wrap">
+						<!-- Image -->
+						{% set i = 0 %}
+						{# initialisation de i pour le compteur #}
+						{% for attachement in attachements %}
+							{% if actualite == attachement.actualite %}
+								{# verifier si attachement correspond à curent actualite #}
+								{% if i == 0 %}
+									{# on veut juste afficher la première image #}
+									<div class="image"><img src="../../../uploads/images/actualite/{{attachement.image}}" alt=""></div>
+								{% endif %}
+								{%  set i = i + 1 %}
+							{% endif %}
+						{% endfor %}
+						<!-- Content -->
+						<div
+							class="content">
+							<!-- Title -->
+							<h5 class="title">
+								<a href="{{path('actualite_details', {'id' : actualite.id })}}">{{actualite.title}}</a>
+							</h5>
+							<!-- Meta -->
+							<div class="meta fix">
+								<span class="meta-item date">
+									<i class="fa fa-clock-o"></i>
+									{{ actualite.datePub | date('d-m-Y')}}</span>
 							</div>
-						{% endfor %} 
-
-					</div> 
-					<div class="d-flex justify-content-center mt-5">	
-						<div class=" ">	
-							{{ knp_pagination_render(actualites) }}
+							<!-- Description -->
+							<p>{{ actualite.content| length > 200 ? actualite.content|striptags|slice(0, 200) ~ '...' : actualite.content|raw   }}</p>
+							<!-- Read More -->
+							<a href="{{path('actualite_details', {'id': actualite.id})}}" class="read-more">
+								lire</a>
 						</div>
-					</div> 
+					</div>
 				</div>
+			{% endfor %}
+
+		</div>
+		<div class="d-flex justify-content-center mt-5">
+			<div class=" ">
+				{{ knp_pagination_render(actualites) }}
 			</div>
+		</div>
+	</div>
+</div>
 
-			<!--			 Responsive card end -->
+<!--			 Responsive card end --></div><button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button><div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" s>
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
 
+		<div class="main-wrapper" oncontextmenu="return false">
+			<div class="container-fluid ">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 
-		</div> 
-
-		<button style="display : none;" id="bouton" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-		<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" s>
-			<div class="modal-dialog" role="document">
+				{# essai #}
+				<!--New modal template ok start-->
 				<div class="modal-content">
-
-					<div class="main-wrapper" oncontextmenu="return false">
-						<div class="container-fluid ">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-
-							{# essai #}
-							<!--New modal template ok start-->
-							<div class="modal-content">
-								<section class="modalOpen">
-									<div class="wrapper">
+					<section class="modalOpen">
+						<div class="wrapper">
 
 
-										<div class="container">
-											<span class="icon-close"></span>
-											<div class="left">
-												<div class="details">
-													<div class=" text-center">
-														<h5 class=" actu_title title"  id="exampleModalCenterTitle"></h5>
-														<p class="actu_datepub m-0 p-0"></p>
+							<div class="container">
+								<span class="icon-close"></span>
+								<div class="left">
+									<div class="details">
+										<div class=" text-center">
+											<h5 class=" actu_title title" id="exampleModalCenterTitle"></h5>
+											<p class="actu_datepub m-0 p-0"></p>
 
 
-													</div>
+										</div>
 
 
-													<!-- Slider main container -->
-													<div class="swiper-container">
-														<!-- Additional required wrapper -->
-														<div class="swiper-wrapper">
-															<!-- Slides -->
+										<!-- Slider main container -->
+										<div
+											class="swiper-container">
+											<!-- Additional required wrapper -->
+											<div
+												class="swiper-wrapper">
+												<!-- Slides -->
 
-															<div class="slide_actu">
-																<div class="testimonial-slider ">
-																	<div class="single-slide p-0 m-0">
-																		<div class="single-portfolio m-0 p-0">
-																			<div class="inner">
-
-																				<div class="portfolio-img">
-																					<div class="bg-one">	
-																						<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="single-slide p-0 m-0">
-																		<div class="single-portfolio m-0 p-0">
-																			<div class="inner">
-
-																				<div class="portfolio-img">
-																					<div class="bg-two">	
-																						<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="single-slide p-0 m-0">
-																		<div class="single-portfolio m-0 p-0">
-																			<div class="inner">
-
-																				<div class="portfolio-img">
-																					<div class="bg-three">	
-																						<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="single-slide p-0 m-0">
-																		<div class="single-portfolio m-0 p-0">
-																			<div class="inner">
-
-																				<div class="portfolio-img">
-																					<div class="bg-four">	
-																						<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															{# version mobile probleme affichage #}
-
-															<div class="single-portfolio m-0 p-0 mobile_photo">
+												<div class="slide_actu">
+													<div class="testimonial-slider ">
+														<div class="single-slide p-0 m-0">
+															<div class="single-portfolio m-0 p-0">
 																<div class="inner">
 
 																	<div class="portfolio-img">
-																		<div class="bg-one">	
+																		<div class="bg-one">
 																			<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
 																		</div>
 																	</div>
 																</div>
 															</div>
+														</div>
+														<div class="single-slide p-0 m-0">
+															<div class="single-portfolio m-0 p-0">
+																<div class="inner">
 
-															{# fin version mobile #}
+																	<div class="portfolio-img">
+																		<div class="bg-two">
+																			<img class="imageflottante" class="img-fluid img2 rounded mb-4" src="" alt="">
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="single-slide p-0 m-0">
+															<div class="single-portfolio m-0 p-0">
+																<div class="inner">
+
+																	<div class="portfolio-img">
+																		<div class="bg-three">
+																			<img class="imageflottante" class="img-fluid img3 rounded mb-4" src="" alt="">
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="single-slide p-0 m-0">
+															<div class="single-portfolio m-0 p-0">
+																<div class="inner">
+
+																	<div class="portfolio-img">
+																		<div class="bg-four">
+																			<img class="imageflottante" class="img-fluid img4 rounded mb-4" src="" alt="">
+																		</div>
+																	</div>
+																</div>
+															</div>
 														</div>
 													</div>
-
-													<article>
-														{# <h3 class="dateActu">Actualité du:</h3> #}
-														
-														{# <p class="date">01 Dec 2015</p> #}
-
-													</article>
 												</div>
-											</div>
-											<div class="right " >
-												<article class="actuContent">
+												{# version mobile probleme affichage #}
 
-													<p  class="actu_content " > </p>
-												</article>
+												<div class="single-portfolio m-0 p-0 mobile_photo">
+													<div class="inner">
+
+														<div class="portfolio-img">
+															<div class="bg-one">
+																<img class="imageflottante" class="img-fluid img1 rounded mb-4" src="" alt="">
+															</div>
+														</div>
+													</div>
+												</div>
+
+												{# fin version mobile #}
 											</div>
 										</div>
+
+										<article>{# <h3 class="dateActu">Actualité du:</h3> #}
+
+											{# <p class="date">01 Dec 2015</p> #}
+
+										</article>
 									</div>
 								</div>
-							</section>
-							<!--New modal template ok end-->
+								<div class="right ">
+									<article class="actuContent">
 
-							{# fin essai #}
-
+										<p class="actu_content "></p>
+									</article>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</section>
+				<!--New modal template ok end-->
+
+				{# fin essai #}
 
 			</div>
 		</div>
 	</div>
-</div>
-</div>
-</div>
 
-
-
-{%endblock%}
-
-{% block javascripts %}
-	<script src="{{ asset('js/actualites_ajax.js') }}"></script>
-	// <script src="{{ asset('js/actualite.js') }}"></script>
-	<script src="{{ asset('js/actuModal.js') }}"></script>
-	<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
-	
-
-{% endblock %}
+</div></div></div></div></div></div>{%endblock%}{% block javascripts %}<script src="{{ asset('js/actualites_ajax.js') }}"></script>//<script src="{{ asset('js/actualite.js') }}"></script><script src="{{ asset('js/actuModal.js') }}"></script><script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script>{% endblock %}
