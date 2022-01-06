@@ -1,0 +1,15 @@
+/* style from khobor template */
+
+.dropcap {
+    display: block;
+}
+
+.dropcap::first-letter {
+    font-size: 100px;
+    float: left;
+    display: block;
+    font-weight: 800;
+    color: #444444;
+    padding: 8px 10px 5px 0;
+    line-height: 1;
+}

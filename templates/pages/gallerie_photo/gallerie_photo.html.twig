@@ -1,67 +1,81 @@
-
 {% extends "base.html.twig" %}
 {% block stylesheets %}
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/baguetteBox.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/grid-gallery.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/baguetteBox.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo/grid-gallery.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset( 'css/gallerie_photo.css')}}">
 
-	{%endblock%}
-	{% block title %}Galerie Photo {% endblock %}
+{%endblock%}
+{% block title %}Galerie Photo
+{% endblock %}
 
-		{% block content %}
-			{% include 'layouts/couverture.html.twig' %} 
+{% block content %}
+{% include 'layouts/couverture.html.twig' %}
 
-			<section class="gallery-block grid-gallery">
-				<div class="container">
-					<div class="section-title">
-						<h2>DGSR en photo</h2>
-						{# <p>Centres de visite technique et de réception technique</p> #}
+<section class="gallery-block grid-gallery">
+	<div class="container">
+		<div class="section-title">
+			<h2>DGSR en photo</h2>
+			{# <p>Centres de visite technique et de réception technique</p> #}
+		</div>
+		{% for actualite in actualites %}
+			<div class="p-4">
+				<div class="desktop_title">
+					<div class="d-flex ">
+						<div class="">
+							<h4>
+								{{ actualite.title }}</h4>
+						</div>
+						<div class="ml-auto">
+							<p>
+								<i class="fa fa-clock-o"></i>
+								{{ actualite.datePub | date("d-m-Y")}}
+							</p>
+						</div>
 					</div>
-					{% for actualite in actualites %}
-						<div class="p-4" >
-							<div class="desktop_title">
-								<div class="d-flex ">
-									<div class=""><h5> {{ actualite.title }}</h5></div>
-									<div class="ml-auto"><p>{{ actualite.datePub | date("d-m-Y")}} </p></div>
-								</div>
-							</div>
-							<div class="m-0 p-0 mobile_title">
-								<div class="m-0 p-0"><h5> {{ actualite.title }}</h5></div>
-								<div class="m-0 p-0"><p>{{ actualite.datePub | date("d-m-Y")}} </p></div>
-							</div>
-
-							<div class="gallery-wrap p-0 m-0">
-								<div class="row  m-0 p-0">
-									{% for attach in actualite.attachements %}
-										<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">
-											<div class="item p-2 m-0 photo ">
-
-												<a  href="{{vich_uploader_asset(attach, 'imageFile')  }}">
-													<img class="img-fluid image scale-on-hover thumbnail" src="{{vich_uploader_asset(attach, 'imageFile')  }}">
-												</a>
-											</div>
-										</div>
-									{% endfor %}
-
-								</div>
-							</div>
-						</div>
-
-					{% endfor %}
-					<div class="d-flex justify-content-center mt-5">	
-						<div class=" ">	
-							{{ knp_pagination_render(actualites) }}
-						</div>
-					</div> 
 				</div>
-			</section>
-			{%endblock%}
+				<div class="m-0 p-0 mobile_title">
+					<div class="m-0 p-0">
+						<h5>
+							{{ actualite.title }}</h5>
+					</div>
+					<div class="m-0 p-0">
+						<p>{{ actualite.datePub | date("d-m-Y")}}
+						</p>
+					</div>
+				</div>
 
-			{% block javascripts %}
-				<script src="{{ asset ('js/gallerie_photo/baguetteBox.min.js') }}"></script>
-				<script>
-				baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
-				</script>
-				<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
-				
-			{% endblock %}
+				<div class="gallery-wrap p-0 m-0">
+					<div class="row  m-0 p-0">
+						{% for attach in actualite.attachements %}
+							<div class="col-lg-3 col-md-3  col-sm-6 col-xs-6 col-xl-3 p-0">
+								<div class="item p-2 m-0 photo ">
+
+									<a href="{{vich_uploader_asset(attach, 'imageFile') }}">
+										<img class="img-fluid image scale-on-hover thumbnail" src="{{vich_uploader_asset(attach, 'imageFile') }}">
+									</a>
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+
+		{% endfor %}
+		<div class="d-flex justify-content-center mt-5">
+			<div class=" ">
+				{{ knp_pagination_render(actualites) }}
+			</div>
+		</div>
+	</div>
+</section>
+{%endblock%}
+
+{% block javascripts %}
+	<script src="{{ asset ('js/gallerie_photo/baguetteBox.min.js') }}"></script>
+	<script>
+		baguetteBox.run('.grid-gallery', {animation: 'slideIn'});
+	</script>
+	<script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script>
+
+{% endblock %}

@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-	{# {% include 'layouts/couverture.html.twig' %} #}
+	{% include 'layouts/couverture.html.twig' %}
 
 	<div class="service-area bg2 sp">
 		<div class="container text-center">
@@ -30,7 +30,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="{{ path ('visite_domicile')}}">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4 class="p-0">
 											{# utilisé pour modal #}
 											{# <a class="btn_tarif" href="" data-toggle="modal" data-target=".visite_domicile">Visite Technique à domicile</a> #}
@@ -56,7 +56,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="{{path('visite_site_apte')}}">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4
 											class="p-0">
 											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_apte">Visite Technique sur site, Apte</a> #}
@@ -84,7 +84,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="{{path('visite_site_inapte')}}">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4
 											class="p-0">
 											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".visite_site_inapte">Visite Technique sur site, Inapte</a> #}
@@ -111,7 +111,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="{{path('tarif_reception')}}">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4
 											class="p-0">
 											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_reception">Réception Technique</a> #}
@@ -140,7 +140,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="{{path('tarif_consta')}}">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4
 											class="p-0">
 											{# <a class="btn_tarif" href="	" data-toggle="modal" data-target=".tarif_consta">Constatation avant dédouanement</a> #}
@@ -167,7 +167,7 @@
 							</div>
 							<div class="col-9">
 								<a class="btn_tarif" href="	" data-toggle="modal" data-target=".liste_abbrev">
-									<div class="title d-flex ">
+									<div class="title d-flex text-left">
 										<h4 class="p-0">
 											Abbreviations et papiers utiles
 										</h4>

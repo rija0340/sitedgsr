@@ -21,52 +21,49 @@ class GalPhotoController extends AbstractController
   private $attachrepo;
   private $attachement;
 
-  public function __construct(ActualiteRepository $acturepo, AttachementRepository $attachrepo, ImagesEnteteRepository $imgenteterepo){
+  public function __construct(ActualiteRepository $acturepo, AttachementRepository $attachrepo, ImagesEnteteRepository $imgenteterepo)
+  {
 
     $this->acturepo = $acturepo;
     $this->attachrepo = $attachrepo;
     $this->imgenteterepo = $imgenteterepo;
   }
 
-        /**
-     * @Route("/gallerie_photo", name="gallerie_photo")
+  /**
+   * @Route("/gallerie_photo", name="gallerie_photo")
 
-     */
-        public function gallerie_photo(Request $request,PaginatorInterface $paginator)
-        {
-          $actualites = new Actualite();
-          $actualites = $this->acturepo->findBy(array(), array('id' => 'DESC'));
-          //affichage image en couveture
-          $i = 0;
+   */
+  public function gallerie_photo(Request $request, PaginatorInterface $paginator, EntityManagerInterface $em)
+  {
+    // $actualites = $this->acturepo->findBy(array(), array('id' => 'DESC'));
+    $actualites = $this->acturepo->findNotVideoOnly();
 
-          $last_image = new ImagesEntete();
-          $images = $this->imgenteterepo->findAll();
+    //affichage image en couveture
+    $i = 0;
 
-          foreach ($images as $cle => $img) {
+    $last_image = new ImagesEntete();
+    $images = $this->imgenteterepo->findAll();
 
-            if ( $img->getLabelCouverture()->getLabel() == 'galerie photo' ) {
-              $ity['$i'] = $img;
-              $i = $i +1;
-            }
-          }
-          $i = $i - 1;
-          $last_image = $ity['$i'];
+    foreach ($images as $cle => $img) {
 
-          $actualites = $paginator->paginate(
-            $actualites, // Requête contenant les données à paginer (ici nos articles)
-            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
-            5 // Nombre de résultats par page
-          );
-
-
-          return $this->render('pages/gallerie_photo/gallerie_photo.html.twig', [
-            'actualites' => $actualites,
-            'last_image' => $last_image
-          ]);
-
-        }  
-
-
-
-
+      if ($img->getLabelCouverture()->getLabel() == 'galerie photo') {
+        $ity['$i'] = $img;
+        $i = $i + 1;
       }
+    }
+    $i = $i - 1;
+    $last_image = $ity['$i'];
+
+    $actualites = $paginator->paginate(
+      $actualites, // Requête contenant les données à paginer (ici nos articles)
+      $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+      5 // Nombre de résultats par page
+    );
+
+
+    return $this->render('pages/gallerie_photo/gallerie_photo.html.twig', [
+      'actualites' => $actualites,
+      'last_image' => $last_image
+    ]);
+  }
+}

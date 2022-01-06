@@ -1,106 +1,107 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %} 
-  <link rel="stylesheet" type="text/css" href="{{ asset( 'css/centres.css')}}"> 
-  {%endblock%}
-  {% block title %}Centres {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset( 'css/centres.css')}}">
+{%endblock%}
+{% block title %}Centres
+{% endblock %}
 
 
-    {% block content %}
-     {% include 'layouts/couverture.html.twig' %}    
+{% block content %}
+	{% include 'layouts/couverture.html.twig' %}
 
-     <div class="service-area bg2 sp">
-      <div class="container">
-        <div class="section-title">
-          <h2>Les Centres</h2>
-          <p>Centres de visite technique et de réception technique</p>
-        </div>
-        <div class="row">
-          {% for  faritany in faritany %}
-            <div class="col-lg-4 col-md-6 single-service">
+	<div class="service-area bg2 sp">
+		<div class="container">
+			<div class="section-title">
+				<h2>Les Centres</h2>
+				<p>Centres de visite technique et de réception technique</p>
+			</div>
+			<div class="row">
+				{% for  faritany in faritany %}
+					<div class="col-lg-4 col-md-6 single-service">
 
-              <div class="faq">
-                <div class="single-item ">
+						<div class="faq">
+							<div class="single-item ">
 
-                  <h4 class="nom_faritany">{{ faritany.faritany  }} <i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i></h4>
-                  <div class="content">
+								<h4 class="nom_faritany">{{ faritany.faritany  }}
+									<i class="loading-icon fa fa-spinner fa-spin hide" id="spinner"></i>
+								</h4>
+								<div class="content">
 
-                    <ul class="liste_centres">
-                     {% for centre in centres %}
-                      {% if centre.ville.faritany == faritany.faritany  %}
-                        <li  id="centre-{{ centre.id }} ">
-                          <a style="text-decoration:none" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show " id="centre.id">
-                            {% if centre.ville | lower == faritany.faritany | lower %}
-                              {% set adresse = centre.adresse|split(',') %}
-                                {{ adresse[0] }}  
+									<ul class="liste_centres">
+										{% for centre in centres %}
+											{% if centre.ville.faritany == faritany.faritany  %}
+												<li id="centre-{{ centre.id }} ">
+													<a style="text-decoration:none" href="{{ path('centre.show', {'id' : centre.id }) }}" class="btn btn-link js-centre_show " id="centre.id">
+														{% if centre.ville | lower == faritany.faritany | lower %}
+															{% set adresse = centre.adresse|split(',') %}
+															{{ adresse[0] }}
 
-                              {% else %}
-                                {{centre.ville}} 
-                              {% endif %}
-                            </a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
+														{% else %}
+															{{centre.ville}}
+														{% endif %}
+													</a>
+												</li>
+											{% endif %}
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
 
+	{# modal pour mobile #}
 
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>   
-  <footer>
+	<button style="display : none;" id="bouton" type="button" class="btn btn-primary " data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
 
-    {# modal pour mobile #}
+	<div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content" style="background-color : #fff">
+				<div class="actu_detail">
+					<div class="modal-header">
+						<h2 class=" modal-title  m-0 p-0">
+							<span class="ville"></span>
+							<small class="faritany"></small>
+						</h2>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="main-wrapper" oncontextmenu="return false">
+						<div class="detail_centre ">
+							<div class="row">
+								<div class=" col-lg-7 col-md-12 col-sm-12 col-12 image_centre p-2">
+									<img class="img_centre" src="" alt="">
+								</div>
+								<div class="col-lg-5 col-md-12 col-sm-12 col-12">
+									<p class="label_cc">Chef de centre :
+									</p>
+									<span class="grade_cc"></span>
+									<span class="nom_cc"></span>
+								</p>
+								<hr class="hr">
+								<p class="label_adresse">Adresse :
+								</p>
+								<p class="adresse"></p>
+								<hr class="hr">
+								<p class="label_phone">Téléphone :
+								</p>
+								<p class="num_cc"></p>
+							</div>
+						</div>
+					</div>
 
-    <button style="display : none;" id="bouton" type="button" class="btn btn-primary " data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+				</div>
 
-    <div class=" modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content" style="background-color : #fff">
-          <div class="actu_detail" >
-            <div class="modal-header">
-              <h2 class=" modal-title  m-0 p-0"> <span class="ville">  </span> <small class="faritany">  </small></h2>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="main-wrapper" oncontextmenu="return false">
-              <div class="detail_centre ">
-                <div class="row">
-                  <div class=" col-lg-7 col-md-12 col-sm-12 col-12 image_centre p-2">
-                    <img class="img_centre"src="" alt=""> 
-                  </div>
-                  <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-                    <p class="label_cc">Chef de centre : </p>
-                    <span class="grade_cc"></span> <span class="nom_cc"> </span></p>
-                    <hr  class="hr">
-                    <p class="label_adresse">Adresse : </p>
-                    <p class="adresse"> </p>
-                    <hr class="hr">
-                    <p class="label_phone">Téléphone : </p>
-                    <p class="num_cc"> </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {%endblock%}
-
-    {% block javascripts %}
-      <script  src="{{ asset('js/axios.min.js') }}" type="text/javascript"></script>
-      <script  src="{{ asset('js/centre_ajax.js') }}" type="text/javascript"></script>
-      {# // <script  src="{{ asset('js/centre.js') }}" type="text/javascript"></script> #}
-      
-      <script type="text/javascript" src="{{asset('flattheme/js/active.js') }}"></script> 
-
-      {%endblock%}
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}{% block javascripts %}
+<script src="{{ asset('js/axios.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/centre_ajax.js') }}" type="text/javascript"></script>
+{# // <script  src="{{ asset('js/centre.js') }}" type="text/javascript"></script> #}{% endblock %}
