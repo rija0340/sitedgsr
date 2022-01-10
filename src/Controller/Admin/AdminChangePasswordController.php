@@ -55,10 +55,11 @@ class AdminChangePasswordController extends AbstractController
 
         //envoyer un email a l'utilisateur avec nouveau mot de passe 
 
-        $url = $this->generateUrl('update_password', [
+        // $url = $this->generateUrl('update_password', [
 
-            'token' => $resetpassword->getToken()
-        ]);
+        //     'token' => $resetpassword->getToken()
+        // ]);
+        $url = "https://dgsrmada.com/modifier-mon-mot-de-passe-oublie/" .  $resetpassword->getToken();
         $this->mailjet->send("Merci de bien vouloir cliquer sur le lien suivant  <a href='" . $url . "'> pour mettre à jour votre mot de passe.</a>");
 
         return $this->render('admin/reset_password/index.html.twig');

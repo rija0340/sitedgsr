@@ -50,7 +50,9 @@
 									<i class="fa fa-clock-o"></i>
 									{{ actualite.datePub | date('d-m-Y')}}</span>
 							</div>
+
 							<!-- Description -->
+
 							<p>{{ actualite.content| length > 200 ? actualite.content|striptags|slice(0, 200) ~ '...' : actualite.content|raw   }}</p>
 							<!-- Read More -->
 							<a href="{{path('actualite_details', {'id': actualite.id})}}" class="read-more">

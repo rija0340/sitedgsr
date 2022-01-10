@@ -26,7 +26,7 @@ class ActualiteRepository extends ServiceEntityRepository
     public function findNotVideoOnly()
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.video_only = FALSE')
+            ->andWhere('a.video_only = FALSE OR a.video_only is NULL')
             ->orderBy('a.id', 'DESC')
             ->getQuery()
             ->getResult();
