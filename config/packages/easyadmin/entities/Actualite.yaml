@@ -13,6 +13,7 @@ easy_admin:
           - {property: 'content',label: Contenu ,type: 'text_editor'} 
           - url_video
           - {property: 'datePub', label: 'Date'} 
+          - {property: 'video_only', label: 'Video_only'} 
           - { property: 'imageFile',label: photo Caroussel, type: 'vich_image' }
           - { property: 'attachements',label: Autre photos, type: 'collection', type_options: {entry_type: 'App\Form\AttachementType', by_reference: false}}
           
