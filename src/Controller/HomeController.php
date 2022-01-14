@@ -45,7 +45,7 @@ class HomeController extends AbstractController
         // $dgword = $this->dgwordRepo->findOneBy(3);
 
         //on prend les 6 dernières actualités dans la base de données.
-        $actualites = $this->actuRepo->findBy(['video_only' => false], array('id' => 'DESC'), 6);
+        $actualites = $this->actuRepo->find6NotVideoOnly();
 
 
         //on prend les 3 dernières carousels dans la base de données.

@@ -32,6 +32,15 @@ class ActualiteRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function find6NotVideoOnly()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.video_only = FALSE OR a.video_only is NULL')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Actualite[] Returns an array of Actualite objects
     //  */
