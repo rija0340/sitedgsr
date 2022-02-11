@@ -1,14 +1,14 @@
 
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 
 	$('#bouton').hide();
-	$(".js-actu_show").on('click', function( e ){
+	$(".js-actu_show").on('click', function (e) {
 
 		e.preventDefault();
-		
+
 
 		var $a = $(this);
 		var url = $a.attr('href');
@@ -21,43 +21,43 @@ $(document).ready(function() {
 
 		//affichage spinner a l'aide du ID
 		var $id_a = $a.attr('id');
-		console.log($('#'+$id_a));
-		console.log($('#'+$id_a).firstChild);
+		console.log($('#' + $id_a));
+		console.log($('#' + $id_a).firstChild);
 
 
-		$.ajax({ url : url, type : 'GET', dataType : "json", data : { "id" : $id } }) 
-		.done(function(data, status, jqxhr){
+		$.ajax({ url: url, type: 'GET', dataType: "json", data: { "id": $id } })
+			.done(function (data, status, jqxhr) {
 
 
-			$('.loading-icon').addClass("hide"); //pour cacher de nouveau le spinner une fois les données eu
+				$('.loading-icon').addClass("hide"); //pour cacher de nouveau le spinner une fois les données eu
 
 
-			$('#bouton').trigger('click');
-			
-			$( '.actu_title' ).text(data.titre);
-			$( '.actu_content' ).html(data.contenu);
-			$( '.actu_datepub' ).text($date(data.datepub.date)); //getday() return 0->sunday, 1->monday..., 
+				$('#bouton').trigger('click');
 
-			$img2.attr('src', "/uploads/images/actualite/"+ data.attachement[0] +"");
-			$img3.attr('src', "/uploads/images/actualite/"+ data.attachement[1] +"");
-			$img4.attr('src', "/uploads/images/actualite/"+ data.attachement[2] +"");
-			$img1.attr('src', "/uploads/images/actualite/"+ data.attachement[3] +"");
-		/*	setTimeout(function(){
-				console.log("THIS IS");
-			}, 4000);*/
+				$('.actu_title').text(data.titre);
+				$('.actu_content').html(data.contenu);
+				$('.actu_datepub').text($date(data.datepub.date)); //getday() return 0->sunday, 1->monday..., 
+
+				$img2.attr('src', "/uploads/images/actualite/" + data.attachement[0] + "");
+				$img3.attr('src', "/uploads/images/actualite/" + data.attachement[1] + "");
+				$img4.attr('src', "/uploads/images/actualite/" + data.attachement[2] + "");
+				$img1.attr('src', "/uploads/images/actualite/" + data.attachement[3] + "");
+				/*	setTimeout(function(){
+						console.log("THIS IS");
+					}, 4000);*/
 
 
-		})
-		.fail(function(jqxhr){
-			alert(jqxhr.responseText);
-		})
-		.always(function(jqxhr){
+			})
+			.fail(function (jqxhr) {
+				alert(jqxhr.responseText);
+			})
+			.always(function (jqxhr) {
 
-		});
+			});
 
 		/*formatage de date*/
 
-		$date = function(dateObject) {
+		$date = function (dateObject) {
 			var d = new Date(dateObject);
 			var day = d.getDay();
 			var month = d.getMonth() + 1;
