@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Symfony\Component\HttpFoundation\Request; // Nous avons besoin d'accéder à la requête pour obtenir le numéro de page
 use Knp\Component\Pager\PaginatorInterface;
-use Proxies\__CG__\App\Entity\Actualite as EntityActualite;
+// use Proxies\__CG__\App\Entity\Actualite as EntityActualite;
 
 class ActualitesController extends AbstractController
 {

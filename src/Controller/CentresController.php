@@ -21,72 +21,71 @@ class CentresController extends AbstractController
 
 
 
-	private $faritanyRepo;
- private $centreRepo;
- private $villeRepo;
+  private $faritanyRepo;
+  private $centreRepo;
+  private $villeRepo;
 
- public function __construct (FaritanyRepository $faritanyRepo,VilleRepository $villeRepo ,CentreRepository $centreRepo,ImagesEnteteRepository $imgenteterepo)
- {
-  $this->faritanyRepo = $faritanyRepo;
-  $this->villeRepo = $villeRepo;
-  $this->centreRepo = $centreRepo;
-  $this->imgenteterepo = $imgenteterepo;
+  public function __construct(FaritanyRepository $faritanyRepo, VilleRepository $villeRepo, CentreRepository $centreRepo, ImagesEnteteRepository $imgenteterepo)
+  {
+    $this->faritanyRepo = $faritanyRepo;
+    $this->villeRepo = $villeRepo;
+    $this->centreRepo = $centreRepo;
+    $this->imgenteterepo = $imgenteterepo;
+  }
+
+  /**
+   * @Route("/centres", name="centres")
+   */
+  public function centres()
+  {
+
+    $centres = new Centre();
+    $faritany = new Faritany();
+    $villes = new Ville();
+
+    $faritany = $this->faritanyRepo->findAll();
+    $centres = $this->centreRepo->findAll();
+    $villes = $this->villeRepo->findAll(['ville' => 'ASC']);
 
 
-}
+    //affichage image en couveture
+    $i = 0;
 
-     /**
-     * @Route("/centres", name="centres")
-     */
-     public function centres()
-     {
+    $last_image = new ImagesEntete();
+    $images = $this->imgenteterepo->findAll();
 
-     	$centres = new Centre();
-      $faritany = new Faritany();
-      $villes = new Ville();
+    foreach ($images as $cle => $img) {
 
-      $faritany = $this->faritanyRepo->findAll();
-      $centres = $this->centreRepo->findAll();
-      $villes = $this->villeRepo->findAll(['ville' => 'ASC']);
-      
-
-      //affichage image en couveture
-      $i = 0;
-      
-      $last_image = new ImagesEntete();
-      $images = $this->imgenteterepo->findAll();
-
-      foreach ($images as $cle => $img) {
-
-        if ( $img->getLabelCouverture()->getLabel() == 'centres' ) {
-          $ity['$i'] = $img;
-          $i = $i +1;
-        }
+      if ($img->getLabelCouverture()->getLabel() == 'centres') {
+        $ity['$i'] = $img;
+        $i = $i + 1;
       }
-      $i = $i - 1;
-
-      $last_image = $ity['$i'];
-
-      return $this->render('pages/centres/centres.html.twig', [
-
-        'faritany' => $faritany,
-        'centres' => $centres,
-        'villes' => $villes,
-        'last_image'=> $last_image
-
-      ]);
     }
+    $i = $i - 1;
 
-    /**
-    * @Route("/centre/{id}", name="centre.show", methods = {"GET"})
-    * @param Centre centre
-    * 
-    */
-    public function show(int $id, Centre $centre, Request $request){
+    $last_image = $ity['$i'];
 
-     if($request->isXmlHttpRequest()) {
+    return $this->render('pages/centres/centres.html.twig', [
 
-      $id_centre =  $request->request->get('id_centre'); 
+      'faritany' => $faritany,
+      'centres' => $centres,
+      'villes' => $villes,
+      'last_image' => $last_image
+
+    ]);
+  }
+
+  /**
+   * @Route("/centre/{id}", name="centre.show", methods = {"GET"})
+   * @param Centre centre
+   * 
+   */
+  public function show(int $id, Centre $centre, Request $request)
+  {
+
+    if ($request->isXmlHttpRequest()) {
+
+      $id_centre =  $request->request->get('id_centre');
       $centre = $this->centreRepo->find($id);
 
       $response = new Response(json_encode(array(
